@@ -24,9 +24,14 @@ if ItemShopBoostEnabled = true then
   ItemShopFrame.Boost.Visible = false
 end
 
+local StackEnabled = false
+
+if StackEnabled = true then
+  ItemShopC.Stack.Visible = true
+end
+
 -- SCRIPT
 
-local StackEnabled = false
 
 local Title = ItemShopC.Title
 local Desc = ItemShopC.Desc
