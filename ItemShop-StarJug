@@ -28,7 +28,7 @@ local Image = ItemShopC.ImageLabel
 Title.Text = "Starlight Jug"
 Desc.Text = "Curious Light... or A-1000?"
 Stack.Text = ""
-Price.Text = "1299"
+Price.Text = "1,299"
 Image.Image = "rbxassetid://90285519819612"
 
 -- ITEM GIVER IF YOU SELECT THIS ITEM
