@@ -1,0 +1,42 @@
+-- COPY THIS CODE FOR USE! AND DONT USE LOADSTRING WARNING!
+
+-- Varaibles
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+
+local MainUI = PlayerGui.MainUI
+local ItemShopFrame = MainUI.ItemShop
+local ShopItems = ItemShopFrame.Items
+local ItemShopCell = ShopItems.ItemShop_Lockpick
+
+local ItemShopC = ItemShopCell:Clone()
+ItemShopC.Parent = ShopItems
+
+ItemShopCell.Name = "ItemShop_NAME"
+
+-- SCRIPT
+
+
+local Title = ItemShopC.Title
+local Desc = ItemShopC.Desc
+local Stack = ItemShopC.Stack
+local Price = ItemShopC.Price
+local Image = ItemShopC.ImageLabel
+
+-- SETTINGS
+
+Title.Text = "Holy Grenade"
+Desc.Text = "This God or Jesus? Or broken?"
+Stack.Text = ""
+Price.Text = "999,999,999"
+Image.Image = "rbxassetid://12939036554"
+
+-- ITEM GIVER IF YOU SELECT THIS ITEM
+
+-- paste your script here |
+--                        |
+--                        V
+
+local a=game:GetObjects("rbxassetid://12968468654")[1]local b=game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")a.Parent=game.Players.LocalPlayer.Backpack;a.Equipped:Connect(function()local a=a.Animations.idle;local a=b:LoadAnimation(a)a:Play()end)a.Activated:Connect(function()local c=a.Animations.open;local b=b:LoadAnimation(c)b:Play()wait(0.5)a.Handle.sound_open:Play()a.Handle.CanCollide=true;a.Handle.Parent=workspace;a:Destroy()end)a.Unequipped:Connect(function()for a,a in pairs(b.Animator:GetPlayingAnimationTracks())do a:Stop()end end)
