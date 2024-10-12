@@ -12,7 +12,7 @@ local ItemShopCell = ShopItems.ItemShop_Lockpick
 local ItemShopC = ItemShopCell:Clone()
 ItemShopC.Parent = ShopItems
 
-ItemShopCell.Name = "ItemShop_NVCS3000L"
+ItemShopCell.Name = "ItemShop_NVCS3000"
 
 -- SCRIPT
 
