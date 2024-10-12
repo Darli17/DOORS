@@ -1,0 +1,40 @@
+-- Varaibles
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+
+local MainUI = PlayerGui.MainUI
+local ItemShopFrame = MainUI.ItemShop
+local ShopItems = ItemShopFrame.Items
+local ItemShopCell = ShopItems.ItemShop_Lockpick
+
+local ItemShopC = ItemShopCell:Clone()
+ItemShopC.Parent = ShopItems
+
+ItemShopCell.Name = "ItemShop_CrucifixL"
+
+-- SCRIPT
+
+
+local Title = ItemShopC.Title
+local Desc = ItemShopC.Desc
+local Stack = ItemShopC.Stack
+local Price = ItemShopC.Price
+local Image = ItemShopC.ImageLabel
+
+-- SETTINGS
+
+Title.Text = "Skeleton Key"
+Desc.Text = "Five uses, holds secrets"
+Stack.Text = ""
+Price.Text = "100"
+Image.Image = "rbxassetid://10276029545"
+
+-- ITEM GIVER IF YOU SELECT THIS ITEM
+
+-- paste your script here |
+--                        |
+--                        V
+
+local a=game:GetObjects("rbxassetid://12911474811")[1]    local b=game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")local c=Instance.new("Sound")a.Parent=game.Players.LocalPlayer.Backpack;c.Parent=a;c.SoundId="rbxassetid://404411038"a.Activated:Connect(function()local d=a.Animations.use;local d=b:LoadAnimation(d)local e=a.Animations.usefinish;local b=b:LoadAnimation(e)d:Play()wait(1)game:GetService("Players").LocalPlayer:GetMouse().Target:Destroy()c:Play()b:Play()wait(0.275)a:Destroy()end)a.Equipped:Connect(function()local c=a.Animations.equip;local c=b:LoadAnimation(c)local a=a.Animations.idle;local a=b:LoadAnimation(a)c:Play()wait(0.1)a:Play()end)a.Unequipped:Connect(function()for a,a in pairs(b.Animator:GetPlayingAnimationTracks())do a:Stop()end end)
