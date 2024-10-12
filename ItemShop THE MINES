@@ -1,0 +1,41 @@
+-- COPY THIS CODE FOR USE! AND DONT USE LOADSTRING WARNING!
+
+-- Varaibles
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+
+local MainUI = PlayerGui.MainUI
+local ItemShopFrame = MainUI.ItemShop
+local ShopItems = ItemShopFrame.Items
+local ItemShopCell = ShopItems.ItemShop_Lockpick
+
+local ItemShopC = ItemShopCell:Clone()
+ItemShopC.Parent = ShopItems
+
+ItemShopFrame.Boost.Visible = false
+ItemShopCell.Name = "ItemShop_NAME"
+
+-- SCRIPT
+
+
+local Title = ItemShopC.Title
+local Desc = ItemShopC.Desc
+local Stack = ItemShopC.Stack
+local Price = ItemShopC.Price
+local Image = ItemShopC.ImageLabel
+
+-- SETTINGS
+
+Title.Text = ""
+Desc.Text = ""
+Stack.Text = ""
+Price.Text = "0"
+Image.Image = ""
+
+-- ITEM GIVER IF YOU SELECT THIS ITEM
+
+-- paste your script here |
+--                        |
+--                        V
