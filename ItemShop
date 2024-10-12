@@ -14,22 +14,6 @@ ItemShopC.Parent = ShopItems
 
 ItemShopCell.Name = "ItemShop_NAME"
 
--- VALUES
-
-local ItemShopCellValue = false
-
-local ItemShopBoostEnabled = true
-
-if ItemShopBoostEnabled = true then
-  ItemShopFrame.Boost.Visible = false
-end
-
-local StackEnabled = false
-
-if StackEnabled = true then
-  ItemShopC.Stack.Visible = true
-end
-
 -- SCRIPT
 
 
