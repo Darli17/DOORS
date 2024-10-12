@@ -1,0 +1,14 @@
+-- Varaibles
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+
+local MainUI = PlayerGui.MainUI
+local ItemShopFrame = MainUI.ItemShop
+local ShopItems = ItemShopFrame.Items
+
+-- Script
+ShopItems:Destroy()
+ItemShopFrame.Lol.Visible = false
+ItemShopFrame.StoredItem.Visible = true
