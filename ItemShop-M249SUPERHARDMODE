@@ -1,0 +1,44 @@
+-- COPY THIS CODE FOR USE! AND DONT USE LOADSTRING WARNING!
+
+-- Varaibles
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+
+local MainUI = PlayerGui.MainUI
+local ItemShopFrame = MainUI.ItemShop
+local ShopItems = ItemShopFrame.Items
+local ItemShopCell = ShopItems.ItemShop_Lockpick
+
+MainUI.ItemShop.Lol.Visible = false
+
+local ItemShopC = ItemShopCell:Clone()
+ItemShopC.Parent = ShopItems
+
+ItemShopCell.Name = "ItemShop_M249L"
+
+-- SCRIPT
+
+
+local Title = ItemShopC.Title
+local Desc = ItemShopC.Desc
+local Stack = ItemShopC.Stack
+local Price = ItemShopC.Price
+local Image = ItemShopC.ImageLabel
+
+-- SETTINGS
+
+Title.Text = "M249"
+Desc.Text = "Don't shoot your friends!"
+Stack.Text = ""
+Price.Text = "999"
+Image.Image = "rbxassetid://10889297548"
+
+-- ITEM GIVER IF YOU SELECT THIS ITEM
+
+-- paste your script here |
+--                        |
+--                        V
+
+local a=game:GetObjects("rbxassetid://139129987438712")[1]local b=game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")a.Parent=game.Players.LocalPlayer.Backpack;a.Equipped:Connect(function()local a=a.Animations.idle;local a=b:LoadAnimation(a)a:Play()end)a.Unequipped:Connect(function()for a,a in pairs(b.Animator:GetPlayingAnimationTracks())do a:Stop()end end)
