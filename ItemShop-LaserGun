@@ -60,6 +60,7 @@ a.Activated:Connect(function()
 		a.Handle.HitFade:Play()
 		m.Target.Transparency = 0.5
 		m.Target.BrickColor = BrickColor.Blue()
+		a.Handle.HitFade:Play()
 		wait(0.300)
 		m.Target.Transparency = 1
 		wait(0.100)
@@ -70,4 +71,3 @@ end)
 a.Unequipped:Connect(function()
 	idle:Stop()
 end)
-
