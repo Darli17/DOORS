@@ -1,0 +1,19 @@
+local a = game:GetObjects("rbxassetid://121405629324559")[1]
+a.Parent = game.Players.LocalPlayer.Backpack
+local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+local af = a.Animations
+local Equip = b:LoadAnimation(af.equip)
+local Hold = b:LoadAnimation(af.idle)
+
+
+a.Equipped:Connect(function()
+	Equip:Play()
+	Equip.Stopped:Connect(function()
+		Hold:Play()
+	end)
+end)
+
+a.Unequipped:Connect(function()
+	Equip:Stop()
+	Hold:Stop()
+end)
