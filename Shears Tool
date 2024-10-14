@@ -1,0 +1,26 @@
+local a = game:GetObjects("rbxassetid://135423791725906")[1]
+a.Parent = game.Players.LocalPlayer.Backpack
+local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+local af = a.Animations
+p = game.Players.LocalPlayer
+m = p:GetMouse()
+local use = b:LoadAnimation(af.use)
+local idle = b:LoadAnimation(af.idle)
+
+
+a.Equipped:Connect(function()
+	idle:Play()
+  a.Unequipped:Connect(function()
+	  idle:Stop()
+  end)
+  a.Activated:Connect(function()
+	  idle:Stop()
+    use:Play()
+	  if m.Target.ClassName == "Part" then
+		    m.Target:Destroy()
+	  end
+    use.Stopped:Connect(function()
+        idle:Play()
+    end) 
+  end)
+end)
