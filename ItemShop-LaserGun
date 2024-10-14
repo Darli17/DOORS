@@ -41,4 +41,33 @@ Image.Image = "http://www.roblox.com/asset/?id=130093050"
 --                        |
 --                        V
 
-local a=game:GetObjects("rbxassetid://119929393068253")[1]local b=game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")a.Parent=game.Players.LocalPlayer.Backpack;a.Equipped:Connect(function()local a=a.Animations.idle;local a=b:LoadAnimation(a)a:Play()end)a.Unequipped:Connect(function()for a,a in pairs(b.Animator:GetPlayingAnimationTracks())do a:Stop()end end)
+local a = game:GetObjects("rbxassetid://119929393068253")[1]
+a.Parent = game.Players.LocalPlayer.Backpack
+local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+local af = a.Animations
+p = game.Players.LocalPlayer
+m = p:GetMouse()
+local idle = b:LoadAnimation(af.idle)
+
+
+a.Equipped:Connect(function()
+	idle:Play()
+end)
+
+a.Activated:Connect(function()
+	a.Handle.Fire:Play()
+	if m.Target.ClassName == "Part" then
+		a.Handle.HitFade:Play()
+		m.Target.Transparency = 0.5
+		m.Target.BrickColor = BrickColor.Blue()
+		wait(0.300)
+		m.Target.Transparency = 1
+		wait(0.100)
+		m.Target:Destroy()
+	end
+end)
+
+a.Unequipped:Connect(function()
+	idle:Stop()
+end)
+
