@@ -41,4 +41,28 @@ Image.Image = "rbxassetid://10889297548"
 --                        |
 --                        V
 
-local a=game:GetObjects("rbxassetid://116759117653799")[1]local b=game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")a.Parent=game.Players.LocalPlayer.Backpack;a.Equipped:Connect(function()local a=a.Animations.idle;local a=b:LoadAnimation(a)a:Play()end)a.Unequipped:Connect(function()for a,a in pairs(b.Animator:GetPlayingAnimationTracks())do a:Stop()end end)
+local a = game:GetObjects("rbxassetid://125922388866752")[1]
+local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+p = game.Players.LocalPlayer
+m = p:GetMouse()
+a.Sounds.m249.Volume = 2
+a.Parent = game.Players.LocalPlayer.Backpack
+a.Equipped:Connect(function()
+	local as = a.Animations.idle
+	local bs = b:LoadAnimation(as)
+	bs:Play()
+	a.Activated:Connect(function()
+		local m249s = a.Sounds.m249
+		a.FirePart.OverHeat.Enabled = true
+		m249s:Play()
+		if m.Target.ClassName == "Part" then
+			m.Target:Destroy()
+		end
+		wait(0.400)
+		m249s:Stop()
+		a.FirePart.OverHeat.Enabled = false
+	end)
+	a.Unequipped:Connect(function()
+		bs:Stop()
+	end)
+end)
