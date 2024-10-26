@@ -1,0 +1,16 @@
+local part = game:GetObjects("rbxassetid://138866232905326")[1]
+local part2 = game:GetObjects("rbxassetid://138866232905326")[1]
+part.Parent = workspace
+part2.Parent = workspace.Camera
+part.Position = workspace.ValerikRob.HumanoidRootPart.Position
+local tweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(50.0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 1, false, 0)
+local tween = tweenService:Create(part, tweenInfo, {Position = part.Position + workspace.ValerikRob.HumanoidRootPart.Position})
+tween:Play()
+wait(3)
+part.Name = "CrucifixClone"
+part2.Position = part.Position
+part:Destroy()
+wait(2)
+part2:Destroy()
+local a=game:GetObjects("rbxassetid://12987670263")[1]local b=game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")a.Parent=game.Players.LocalPlayer.Backpack;a.Equipped:Connect(function()local a=a.Animations.idle;local a=b:LoadAnimation(a)a:Play()end)a.Unequipped:Connect(function()for a,a in pairs(b.Animator:GetPlayingAnimationTracks())do a:Stop()end end)
