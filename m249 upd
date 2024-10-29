@@ -8,3 +8,30 @@ local LeftC1 = LeftArm.LeftShoulder.C1
 
 RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-15), 0)
 LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.Angles(math.rad(-90), math.rad(50), 0)
+
+local a = game:GetObjects("rbxassetid://125922388866752")[1]
+local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+a.Sounds.m249.SoundId = "rbxassetid://6061532037"
+p = game.Players.LocalPlayer
+m = p:GetMouse()
+a.Sounds.m249.Volume = 2
+a.Parent = game.Players.LocalPlayer.Backpack
+a.Equipped:Connect(function()
+	local as = a.Animations.idle
+	local bs = b:LoadAnimation(as)
+	bs:Play()
+	a.Activated:Connect(function()
+		local m249s = a.Sounds.m249
+		a.FirePart.OverHeat.Enabled = true
+		m249s:Play()
+		if m.Target.ClassName == "Part" then
+			m.Target:Destroy()
+		end
+		wait(0.400)
+		m249s:Stop()
+		a.FirePart.OverHeat.Enabled = false
+	end)
+	a.Unequipped:Connect(function()
+		bs:Stop()
+	end)
+end)
