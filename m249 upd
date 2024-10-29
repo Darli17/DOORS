@@ -9,6 +9,7 @@ local LeftC1 = LeftArm.LeftShoulder.C1
 local a = game:GetObjects("rbxassetid://125922388866752")[1]
 local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 a.Sounds.m249.SoundId = "rbxassetid://6061532037"
+a.Animations.idle.AnimationId = "rbxassetid://12222222222"
 p = game.Players.LocalPlayer
 m = p:GetMouse()
 a.Sounds.m249.Volume = 2
@@ -26,6 +27,7 @@ a.Equipped:Connect(function()
 		wait(0.400)
 		m249s:Stop()
 		a.FirePart.OverHeat.Enabled = false
+        game.Players.LocalPlayer.Character:WaitForChild("M249").Parent = game.Workspace
 	end)
 	a.Unequipped:Connect(function()
 		RightArm.RightShoulder.C1 = RightC1
