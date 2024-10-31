@@ -1,3 +1,14 @@
+local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
+local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Shop%20Items/Source.lua"))()
+game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = false
+game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Lol.Visible = false
+CustomShop.CreateItem(exampleTool, {
+    Title = "M249",
+    Desc = "Don't shoot your friends!",
+    Image = "rbxassetid://10889297548",
+    Price = 999,
+    Stack = 1,
+})
 local plr = game.Players.LocalPlayer
 local Char = plr.Character or plr.CharacterAdded:Wait()
 local Hum = Char:FindFirstChild("Humanoid")
