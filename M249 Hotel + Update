@@ -6,7 +6,7 @@ local LeftArm = Char:FindFirstChild("LeftUpperArm")
 local RightC1 = RightArm.RightShoulder.C1
 local LeftC1 = LeftArm.LeftShoulder.C1
 
-local a = game:GetObjects("rbxassetid://73166395770728")[1]
+local a = game:GetObjects("rbxassetid://81779465622735")[1]
 local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 p = game.Players.LocalPlayer
 m = p:GetMouse()
@@ -31,16 +31,18 @@ a.Equipped:Connect(function()
 
 		a.Dispenser.Decal1.Transparency = 0
 		a.Dispenser.Decal2.Transparency = 0
-		wait(.01)
-		a.Shot.Transparency = 1
+		wait(0.100)
 		a.Shot.GunShotLight.Enabled = false
+		a.Shot.Transparency = 1
 		a.Shot.Smoke1.Enabled = false
 		a.Shot.Smoke2.Enabled = false
-		a.s1.Enabled = false
+		a.Dispenser.s1.Enabled = false
 		a.Dispenser.s2.Enabled = false
-		a.Dispenser.s3.Enabled = false	
+		a.Dispenser.s3.Enabled = false
 		a.Dispenser.s4.Enabled = false
 		a.Dispenser.s5.Enabled = false
+
+
 		a.Dispenser.Decal1.Transparency = 1
 		a.Dispenser.Decal2.Transparency = 1
 	end)
