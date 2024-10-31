@@ -1,14 +1,3 @@
-local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
-local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Shop%20Items/Source.lua"))()
-game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = false
-game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Lol.Visible = false
-CustomShop.CreateItem(exampleTool, {
-    Title = "M249",
-    Desc = "Don't shoot your friends!",
-    Image = "rbxassetid://10889297548",
-    Price = 999,
-    Stack = 1,
-})
 local plr = game.Players.LocalPlayer
 local Char = plr.Character or plr.CharacterAdded:Wait()
 local Hum = Char:FindFirstChild("Humanoid")
@@ -17,29 +6,45 @@ local LeftArm = Char:FindFirstChild("LeftUpperArm")
 local RightC1 = RightArm.RightShoulder.C1
 local LeftC1 = LeftArm.LeftShoulder.C1
 
-local a = game:GetObjects("rbxassetid://125922388866752")[1]
+local a = game:GetObjects("rbxassetid://114565086428190")[1]
 local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
-a.Sounds.m249.SoundId = "rbxassetid://6061532037"
-a.Animations.idle.AnimationId = "rbxassetid://12222222222"
 p = game.Players.LocalPlayer
 m = p:GetMouse()
 a.Sounds.m249.Volume = 2
 a.Parent = game.Players.LocalPlayer.Backpack
 a.Equipped:Connect(function()
-	game.Players.LocalPlayer.Character:WaitForChild("M249").Parent = game.Workspace
 	RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-15), 0)
 	LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.Angles(math.rad(-90), math.rad(50), 0)
 	a.Activated:Connect(function()
 		local m249s = a.Sounds.m249
-		a.FirePart.OverHeat.Enabled = true
+		a.Shot.GunShotLight.Enabled = true
+		a.Shot.Transparency = 0
+		a.Shot.Smoke1.Enabled = true
+		a.Shot.Smoke2.Enabled = true
+		a.Dispenser.s1.Enabled = true
+		a.Dispenser.s2.Enabled = true
+		a.Dispenser.s3.Enabled = true	
+		a.Dispenser.s4.Enabled = true
+		a.Dispenser.s5.Enabled = true
 		m249s:Play()
-		if m.Target.ClassName == "Part" then
-			m.Target:Destroy()
-		end
-		wait(0.400)
-		m249s:Stop()
-		a.FirePart.OverHeat.Enabled = false
-		game.Players.LocalPlayer.Character:WaitForChild("M249").Parent = game.Workspace
+
+
+		a.Dispenser.Decal1.Transparency = 0
+		a.Dispenser.Decal2.Transparency = 0
+		wait(0.100)
+		a.Shot.GunShotLight.Enabled = false
+		a.Shot.Transparency = 1
+		a.Shot.Smoke1.Enabled = false
+		a.Shot.Smoke2.Enabled = false
+		a.Dispenser.s1.Enabled = false
+		a.Dispenser.s2.Enabled = false
+		a.Dispenser.s3.Enabled = false
+		a.Dispenser.s4.Enabled = false
+		a.Dispenser.s5.Enabled = false
+
+
+		a.Dispenser.Decal1.Transparency = 1
+		a.Dispenser.Decal2.Transparency = 1
 	end)
 	a.Unequipped:Connect(function()
 		RightArm.RightShoulder.C1 = RightC1
