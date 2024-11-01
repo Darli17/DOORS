@@ -25,7 +25,7 @@ local Image = ItemShopC.ImageLabel
 -- SETTINGS
 
 Title.Text = "Starlight Jug"
-Desc.Text = "Gives more health and speed, 4 uses."
+Desc.Text = "Gives more HP and speed, 4 uses."
 Price.Text = "1,299"
 Image.Image = "rbxassetid://90285519819612"
 
