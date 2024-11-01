@@ -25,7 +25,7 @@ local Image = ItemShopC.ImageLabel
 -- SETTINGS
 
 Title.Text = "Starlight Jug"
-Desc.Text = "Barrel with curious light, gives immortality for 2 minutes, high speed, 4 uses."
+Desc.Text = "Jug with curious light, gives a lot of health and speed for 2 minutes, 4 uses."
 Price.Text = "1,299"
 Image.Image = "rbxassetid://90285519819612"
 
