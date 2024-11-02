@@ -19,8 +19,6 @@ local LeftC1 = LeftArm.LeftShoulder.C1
 
 local a = game:GetObjects("rbxassetid://114565086428190")[1]
 local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
-local CameraShaker = require(a.CameraShake.CameraShaker)
-local camera = workspace.CurrentCamera
 p = game.Players.LocalPlayer
 m = p:GetMouse()
 a.Sounds.m249.Volume = 2
@@ -34,21 +32,12 @@ a.Equipped:Connect(function()
 		a.Shot.Transparency = 0
 		a.Shot.Smoke1.Enabled = true
 		a.Shot.Smoke2.Enabled = true
-		local camShake = CameraShaker.new(Enum.RenderPriority.Camera.Value, function(shakeCf)
-			camera.CFrame = camera.CFrame * shakeCf
-		end)
-
-		camShake:Start()
-
-		camShake:Shake(CameraShaker.Presets.Explosion)
 		a.Dispenser.s1.Enabled = true
 		a.Dispenser.s2.Enabled = true
 		a.Dispenser.s3.Enabled = true	
 		a.Dispenser.s4.Enabled = true
 		a.Dispenser.s5.Enabled = true
 		m249s:Play()
-
-
 		a.Dispenser.Decal1.Transparency = 0
 		a.Dispenser.Decal2.Transparency = 0
 		wait(0.100)
