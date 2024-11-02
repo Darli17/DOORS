@@ -1,0 +1,12 @@
+local a = game:GetObjects("rbxassetid://117285465741565")[1]
+local b = game.Players.LocalPlayer.Character.Humanoid
+a.Parent = game.Players.LocalPlayer.Backpack
+
+local idle = b:LoadAnimation(a.Animations.idle)
+
+a.Equipped:Connect(function()
+  idle:Play()
+  a.Unequipped:Connect(function()
+    idle:Stop()
+  end)
+end)
