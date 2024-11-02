@@ -1,6 +1,6 @@
 local a = game:GetObjects("rbxassetid://136570795306172")[1]
 local b = game.Players.LocalPlayer.Character.Humanoid
-a.Animations.idle.AnimationId = "rbxassetid://9982615727"
+a.Animations.idle.AnimationId = "rbxassetid://11545520304"
 a.Parent = game.Players.LocalPlayer.Backpack
 
 local idle = b:LoadAnimation(a.Animations.idle)
@@ -11,3 +11,14 @@ a.Equipped:Connect(function()
     idle:Stop()
   end)
 end)
+
+
+--[[
+
+  close = rbxassetid://9982408775
+  open = rbxassetid://9975553075
+  idle = rbxassetid://11545520304
+  idleclosed = rbxassetid://9982427158
+  relight = rbxassetid://9975606580
+
+--]]
