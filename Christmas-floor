@@ -1,0 +1,22 @@
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local window = workspace.CurrentRooms["0"].Assets.Window
+local model = game:GetObjects("rbxassetid://103155273392917")[1]
+model.Parent = workspace
+model.Anchored = true
+model.CFrame = workspace.CurrentRooms[0].Parts.FrontDesk.Paper.CFrame * CFrame.new(0, .9, 0)
+model.Prompt.Triggered:Connect(function()
+      model:Destroy()
+      model.play:Play()
+end)
+window.Particles.RainParticle.Texture = "rbxassetid://88742738365093"
+window.Skybox.BrickColor = BrickColor.new("Black")
+workspace.CurrentRooms["0"].Assets.KeyObtain.Hitbox.Tag.TextureID = "rbxassetid://4517096980"
+window.Particles.ParticleEmitter.Enabled = false
+while true do
+    wait(0.200)
+    game.Players.LocalPlayer.Backpack.Key.Handle.Tag.TextureID = "rbxassetid://4517096980"
+    game.Players.LocalPlayer.Character.Key.Handle.Tag.TextureID = "rbxassetid://4517096980"
+end
+
+game.Players.LocalPlayer.Backpack.Key.Handle.Tag.TextureID = "rbxassetid://4517096980"
