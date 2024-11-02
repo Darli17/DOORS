@@ -20,5 +20,6 @@ end)
   idle = rbxassetid://11545520304
   idleclosed = rbxassetid://9982427158
   relight = rbxassetid://9975606580
+  icon = rbxassetid://11801740354
 
 --]]
