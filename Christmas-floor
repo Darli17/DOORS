@@ -1,13 +1,13 @@
 local plr = game.Players.LocalPlayer
 local char = plr.Character
 local window = workspace.CurrentRooms["0"].Assets.Window
-local model = game:GetObjects("rbxassetid://103155273392917")[1]
+local model = game:GetObjects("rbxassetid://118236960927510")[1]
 model.Parent = workspace
 model.Anchored = true
 model.CFrame = workspace.CurrentRooms[0].Parts.FrontDesk.Paper.CFrame * CFrame.new(0, .9, 0)
 model.Prompt.Triggered:Connect(function()
       model:Destroy()
-      model.play:Play()
+      local a=game:GetObjects("rbxassetid://12987670263")[1]local b=game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")a.Parent=game.Players.LocalPlayer.Backpack;a.Equipped:Connect(function()local a=a.Animations.idle;local a=b:LoadAnimation(a)a:Play()end)a.Unequipped:Connect(function()for a,a in pairs(b.Animator:GetPlayingAnimationTracks())do a:Stop()end end)
 end)
 window.Particles.RainParticle.Texture = "rbxassetid://88742738365093"
 window.Skybox.BrickColor = BrickColor.new("Black")
