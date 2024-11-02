@@ -1,0 +1,53 @@
+local plr = game.Players.LocalPlayer
+local Char = plr.Character or plr.CharacterAdded:Wait()
+local Hum = Char:FindFirstChild("Humanoid")
+local RightArm = Char:FindFirstChild("RightUpperArm")
+local LeftArm = Char:FindFirstChild("LeftUpperArm")
+local RightC1 = RightArm.RightShoulder.C1
+local LeftC1 = LeftArm.LeftShoulder.C1
+
+local a = game:GetObjects("rbxassetid://114565086428190")[1]
+a.Animations.idleD.Name = "idle"
+a.Animations.idle.AnimationId = "rbxassetid://9982615727"
+local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+p = game.Players.LocalPlayer
+m = p:GetMouse()
+a.Sounds.m249.Volume = 2
+a.Parent = game.Players.LocalPlayer.Backpack
+a.Equipped:Connect(function()
+	RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-25), math.rad(-15), 0)
+	LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.Angles(math.rad(-90), math.rad(50), 0)
+	a.Activated:Connect(function()
+		local m249s = a.Sounds.m249
+		a.Shot.GunShotLight.Enabled = true
+		a.Shot.Transparency = 0
+		a.Shot.Smoke1.Enabled = true
+		a.Shot.Smoke2.Enabled = true
+		a.Dispenser.s1.Enabled = true
+		a.Dispenser.s2.Enabled = true
+		a.Dispenser.s3.Enabled = true	
+		a.Dispenser.s4.Enabled = true
+		a.Dispenser.s5.Enabled = true
+		m249s:Play()
+		a.Dispenser.Decal1.Transparency = 0
+		a.Dispenser.Decal2.Transparency = 0
+		wait(0.100)
+		a.Shot.GunShotLight.Enabled = false
+		a.Shot.Transparency = 1
+		a.Shot.Smoke1.Enabled = false
+		a.Shot.Smoke2.Enabled = false
+		a.Dispenser.s1.Enabled = false
+		a.Dispenser.s2.Enabled = false
+		a.Dispenser.s3.Enabled = false
+		a.Dispenser.s4.Enabled = false
+		a.Dispenser.s5.Enabled = false
+
+
+		a.Dispenser.Decal1.Transparency = 1
+		a.Dispenser.Decal2.Transparency = 1
+	end)
+	a.Unequipped:Connect(function()
+		RightArm.RightShoulder.C1 = RightC1
+		LeftArm.LeftShoulder.C1 = LeftC1
+	end)
+end)
