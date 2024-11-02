@@ -1,6 +1,6 @@
 local a = game:GetObjects("rbxassetid://136570795306172")[1]
 local b = game.Players.LocalPlayer.Character.Humanoid
-a.Animations.idle.AnimationId = "rbxassetid://9982615727""
+a.Animations.idle.AnimationId = "rbxassetid://9982615727"
 a.Parent = game.Players.LocalPlayer.Backpack
 
 local idle = b:LoadAnimation(a.Animations.idle)
