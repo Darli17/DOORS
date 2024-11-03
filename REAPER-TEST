@@ -1,0 +1,10 @@
+local REAPER = game:GetObjects("rbxassetid://102351414039287")[1]
+local tweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(35.0, Enum.EasingStyle.Linear, Enum.EasingDirection.In, 1, false, 0)
+local tween = tweenService:Create(REAPER.RushNew, tweenInfo, {Position = game.Workspace.CurrentRooms["1"].RoomEntrance.CFrame.Position + game.Workspace.CurrentRooms["1"].RoomEntrance.CFrame.Position})
+REAPER.RushNew.CFrame = game.Workspace.CurrentRooms["1"].RoomExit.CFrame
+REAPER.Name = "ReaperMoving"
+
+REAPER.Parent = workspace
+wait(3)
+tween:Play()
