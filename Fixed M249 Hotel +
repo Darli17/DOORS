@@ -3,11 +3,11 @@ local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/Re
 game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = false
 game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Lol.Visible = false
 CustomShop.CreateItem(exampleTool, {
-    Title = "M249",
-    Desc = "Don't shoot your friends!",
-    Image = "rbxassetid://10889297548",
-    Price = 999,
-    Stack = 1,
+	Title = "M249",
+	Desc = "Don't shoot your friends!",
+	Image = "rbxassetid://10889297548",
+	Price = 999,
+	Stack = 1,
 })
 local plr = game.Players.LocalPlayer
 local Char = plr.Character or plr.CharacterAdded:Wait()
@@ -26,8 +26,9 @@ m = p:GetMouse()
 a.Sounds.m249.Volume = 2
 a.Parent = game.Players.LocalPlayer.Backpack
 a.Equipped:Connect(function()
-	RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-25), math.rad(-15), 0)
-	LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.Angles(math.rad(80), math.rad(155 ), 0)
+	local pl = Hum:LoadAnimation(script.Parent.Animations.idleD)
+	pl:Play()
+	LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.Angles(math.rad(-3), math.rad(40), 0)
 	a.Activated:Connect(function()
 		local m249s = a.Sounds.m249
 		a.Shot.GunShotLight.Enabled = true
@@ -58,7 +59,7 @@ a.Equipped:Connect(function()
 		a.Dispenser.Decal2.Transparency = 1
 	end)
 	a.Unequipped:Connect(function()
-		RightArm.RightShoulder.C1 = RightC1
+		pl:Stop()
 		LeftArm.LeftShoulder.C1 = LeftC1
 	end)
 end)
