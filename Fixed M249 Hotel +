@@ -1,14 +1,3 @@
-local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
-local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Shop%20Items/Source.lua"))()
-game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = false
-game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Lol.Visible = false
-CustomShop.CreateItem(exampleTool, {
-    Title = "M249",
-    Desc = "Don't shoot your friends!",
-    Image = "rbxassetid://10889297548",
-    Price = 999,
-    Stack = 1,
-})
 local plr = game.Players.LocalPlayer
 local Char = plr.Character or plr.CharacterAdded:Wait()
 local Hum = Char:FindFirstChild("Humanoid")
@@ -17,26 +6,27 @@ local LeftArm = Char:FindFirstChild("LeftUpperArm")
 local RightC1 = RightArm.RightShoulder.C1
 local LeftC1 = LeftArm.LeftShoulder.C1
 
-local a = game:GetObjects("rbxassetid://114565086428190")[1]
-a.Animations.idleD.Name = "idle"
-a.Animations.idle.AnimationId = "rbxassetid://6516424098"
+
+local a = game:GetObjects("rbxassetid://76053789426352")[1]
 local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+local m249s = a.Sounds.m249
 p = game.Players.LocalPlayer
 m = p:GetMouse()
 a.Sounds.m249.Volume = 2
 a.Parent = game.Players.LocalPlayer.Backpack
 a.Equipped:Connect(function()
-	RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-25), math.rad(-15), 0)
-	LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.Angles(math.rad(80), math.rad(155 ), 0)
+	RightArm.Name = "R_Arm"
+	LeftArm.Name = "L_Arm"
+	RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-35), 0)
+   	LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(1, 1, 0) * CFrame.Angles(math.rad(-80), math.rad(35), 0)
 	a.Activated:Connect(function()
-		local m249s = a.Sounds.m249
 		a.Shot.GunShotLight.Enabled = true
 		a.Shot.Transparency = 0
 		a.Shot.Smoke1.Enabled = true
 		a.Shot.Smoke2.Enabled = true
 		a.Dispenser.s1.Enabled = true
 		a.Dispenser.s2.Enabled = true
-		a.Dispenser.s3.Enabled = true	
+		a.Dispenser.s3.Enabled = true
 		a.Dispenser.s4.Enabled = true
 		a.Dispenser.s5.Enabled = true
 		m249s:Play()
@@ -58,7 +48,9 @@ a.Equipped:Connect(function()
 		a.Dispenser.Decal2.Transparency = 1
 	end)
 	a.Unequipped:Connect(function()
-		RightArm.RightShoulder.C1 = RightC1
-		LeftArm.LeftShoulder.C1 = LeftC1
+			RightArm.Name = "RightUpperArm"
+			LeftArm.Name = "LeftUpperArm"
+			RightArm.RightShoulder.C1 = RightC1
+			LeftArm.LeftShoulder.C1 = LeftC1
 	end)
 end)
