@@ -1,14 +1,83 @@
-local Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()
-local CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Shop%20Items/Source.lua"))()
-game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = false
-game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Lol.Visible = false
-CustomShop.CreateItem(exampleTool, {
-    Title = "M249",
-    Desc = "Don't shoot your friends!",
-    Image = "rbxassetid://10889297548",
-    Price = 999,
-    Stack = 1,
-})
+-- COPY THIS CODE FOR USE! AND DONT USE LOADSTRING WARNING!
+
+-- Varaibles
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+
+local MainUI = PlayerGui.MainUI
+local ItemShopFrame = MainUI.ItemShop
+local ShopItems = ItemShopFrame.Items
+local ItemShopCell = ShopItems.ItemShop_Lockpick
+
+local ItemShopC = ItemShopCell:Clone()
+ItemShopC.Parent = ShopItems
+
+ItemShopCell.Name = "ItemShop_NAME"
+
+-- VALUE SETTINGS
+local BoostsEnabled = false
+local ScannerEnabled = false
+local StackEnabled = false
+
+--[[
+
+	PLAYER NOTE:
+
+	IF YOU IN SUPER HARDMODE DO IT BEFORE if BoostEnabled = true then 
+	or if BoostEnabled = false then put it there at the beginning and in the line 
+	-- "Close access" And before BoostsEnabled = true or false too.
+
+	OR IF YOU IN DEFUALT DOORS DONT WRITE THIS!
+
+	thanks for using it!
+
+--]]
+
+--if BoostsEnabled == true then
+	--game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = true
+--end
+--if BoostsEnabled == false then
+	--game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = false
+--end
+
+if ScannerEnabled == true then
+	game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Lol.Visible = true
+end
+if ScannerEnabled == false then
+	game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Lol.Visible = false
+end
+
+if StackEnabled == true then
+	ItemShopC.Stack.Visible = true
+end
+if StackEnabled == false then
+	ItemShopC.Stack.Visible = false
+end
+
+-- SCRIPT
+
+local Title = ItemShopC.Title
+local Desc = ItemShopC.Desc
+local Stack = ItemShopC.Stack
+local Price = ItemShopC.Price
+local Image = ItemShopC.ImageLabel
+
+-- SETTINGS
+
+Title.Text = "M249"
+Desc.Text = "Don't shoot your friends!"
+Stack.Text = ""
+Price.Text = "999"
+Image.Image = "rbxassetid://10889297548"
+
+-- ITEM GIVER IF YOU SELECT THIS ITEM
+
+-- paste your script here |
+--                        |
+--                        V
+
 local plr = game.Players.LocalPlayer
 local Char = plr.Character or plr.CharacterAdded:Wait()
 local Hum = Char:FindFirstChild("Humanoid")
