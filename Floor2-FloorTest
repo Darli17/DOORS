@@ -1,0 +1,165 @@
+-- Varaibles
+
+warn("DOORS Floor 2 By Darli_17.")
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+
+local MainUI = PlayerGui.MainUI
+local ItemShopFrame = MainUI.ItemShop
+local ShopItems = ItemShopFrame.Items
+local ItemShopCell = ShopItems.ItemShop_Lockpick
+
+local ItemShopC = ItemShopCell:Clone()
+ItemShopC.Parent = ShopItems
+
+ItemShopCell.Name = "ItemShop_GuidingCandle"
+
+-- VALUE SETTINGS
+local BoostsEnabled = false
+local ScannerEnabled = false
+local StackEnabled = false
+
+--[[
+
+	PLAYER NOTE:
+
+	IF YOU IN SUPER HARDMODE DO IT BEFORE if BoostEnabled = true then 
+	or if BoostEnabled = false then put it there at the beginning and in the line 
+	-- "Close access" And before BoostsEnabled = true or false too.
+
+	OR IF YOU IN DEFUALT DOORS DONT WRITE THIS!
+
+	thanks for using it!
+
+--]]
+
+if BoostsEnabled == true then
+	game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = true
+end
+if BoostsEnabled == false then
+	game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = false
+end
+
+if ScannerEnabled == true then
+	game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Lol.Visible = true
+end
+if ScannerEnabled == false then
+	game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Lol.Visible = false
+end
+
+if StackEnabled == true then
+	ItemShopC.Stack.Visible = true
+end
+if StackEnabled == false then
+	ItemShopC.Stack.Visible = false
+end
+
+-- SCRIPT
+
+local Title = ItemShopC.Title
+local Desc = ItemShopC.Desc
+local Stack = ItemShopC.Stack
+local Price = ItemShopC.Price
+local Image = ItemShopC.ImageLabel
+
+-- SETTINGS
+
+Title.Text = "Guiding Candle"
+Desc.Text = "A candle with unprecedented power..."
+Stack.Text = ""
+Price.Text = "250"
+Image.Image = "rbxassetid://132608880662027"
+
+-- ITEM GIVER IF YOU SELECT THIS ITEM
+
+-- paste your script here |
+--                        |
+--       				  <
+
+-- CANDLE
+
+local a = game:GetObjects("rbxassetid://136570795306172")[1]
+local b = game.Players.LocalPlayer.Character.Humanoid
+a.Animations.idle.AnimationId = "rbxassetid://11545520304"
+a.Parent = game.Players.LocalPlayer.Backpack
+
+local idle = b:LoadAnimation(a.Animations.idle)
+
+a.Equipped:Connect(function()
+  idle:Play()
+  a.Unequipped:Connect(function()
+    idle:Stop()
+  end)
+end)
+
+-- SCRIPT
+
+
+-- Room Setup (Loop)
+while task.wait(0.000005) do
+for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Parts:GetDescendants()) do
+  if v:IsA("BasePart") then
+    v.Material = Enum.Material.Limestone
+    v.Color = Color3.new(0.243137, 0.25098, 0.278431) -- sets the color
+    end
+end
+local roomdoor = game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door
+	roomdoor.Material = "Slate"
+	roomdoor.Sign.Material = "Slate"
+	game.Lighting.FogEnd = "75"
+	game.Lighting.FogStart = "10"
+end
+
+local answer = game:GetObjects("rbxassetid://131214117673018")[1]
+local correction = game:GetObjects("rbxassetid://78687618576840")[1]
+wait(150)
+local sound = Instance.new("Sound")
+sound.Parent = Character.Head
+sound.SoundId = "rbxassetid://5294253171"
+sound.Volume = 5
+local sound2 = Instance.new("Sound")
+sound2.Parent = Character.Head
+sound2.SoundId = "rbxassetid://4621722813"
+sound2.Volume = 5
+sound2:Play()
+local sound3 = Instance.new("Sound")
+sound3.Parent = Character.Head
+sound3.SoundId = "rbxassetid://2152227673"
+sound3.Volume = 5
+sound3:Play()
+answer.Parent = workspace
+wait(3)
+sound2:Play()
+answer.RushNew.CFrame = Character.HumanoidRootPart.CFrame
+correction.Parent = game.Lighting
+correction.Name = "AnswerOpenein"
+Character.Humanoid.WalkSpeed = 13
+wait(1)
+sound2:Play()
+wait(1)
+sound2:Play()
+wait(1)
+sound2:Play()
+Character.HumanoidRootPart.Anchored = true
+wait(1)
+sound2:Play()
+wait(1)
+sound2:Play()
+wait(1)
+sound2:Play()
+wait(1)
+sound2:Play()
+wait(1)
+sound2:Play()
+wait(1)
+sound2:Play()
+wait(1)
+sound2:Play()
+sound3:Play()
+wait(3)
+Character.HumanoidRootPart.Anchored = false
+Character.Humanoid.WalkSpeed = 15
+correction:Destroy()
+answer:Destroy()
