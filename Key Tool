@@ -1,4 +1,4 @@
-local a = game:GetObjects("rbxassetid://121405629324559")[1]
+local a = game:GetObjects("rbxassetid://87027639116625")[1]
 a.Parent = game.Players.LocalPlayer.Backpack
 local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 local af = a.Animations
