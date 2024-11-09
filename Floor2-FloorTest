@@ -166,13 +166,6 @@ answer:Destroy()
 local Details = {
     Description = "The whole world stopped.",
     Title = "Why time?",
-    Reason =  "Survive Answer."
-    Icon = "rbxassetid://98824220109959"
-}
-
-local Details = {
-    Description = "The whole world stopped.",
-    Title = "Why time?",
     Reason =  "Survive Answer.",
     Icon = "http://www.roblox.com/asset/?id=124032749942127"
 }
