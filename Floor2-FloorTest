@@ -94,6 +94,22 @@ a.Equipped:Connect(function()
   end)
 end)
 
+-- NEW DEATH
+
+local RedBackround = game:GetObjects("rbxassetid://81618496007298")[1]
+local BlueBackround = game.ReplicatedStorage.Misc.DeathBackgroundBlue
+
+warn("Red Death Screen Loaded!")
+
+BlueBackround:Destroy()
+RedBackround.Parent = game.ReplicatedStorage.Misc
+while true do
+    wait(0.130)
+    game.Players.LocalPlayer.PlayerGui.MainUI.Death.HelpfulDialogue.TextColor3 = Color3.new(1, 0, 0)
+    game.Players.LocalPlayer.PlayerGui.MainUI.Death.HelpfulDialogue.Text = "Do you really think that I will help you?"
+    print("Changed!")
+end
+
 -- SCRIPT
 
 if game.ReplicatedStorage.GameData.LatestRoom.Value == 50 then
