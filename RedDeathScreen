@@ -1,0 +1,5 @@
+local RedBackround = game:GetObjects("rbxassetid://81618496007298")[1]
+local BlueBackround = game.ReplicatedStorage.Misc.DeathBackgroundBlue
+
+BlueBackround:Destroy()
+RedBackround.Parent = game.ReplicatedStorage.Misc
