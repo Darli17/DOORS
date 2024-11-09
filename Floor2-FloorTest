@@ -96,6 +96,9 @@ end)
 
 -- SCRIPT
 
+if game.ReplicatedStorage.GameData.LatestRoom.Value == 50 then
+	workspace.Ambience_Dark:Play()
+end
 
 -- Room Setup (Loop)
 while task.wait(0.000005) do
@@ -250,3 +253,7 @@ wait(0.5);
 AchievementsHolder:Destroy();
 sound:Destroy()
 apex:Destroy()
+
+if game.ReplicatedStorage.GameData.LatestRoom == 90 then
+	game.ReplicatedStorage.Sounds["LA_The Courtyard"]
+end
