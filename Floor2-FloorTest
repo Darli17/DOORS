@@ -163,3 +163,97 @@ Character.HumanoidRootPart.Anchored = false
 Character.Humanoid.WalkSpeed = 15
 correction:Destroy()
 answer:Destroy()
+local Details = {
+    Description = "The whole world stopped.",
+    Title = "Why time?",
+    Reason =  "Survive Answer."
+    Icon = "rbxassetid://98824220109959"
+}
+
+local Details = {
+    Description = "The whole world stopped.",
+    Title = "Why time?",
+    Reason =  "Survive Answer.",
+    Icon = "http://www.roblox.com/asset/?id=124032749942127"
+}
+
+local LocalPlayer = game.Players.LocalPlayer;
+local GUI = LocalPlayer.PlayerGui.MainUI
+local TweenService = game:GetService("TweenService");
+local AchievementsHolder = GUI.AchievementsHolder.Achievement:Clone();
+AchievementsHolder.Size = UDim2.new(0, 0, 0, 0);
+AchievementsHolder.Frame.Position = UDim2.new(1.1, 0, 0, 0);
+AchievementsHolder.Name = "LiveAchievement";
+AchievementsHolder.Visible = true;
+AchievementsHolder.Parent = GUI.AchievementsHolder;
+AchievementsHolder.Frame.Details.Desc.Text = Details.Description
+AchievementsHolder.Frame.Details.Title.Text = Details.Title
+AchievementsHolder.Frame.Details.Reason.Text = Details.Reason
+AchievementsHolder.Frame.ImageLabel.Image = Details.Icon
+AchievementsHolder.Sound:Play();
+AchievementsHolder:TweenSize(UDim2.new(1, 0, 0.2, 0), "In", "Quad", 0.8, true);
+wait(0.8);
+AchievementsHolder.Frame:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.5, true);
+TweenService:Create(AchievementsHolder.Frame.Glow, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+    ImageTransparency = 1
+  }):Play();
+  wait(8);
+AchievementsHolder.Frame:TweenPosition(UDim2.new(1.1, 0, 0, 0), "In", "Quad", 0.5, true);
+wait(0.5);
+AchievementsHolder:TweenSize(UDim2.new(1, 0, -0.1, 0), "InOut", "Quad", 0.5, true);
+wait(0.5);
+AchievementsHolder:Destroy();
+
+wait(90)
+local apex = game:GetObjects("rbxassetid://71103097103114")[1]
+local tweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(35.0, Enum.EasingStyle.Linear, Enum.EasingDirection.In, 1, false, 0)
+local tween = tweenService:Create(apex.RushNew, tweenInfo, {Position = workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].RoomEntrance.CFrame.Position + workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].RoomEntrance.CFrame.Position})
+apex.RushNew.CFrame = workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].RoomEntrance.CFrame
+
+local sound = Instance.new("Sound")
+sound.Parent = Character.Head
+sound.SoundId = "rbxassetid://844208899"
+sound.Volume = 5
+sound.Looped = true
+sound:Play()
+
+apex.Parent = workspace
+wait(3)
+tween:Play()
+wait(4)
+local Details = {
+    Description = "Some eyes, are they scary?",
+    Title = "Aren't you scary?",
+    Reason =  "Survive Apex.",
+    Icon = "http://www.roblox.com/asset/?id=119987277757735"
+}
+
+local LocalPlayer = game.Players.LocalPlayer;
+local GUI = LocalPlayer.PlayerGui.MainUI
+local TweenService = game:GetService("TweenService");
+local AchievementsHolder = GUI.AchievementsHolder.Achievement:Clone();
+AchievementsHolder.Size = UDim2.new(0, 0, 0, 0);
+AchievementsHolder.Frame.Position = UDim2.new(1.1, 0, 0, 0);
+AchievementsHolder.Name = "LiveAchievement";
+AchievementsHolder.Visible = true;
+AchievementsHolder.Parent = GUI.AchievementsHolder;
+AchievementsHolder.Frame.Details.Desc.Text = Details.Description
+AchievementsHolder.Frame.Details.Title.Text = Details.Title
+AchievementsHolder.Frame.Details.Reason.Text = Details.Reason
+AchievementsHolder.Frame.ImageLabel.Image = Details.Icon
+AchievementsHolder.Sound:Play();
+AchievementsHolder:TweenSize(UDim2.new(1, 0, 0.2, 0), "In", "Quad", 0.8, true);
+wait(0.8);
+AchievementsHolder.Frame:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.5, true);
+TweenService:Create(AchievementsHolder.Frame.Glow, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+    ImageTransparency = 1
+  }):Play();
+  wait(8);
+AchievementsHolder.Frame:TweenPosition(UDim2.new(1.1, 0, 0, 0), "In", "Quad", 0.5, true);
+wait(0.5);
+AchievementsHolder:TweenSize(UDim2.new(1, 0, -0.1, 0), "InOut", "Quad", 0.5, true);
+wait(0.5);
+AchievementsHolder:Destroy();
+sound:Destroy()
+apex:Destroy()
