@@ -255,5 +255,5 @@ sound:Destroy()
 apex:Destroy()
 
 if game.ReplicatedStorage.GameData.LatestRoom == 90 then
-	game.ReplicatedStorage.Sounds["LA_The Courtyard"]
+	game.ReplicatedStorage.Sounds["LA_The Courtyard"]:Play()
 end
