@@ -10,9 +10,13 @@ local a = game:GetObjects("rbxassetid://133400552943958")[1]
 local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 a.Parent = game.Players.LocalPlayer.Backpack
 a.Equipped:Connect(function()
+	RightArm.Name = "R_Arm"
+	LeftArm.Name = "L_Arm"
 	RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-35), 0)
 	LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.Angles(math.rad(-90), math.rad(50), 0)
 	a.Unequipped:Connect(function()
+		RightArm.Name = "RightUpperArm"
+		LeftArm.Name = "LeftUpperArm"
 		RightArm.RightShoulder.C1 = RightC1
 		LeftArm.LeftShoulder.C1 = LeftC1
 	end)
