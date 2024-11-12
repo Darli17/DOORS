@@ -6,6 +6,7 @@ local idle = hum:LoadAnimation(anim2)
 tool.Parent = game.Players.LocalPlayer.Backpack
 local tw = game:GetService("TweenService")
 local unlimited = true
+tool.Handle.Attachment.Shiny.Enabled = false
 tool.Equipped:Connect(function()
     idle:Play()
     tool.Unequipped:Connect(function()
@@ -34,6 +35,7 @@ tool.Activated:Connect(function()
     handleclone.Velocity = direction
     handleclone.Anchored = false
     handleclone.CanCollide = true
+    handleclone.Attachment.Shiny.Enabled = true
     wait(1.4)
     handleclone.Anchored = true
     wait(0.8)
