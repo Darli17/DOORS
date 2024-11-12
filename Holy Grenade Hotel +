@@ -1,0 +1,56 @@
+local tool = game:GetObjects("rbxassetid://76933124953229")[1]
+tool.Parent = game.Players.LocalPlayer.Backpack
+local tw = game:GetService("TweenService")
+local unlimited = true
+tool.Equipped:Connect(function()
+	local c = game.Players.LocalPlayer.Character
+	local hum = c:WaitForChild("Humanoid")
+	local anim2 = tool.Animations.idle
+	local idle = hum:LoadAnimation(anim2)
+    idle:Play()
+    tool.Unequipped:Connect(function()
+        idle:Stop()
+    end)
+end)
+tool.Activated:Connect(function()
+	local c = game.Players.LocalPlayer.Character
+	local hum = c:WaitForChild("Humanoid")
+	local anim = tool.Animations.open
+	local throw = hum:LoadAnimation(anim)
+	local handle = tool.Handle
+	local direction
+	local handleclone = handle:Clone()
+	local light = handleclone.PointLight
+	local function explodecreate()
+		local explosion = Instance.new("Explosion", workspace)
+		explosion.Position = handleclone.Position
+		explosion.BlastRadius = 28
+	end
+	throw:Play()
+	handleclone.sound_throw:Play()
+	handleclone.Parent = workspace
+	handleclone.CFrame = handle.CFrame
+	direction = handleclone.CFrame.lookVector * 75
+	handleclone.Velocity = direction
+	handleclone.Anchored = false
+	handleclone.CanCollide = true
+	wait(1.4)
+	handleclone.Anchored = true
+	wait(0.8)
+	handleclone.sound_sing:Play()
+	wait(1.05)
+	handleclone.sound_explode:Play()
+    	local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Linear)
+	local tweenInfo2 = TweenInfo.new(1, Enum.EasingStyle.Linear)
+	tw:Create(light,tweenInfo,{Brightness=650}):Play()
+	explodecreate()
+	wait(0.5)
+	tw:Create(light,tweenInfo2,{Brightness=0}):Play()
+	handleclone:Destroy()
+	--if any player is within the magnitude of 40 of the handleclone then kill them
+	for i,v in pairs(workspace:GetChildren()) do
+		if unlimited == false then
+			tool:Destroy()
+		end
+	end
+end)
