@@ -1,4 +1,4 @@
--- Varaibles
+33333-- Varaibles
 
 warn("DOORS Floor 2 By Darli_17.")
 
@@ -234,6 +234,7 @@ apex.Parent = workspace
 wait(3)
 tween:Play()
 wait(4)
+sound:Stop()
 local Details = {
     Description = "Some eyes, are they scary?",
     Title = "Aren't you scary?",
