@@ -133,7 +133,7 @@ end
 
 local answer = game:GetObjects("rbxassetid://131214117673018")[1]
 local correction = game:GetObjects("rbxassetid://78687618576840")[1]
-wait(150)
+wait(54)
 local sound = Instance.new("Sound")
 sound.Parent = Character.Head
 sound.SoundId = "rbxassetid://5294253171"
@@ -216,7 +216,7 @@ AchievementsHolder:TweenSize(UDim2.new(1, 0, -0.1, 0), "InOut", "Quad", 0.5, tru
 wait(0.5);
 AchievementsHolder:Destroy();
 
-wait(90)
+wait(54)
 local apex = game:GetObjects("rbxassetid://71103097103114")[1]
 local tweenService = game:GetService("TweenService")
 local tweenInfo = TweenInfo.new(35.0, Enum.EasingStyle.Linear, Enum.EasingDirection.In, 1, false, 0)
