@@ -1,0 +1,30 @@
+local Screpixer = game:GetObjects("rbxassetid://84807810338535")[1]
+local ScrepixerColor = game:GetObjects("rbxassetid://84947449054554")[1]
+Screpixer.Parent = workspace
+ScrepixerColor.Parent = game.Lighting
+local sound = Instance.new("Sound")
+sound.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+sound.SoundId = Screpixer.RushNew.Arrive.SoundId
+sound.Volume = 3
+sound:Play()
+local sound2 = Instance.new("Sound")
+sound2.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+sound2.SoundId = Screpixer.RushNew.Scream.SoundId
+sound2.Volume = 3
+sound2:Play()
+wait(5)
+local sound3 = Instance.new("Sound")
+sound3.Looped = true
+sound3.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+sound3.SoundId = Screpixer.RushNew.Sounds.SoundId
+sound3.Volume = 3
+sound3:Play()
+wait(10)
+local sound4 = Instance.new("Sound")
+sound3:Destroy()
+Screpixer:Destroy()
+ScrepixerColor:Destroy()
+sound4.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+sound4.SoundId = "rbxassetid://17680887707"
+sound4.Volume = 6
+sound4:Play()
