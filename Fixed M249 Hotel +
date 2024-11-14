@@ -35,12 +35,12 @@ local StackEnabled = false
 
 --]]
 
---if BoostsEnabled == true then
-	--game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = true
---end
---if BoostsEnabled == false then
-	--game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = false
---end
+if BoostsEnabled == true then
+	game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = true
+end
+if BoostsEnabled == false then
+	game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Boost.Visible = false
+end
 
 if ScannerEnabled == true then
 	game.Players.LocalPlayer.PlayerGui.MainUI.ItemShop.Lol.Visible = true
