@@ -793,3 +793,6 @@ end
 coroutine.wrap(CJZEISY_fake_script)()
 
 
+game.Players.LocalPlayer.Character.Humanoid.Died:Connect(function()
+    StaminaBar:Destroy()
+end)
