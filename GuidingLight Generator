@@ -29,9 +29,11 @@ local HelpText = MainUI.Death.HelpfulDialogue
 
 -- Settings
 
-local Type = Blue
+local Blue = false
+local Yellow = true
+local Red = false
 
-local Text1 = "Example"
+local Text1 = "bruh this test"
 local Text2 = "Example"
 local Text3 = "Example"
 local Text4 = "Example"
@@ -39,15 +41,12 @@ local Text5 = "Example"
 
 -- Script
 
-if Type == Blue then
-       game.ReplicatedStorage.Misc.DeathBackroundBlue.Name = DeathBackgroundBlue
-end
-if Type == Yellow then
-       game.ReplicatedStorage.Misc.DeathBackroundBlue:Destroy()
-       game.ReplicatedStorage.Misc.DeathBackroundYellow.Name = DeathBackgroundBlue
+if Yellow == true then
+       game.ReplicatedStorage.Misc.DeathBackgroundBlue:Destroy()
+       game.ReplicatedStorage.Misc.DeathBackgroundYellow.Name = DeathBackgroundBlue
        game.Players.LocalPlayer.PlayerGui.MainUI.Death.HelpfulDialogue.TextColor3 = Color3.new(226, 213, 29)
 end
-if Type == Red then
+if Red == true then
        local RedBackround = game:GetObjects("rbxassetid://81618496007298")[1]
        local BlueBackround = game.ReplicatedStorage.Misc.DeathBackgroundBlue
 
