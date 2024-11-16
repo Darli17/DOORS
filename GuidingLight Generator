@@ -17,3 +17,33 @@
     4. SUPER!!!
 
 --[[
+
+-- Varaibles
+
+local PService = game.Players
+local Player = PService.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+local MainUI = PlayerGui.MainUI
+local HelpText = MainUI.Death.HelpfulDialogue
+
+-- Settings
+
+local Type = Blue
+
+local Text1 = "Example"
+local Text2 = "Example"
+local Text3 = "Example"
+local Text4 = "Example"
+local Text5 = "Example" 
+
+-- Script
+
+if Type == Blue then
+       
+end
+if Type == Yellow then
+       game.ReplicatedStorage.Misc
+end
+
+
