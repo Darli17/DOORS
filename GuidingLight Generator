@@ -40,10 +40,33 @@ local Text5 = "Example"
 -- Script
 
 if Type == Blue then
-       
+       game.ReplicatedStorage.Misc.DeathBackroundBlue.Name = DeathBackgroundBlue
 end
 if Type == Yellow then
-       game.ReplicatedStorage.Misc
+       game.ReplicatedStorage.Misc.DeathBackroundBlue:Destroy()
+       game.ReplicatedStorage.Misc.DeathBackroundYellow.Name = DeathBackgroundBlue
+       game.Players.LocalPlayer.PlayerGui.MainUI.Death.HelpfulDialogue.TextColor3 = Color3.new(226, 213, 29)
+end
+if Type == Red then
+       local RedBackround = game:GetObjects("rbxassetid://81618496007298")[1]
+       local BlueBackround = game.ReplicatedStorage.Misc.DeathBackgroundBlue
+
+       BlueBackround:Destroy()
+       RedBackround.Parent = game.ReplicatedStorage.Misc
+       while true do
+           wait(0.100)
+           game.Players.LocalPlayer.PlayerGui.MainUI.Death.HelpfulDialogue.TextColor3 = Color3.new(1, 0, 0)
+       end
 end
 
-
+Character.Humanoid.Died:Connect(function()
+       game.Players.LocalPlayer.PlayerGui.MainUI.Death.HelpfulDialogue.Text = Text1
+       wait(3)
+       game.Players.LocalPlayer.PlayerGui.MainUI.Death.HelpfulDialogue.Text = Text2
+       wait(3)
+       game.Players.LocalPlayer.PlayerGui.MainUI.Death.HelpfulDialogue.Text = Text3
+       wait(3)
+       game.Players.LocalPlayer.PlayerGui.MainUI.Death.HelpfulDialogue.Text = Text4
+       wait(3)
+       game.Players.LocalPlayer.PlayerGui.MainUI.Death.HelpfulDialogue.Text = Text5
+end)
