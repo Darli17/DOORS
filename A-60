@@ -1,0 +1,79 @@
+-- Varaibles
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+local A60 = game:GetObjects("rbxassetid://134643375926620")[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+
+-- Achievement Settings
+
+local Details = {
+	Description = "Might Come back or not",
+	Title = "Out of Many Rebounds.",
+	Reason =  "Encounter rare Entity called A-60.",
+	Icon = "http://www.roblox.com/asset/?id=16526208947"
+}
+
+-- Script
+
+A60.Parent = workspace
+local Sound = Instance.new("Sound")
+Sound.SoundId = "rbxassetid://2738830850"
+Sound.Volume = 0.2
+Sound.PlaybackSpeed = 0.7
+Sound.Name = "A60Arrive"
+Sound.Parent = Character.HumanoidRootPart
+Sound:Play()
+
+wait(3)
+local tweenService = game:GetService("TweenService")
+local tweenInfo = TweenInfo.new(75.0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 1, false, 0)
+local tween = tweenService:Create(A60.RushNew, tweenInfo, {Position = workspace.CurrentRooms[LatestRoom].RoomEntrance.Position + workspace.CurrentRooms[LatestRoom].RoomEntrance.Position + workspace.CurrentRooms[LatestRoom].RoomExit.Position})
+A60.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+
+wait(2)
+tween:Play()
+
+wait(1)
+
+local cam = game.Workspace.CurrentCamera
+for i = 1, 75 do
+    wait()
+    local cam_rot = cam.CoordinateFrame - cam.CoordinateFrame.p --* CFrame.fromEulerAnglesXYZ(math.random(-10, 10)/10, math.random(-10, 10)/10, 0)
+    local cam_scroll = (cam.CoordinateFrame.p - cam.Focus.p).magnitude
+    local ncf = CFrame.new(cam.Focus.p)*cam_rot*CFrame.fromEulerAnglesXYZ(math.random(-10, 10)/40, math.random(-10, 10)/40, 0)
+    cam.CoordinateFrame = ncf*CFrame.new(0, 0, cam_scroll)
+end
+
+wait(8)
+A60:Destroy()
+
+-- Achievement Get
+
+local LocalPlayer = game.Players.LocalPlayer;
+local GUI = LocalPlayer.PlayerGui.MainUI
+local TweenService = game:GetService("TweenService");
+local AchievementsHolder = GUI.AchievementsHolder.Achievement:Clone();
+AchievementsHolder.Size = UDim2.new(0, 0, 0, 0);
+AchievementsHolder.Frame.Position = UDim2.new(1.1, 0, 0, 0);
+AchievementsHolder.Name = "LiveAchievement";
+AchievementsHolder.Visible = true;
+AchievementsHolder.Parent = GUI.AchievementsHolder;
+AchievementsHolder.Frame.Details.Desc.Text = Details.Description
+AchievementsHolder.Frame.Details.Title.Text = Details.Title
+AchievementsHolder.Frame.Details.Reason.Text = Details.Reason
+AchievementsHolder.Frame.ImageLabel.Image = Details.Icon
+AchievementsHolder.Sound:Play();
+AchievementsHolder:TweenSize(UDim2.new(1, 0, 0.2, 0), "In", "Quad", 0.8, true);
+wait(0.8);
+AchievementsHolder.Frame:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.5, true);
+TweenService:Create(AchievementsHolder.Frame.Glow, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+	ImageTransparency = 1
+}):Play();
+wait(8);
+AchievementsHolder.Frame:TweenPosition(UDim2.new(1.1, 0, 0, 0), "In", "Quad", 0.5, true);
+wait(0.5);
+AchievementsHolder:TweenSize(UDim2.new(1, 0, -0.1, 0), "InOut", "Quad", 0.5, true);
+wait(0.5);
+AchievementsHolder:Destroy();
