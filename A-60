@@ -26,7 +26,7 @@ Sound.Name = "A60Arrive"
 Sound.Parent = Character.HumanoidRootPart
 Sound:Play()
 
-wait(3)
+wait(21)
 local tweenService = game:GetService("TweenService")
 local tweenInfo = TweenInfo.new(75.0, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 1, false, 0)
 local tween = tweenService:Create(A60.RushNew, tweenInfo, {Position = workspace.CurrentRooms[LatestRoom].RoomEntrance.Position + workspace.CurrentRooms[LatestRoom].RoomEntrance.Position + workspace.CurrentRooms[LatestRoom].RoomExit.Position})
@@ -35,16 +35,6 @@ A60.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
 wait(2)
 tween:Play()
 
-wait(1)
-
-local cam = game.Workspace.CurrentCamera
-for i = 1, 75 do
-    wait()
-    local cam_rot = cam.CoordinateFrame - cam.CoordinateFrame.p --* CFrame.fromEulerAnglesXYZ(math.random(-10, 10)/10, math.random(-10, 10)/10, 0)
-    local cam_scroll = (cam.CoordinateFrame.p - cam.Focus.p).magnitude
-    local ncf = CFrame.new(cam.Focus.p)*cam_rot*CFrame.fromEulerAnglesXYZ(math.random(-10, 10)/40, math.random(-10, 10)/40, 0)
-    cam.CoordinateFrame = ncf*CFrame.new(0, 0, cam_scroll)
-end
 
 wait(8)
 A60:Destroy()
