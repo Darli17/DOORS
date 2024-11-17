@@ -42,7 +42,7 @@ wait(2)
 A60.RushNew.Touched:Connect(function()
 	Character.Humanoid:TakeDamage(100)
     while true do
-        wait(0.5)
+        wait(0.)
         PlayerGui.MainUI.Statistics.Death.Text = "You died to A-60"
     end
 end)
