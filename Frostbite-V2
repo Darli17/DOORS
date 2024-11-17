@@ -1,0 +1,89 @@
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+local Frostbite = game:GetObjects("rbxassetid://97585092787249")[1]
+
+-- Settings
+
+local Damage = 2
+local WaitTime = 4.500
+
+-- Script
+
+Frostbite.Parent = workspace
+Frostbite.Part.CFrame = Character.HumanoidRootPart.CFrame
+
+Frostbite.Part["Static Effect"].Volume = 1.500
+Frostbite.Part["Static Effect"]:Play()
+wait(WaitTime)
+
+Frostbite.Part["Sound"]:Play()
+wait(1)
+Frostbite.Part["Static Effect"].PlaybackSpeed = 0.155
+wait(1)
+Frostbite.Part["Static Effect"].PlaybackSpeed = 0.144
+wait(1)
+Frostbite.Part["Static Effect"]:Stop()
+wait(0.100)
+Frostbite.Part.Ambience.Volume = 2
+Frostbite.Part.Ambience:Play()
+
+Frostbite.Part.Attachment.Heylois.Enabled = true
+Frostbite.Part.Attachment.face.Enabled = true
+Frostbite.Part.Attachment.BlackTrail.Enabled = true
+
+Frostbite.Part.Part.ParticleEmitter.Enabled = true
+
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+wait(1)
+Character.Humanoid:TakeDamage(Damage)
+
+
+Frostbite.Part.Ambience:Stop()
+
+Frostbite.Part.Attachment.Heylois.Enabled = false
+Frostbite.Part.Attachment.face.Enabled = false
+Frostbite.Part.Attachment.BlackTrail.Enabled = false
+
+Frostbite.Part.Part.ParticleEmitter.Enabled = false
+
+wait(3)
+
+Frostbite:Destroy()
