@@ -20,3 +20,20 @@ while true do
 end
 
 game.Players.LocalPlayer.Backpack.Key.Handle.Tag.TextureID = "rbxassetid://4517096980"
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+    for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Parts:GetDescendants()) do
+    if v:IsA("BasePart") then
+            if v.Name == "Wall" then
+                v.Wallpaper:Destroy()
+                local Wallpaper = Instance.new("Texture")
+                Wallpaper.Parent = v
+                Wallpaper.Texture = "rbxassetid://4516921283"
+                Wallpaper.Transparency = 0
+                Wallpaper.ZIndex = 1
+                Wallpaper.StudsPerTileU = 2
+                Wallpaper.StudsPerTileV = 2
+            end
+        end
+    end
+end)
