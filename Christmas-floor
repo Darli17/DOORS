@@ -1,3 +1,37 @@
+-- Varaibles
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+
+
+local Info = TweenInfo.new(1)
+local Tween = game:GetService("TweenService"):Create(PlayerGui.LoadingUINew.TextLabel,Info,{TextTransparency=1})
+local TweenCaption = game:GetService("TweenService"):Create(PlayerGui.MainUI.MainFrame.Caption,Info,{TextTransparency=1})
+local TweenFrame = game:GetService("TweenService"):Create(PlayerGui.LoadingUINew.TextLabel,Info,{BackgroundTransparency=1})
+
+PlayerGui.LoadingUINew.Enabled = true
+PlayerGui.LoadingUINew.TextLabel.BackgroundTransparency = 0
+PlayerGui.LoadingUINew.TextLabel.TextTransparency = 0
+
+warn("[⚒] Loading...")
+
+wait(5)
+
+Tween:Play()
+TweenFrame:Play()
+
+print("[✅] Loaded! Christmas script by Darli_17.")
+
+wait(1.300)
+PlayerGui.MainUI.MainFrame.Caption.Text = "Darli_17 Christmas Script is Loaded! Enjoy."
+PlayerGui.MainUI.MainFrame.Caption.TextTransparency = 0
+PlayerGui.MainUI.MainFrame.Caption.Visible = true
+wait(5)
+TweenCaption:Play()
+wait(8)
+PlayerGui.MainUI.MainFrame.Caption.Visible = false
+
 local plr = game.Players.LocalPlayer
 local char = plr.Character
 local window = workspace.CurrentRooms["0"].Assets.Window
