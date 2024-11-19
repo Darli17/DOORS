@@ -9,17 +9,24 @@ model.Prompt.Triggered:Connect(function()
       model:Destroy()
       local a=game:GetObjects("rbxassetid://112687850402819")[1]local b=game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")a.Parent=game.Players.LocalPlayer.Backpack;a.Equipped:Connect(function()local a=a.Animations.idle;local a=b:LoadAnimation(a)a:Play()end)a.Unequipped:Connect(function()for a,a in pairs(b.Animator:GetPlayingAnimationTracks())do a:Stop()end end)
 end)
+for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Parts:GetDescendants()) do
+if v:IsA("BasePart") then
+      if v.Name == "Wall" then
+            v.Wallpaper:Destroy()
+            local Wallpaper = Instance.new("Texture")
+            Wallpaper.Parent = v
+            Wallpaper.Texture = "rbxassetid://4516921283"
+            Wallpaper.Transparency = 0
+            Wallpaper.ZIndex = 1
+            Wallpaper.StudsPerTileU = 2
+            Wallpaper.StudsPerTileV = 2
+      end
+   end
+end
 window.Particles.RainParticle.Texture = "rbxassetid://88742738365093"
 window.Skybox.BrickColor = BrickColor.new("Black")
-workspace.CurrentRooms["0"].Assets.KeyObtain.Hitbox.Tag.TextureID = "rbxassetid://4517096980"
 window.Particles.ParticleEmitter.Enabled = false
-while true do
-    wait(0.200)
-    game.Players.LocalPlayer.Backpack.Key.Handle.Tag.TextureID = "rbxassetid://4517096980"
-    game.Players.LocalPlayer.Character.Key.Handle.Tag.TextureID = "rbxassetid://4517096980"
-end
 
-game.Players.LocalPlayer.Backpack.Key.Handle.Tag.TextureID = "rbxassetid://4517096980"
 
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
     for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Parts:GetDescendants()) do
@@ -37,3 +44,4 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
         end
     end
 end)
+
