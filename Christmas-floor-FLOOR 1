@@ -1,0 +1,173 @@
+-- Varaibles
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+
+
+local Info = TweenInfo.new(1)
+local Tween = game:GetService("TweenService"):Create(PlayerGui.LoadingUI.TextLabel,Info,{TextTransparency=1})
+local TweenCaption = game:GetService("TweenService"):Create(PlayerGui.MainUI.MainFrame.Caption,Info,{TextTransparency=1})
+local TweenFrame = game:GetService("TweenService"):Create(PlayerGui.LoadingUI.TextLabel,Info,{BackgroundTransparency=1})
+
+PlayerGui.LoadingUI.Enabled = true
+PlayerGui.LoadingUI.TextLabel.BackgroundTransparency = 0
+PlayerGui.LoadingUI.TextLabel.TextTransparency = 0
+
+warn("[⚒] Loading...")
+
+local Room = game:GetObjects("rbxassetid://139385283938160")[1]
+Room.Parent = workspace
+
+Room.PrimaryPart = Room.RoomStart
+Room:pivotTo(workspace.CurrentRooms["0"].Assets.Fireplace.Stone.CFrame+Vector3.new(0,88,0))
+game.Players.LocalPlayer.Character.Head.CFrame = Room.TP.CFrame
+
+Room.Parts.End_DoorFrame.Wall_Strip2.CanCollide = false
+Room.Parts.End_DoorFrame.Wall_Strip3.CanCollide = false
+
+Room.Assets.Gifts["Red Gift2"].ProximityPrompt.Triggered:Connect(function()
+    Room.Assets.Gifts["Red Gift2"]:Destroy()
+    local plr = game.Players.LocalPlayer
+    local char = plr.Character
+
+    local ax = game:GetObjects("rbxassetid://85885716130011")[1]
+    ax.Parent = plr.Backpack
+ax.Activated:Connect(function()
+    local openanim = char.Humanoid:LoadAnimation(ax.Animations.open)
+    openanim:Play()
+
+
+    local soud = Instance.new("Sound")
+    soud.Volume = 10
+    soud.SoundId = "rbxassetid://18533042634"
+    soud.Parent = char.HumanoidRootPart
+    soud:Play()
+    wait(1.300)
+    ax:Destroy()
+
+    local plr = game.Players.LocalPlayer
+    local Char = plr.Character or plr.CharacterAdded:Wait()
+    local Hum = Char:FindFirstChild("Humanoid")
+    local RightArm = Char:FindFirstChild("RightUpperArm")
+    local LeftArm = Char:FindFirstChild("LeftUpperArm")
+    local RightC1 = RightArm.RightShoulder.C1
+    local LeftC1 = LeftArm.LeftShoulder.C1
+
+
+    local a = game:GetObjects("rbxassetid://115547537664321")[1]
+    local b = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+    local m249s = a.Sounds.m249
+    p = game.Players.LocalPlayer
+    m = p:GetMouse()
+    a.Sounds.m249.Volume = 2
+    a.Parent = game.Players.LocalPlayer.Backpack
+    a.Equipped:Connect(function()
+	    RightArm.Name = "R_Arm"
+	    LeftArm.Name = "L_Arm"
+	    RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-35), 0)
+   	    LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(1, 1, 0) * CFrame.Angles(math.rad(-80), math.rad(35), 0)
+	    a.Activated:Connect(function()
+		    a.Shot.GunShotLight.Enabled = true
+		    a.Shot.Transparency = 0
+		    a.Shot.Smoke1.Enabled = true
+		    a.Shot.Smoke2.Enabled = true
+		    a.Dispenser.s1.Enabled = true
+		    a.Dispenser.s2.Enabled = true
+		    a.Dispenser.s3.Enabled = true
+		    a.Dispenser.s4.Enabled = true
+		    a.Dispenser.s5.Enabled = true
+		    m249s:Play()
+		    a.Dispenser.Decal1.Transparency = 0
+		    a.Dispenser.Decal2.Transparency = 0
+		    wait(0.100)
+		    m.Target:Destroy()
+		    a.Shot.GunShotLight.Enabled = false
+		    a.Shot.Transparency = 1
+		    a.Shot.Smoke1.Enabled = false
+		    a.Shot.Smoke2.Enabled = false
+		    a.Dispenser.s1.Enabled = false
+		    a.Dispenser.s2.Enabled = false
+		    a.Dispenser.s3.Enabled = false
+		    a.Dispenser.s4.Enabled = false
+		    a.Dispenser.s5.Enabled = false
+
+
+		    a.Dispenser.Decal1.Transparency = 1
+		    a.Dispenser.Decal2.Transparency = 1
+	    end)
+	    a.Unequipped:Connect(function()
+			RightArm.Name = "RightUpperArm"
+			LeftArm.Name = "LeftUpperArm"
+			RightArm.RightShoulder.C1 = RightC1
+			 LeftArm.LeftShoulder.C1 = LeftC1
+	    end)
+    end)
+end)
+end)
+
+
+
+wait(5)
+
+Tween:Play()
+TweenFrame:Play()
+
+print("[✅] Loaded! Christmas script by Darli_17.")
+
+wait(1.300)
+PlayerGui.MainUI.MainFrame.Caption.Text = "Darli_17 Christmas Script is Loaded! Enjoy."
+PlayerGui.MainUI.MainFrame.Caption.TextTransparency = 0
+PlayerGui.MainUI.MainFrame.Caption.Visible = true
+wait(5)
+TweenCaption:Play()
+wait(8)
+PlayerGui.MainUI.MainFrame.Caption.Visible = false
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local window = workspace.CurrentRooms["0"].Assets.Window
+local model = game:GetObjects("rbxassetid://82367079867469")[1]
+model.Parent = workspace
+model.Anchored = true
+model.CFrame = workspace.CurrentRooms[0].Parts.FrontDesk.Paper.CFrame * CFrame.new(0, .9, 0)
+model.Prompt.Triggered:Connect(function()
+      model:Destroy()
+      local a=game:GetObjects("rbxassetid://112687850402819")[1]local b=game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")a.Parent=game.Players.LocalPlayer.Backpack;a.Equipped:Connect(function()local a=a.Animations.idle;local a=b:LoadAnimation(a)a:Play()end)a.Unequipped:Connect(function()for a,a in pairs(b.Animator:GetPlayingAnimationTracks())do a:Stop()end end)
+end)
+for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Parts:GetDescendants()) do
+if v:IsA("BasePart") then
+      if v.Name == "Wall" then
+            v.Wallpaper:Destroy()
+            local Wallpaper = Instance.new("Texture")
+            Wallpaper.Parent = v
+            Wallpaper.Texture = "rbxassetid://4516921283"
+            Wallpaper.Transparency = 0
+            Wallpaper.ZIndex = 1
+            Wallpaper.StudsPerTileU = 2
+            Wallpaper.StudsPerTileV = 2
+      end
+   end
+end
+window.Particles.RainParticle.Texture = "rbxassetid://88742738365093"
+window.Skybox.BrickColor = BrickColor.new("Black")
+window.Particles.ParticleEmitter.Enabled = false
+
+
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+    for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Parts:GetDescendants()) do
+    if v:IsA("BasePart") then
+            if v.Name == "Wall" then
+                v.Wallpaper:Destroy()
+                local Wallpaper = Instance.new("Texture")
+                Wallpaper.Parent = v
+                Wallpaper.Texture = "rbxassetid://4516921283"
+                Wallpaper.Transparency = 0
+                Wallpaper.ZIndex = 1
+                Wallpaper.StudsPerTileU = 2
+                Wallpaper.StudsPerTileV = 2
+            end
+        end
+    end
+end)
+
