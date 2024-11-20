@@ -1,0 +1,67 @@
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+
+local Curious = game:GetObjects("rbxassetid://87521737355680")[1]
+local DiologGui = game:GetObjects("rbxassetid://121772613578585")[1]
+
+Curious.Parent = workspace
+Curious.CFrame = Character.HumanoidRootPart.CFrame
+DiologGui.Parent = PlayerGui
+
+local Info = TweenInfo.new(1)
+local TweenVisible = game:GetService("TweenService"):Create(DiologGui.Frame.Diolog,Info,{TextTransparency=0})
+local TweenUnVisible = game:GetService("TweenService"):Create(DiologGui.Frame.Diolog,Info,{TextTransparency=1})
+
+PlayerGui.CuriousLightDiolog.Frame.Diolog.Text = "Hello?"
+wait(1)
+TweenVisible:Play()
+wait(4)
+TweenUnVisible:Play()
+wait(4)
+PlayerGui.CuriousLightDiolog.Frame.Diolog.Text = "Wait, how did I get here? I was in the ROOMS dimension."
+wait(1)
+TweenVisible:Play()
+wait(4)
+TweenUnVisible:Play()
+wait(4)
+PlayerGui.CuriousLightDiolog.Frame.Diolog.Text = "Ok player, in honor of the fact that I got here I want to help you?"
+wait(1)
+TweenVisible:Play()
+wait(4)
+TweenUnVisible:Play()
+wait(4)
+PlayerGui.CuriousLightDiolog.Frame.Diolog.Text = "I'll give you a cross, I'll be in it. I don't know yet how to get back."
+wait(1)
+TweenVisible:Play()
+wait(4)
+TweenUnVisible:Play()
+wait(4)
+PlayerGui.CuriousLightDiolog.Frame.Diolog.Text = "But as I understand it, when you use it, I will go back!"
+wait(1)
+TweenVisible:Play()
+wait(4)
+TweenUnVisible:Play()
+wait(4)
+PlayerGui.CuriousLightDiolog.Frame.Diolog.Text = "Bye..."
+wait(4)
+TweenVisible:Play()
+
+wait(1)
+
+TweenUnVisible:Play()
+
+local a=game:GetObjects("rbxassetid://78372140768961")[1]local b=game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")a.Parent=game.Players.LocalPlayer.Backpack;a.Equipped:Connect(function()local a=a.Animations.idle;local a=b:LoadAnimation(a)a:Play()end)a.Unequipped:Connect(function()for a,a in pairs(b.Animator:GetPlayingAnimationTracks())do a:Stop()end end)
+
+Curious:Destroy()
+
+wait(5)
+
+DiologGui:Destroy()
+
+while true do 
+  wait(0.)
+  PlayerGui.MainUI.Statistics.Death:Destroy()
+  PlayerGui.MainUI.Statistics.Secret.Visible = true
+  PlayerGui.MainUI.Statistics.Secret.Text = "Helped by Curious Light"
+end
