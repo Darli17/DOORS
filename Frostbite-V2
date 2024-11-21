@@ -5,7 +5,7 @@ local Frostbite = game:GetObjects("rbxassetid://97585092787249")[1]
 
 -- Settings
 
-local Damage = 2
+local Damage = 0
 local WaitTime = 4.500
 
 -- Script
@@ -19,10 +19,14 @@ wait(WaitTime)
 
 Frostbite.Part["Sound"]:Play()
 wait(1)
-Frostbite.Part["Static Effect"].PlaybackSpeed = 0.155
+Frostbite.Part["Static Effect"].PlaybackSpeed = 0.1
 wait(1)
-Frostbite.Part["Static Effect"].PlaybackSpeed = 0.144
+Frostbite.Part["Static Effect"]:Stop()
+Frostbite.Part.AmbienceFar:Play()
+Frostbite.Part.Sound:Play()
+Frostbite.Part["Wind Whoosheroonies"]:Play()
 wait(1)
+Frostbite.Part.AmbienceFar:Stop()
 Frostbite.Part["Static Effect"]:Stop()
 wait(0.100)
 Frostbite.Part.Ambience.Volume = 2
