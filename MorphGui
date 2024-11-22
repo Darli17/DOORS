@@ -1,0 +1,621 @@
+--[[
+   MADE BY
+
+     _____          _____  _      _____  __ ______ 
+    |  __ \   /\   |  __ \| |    |_   _|/_ |____  |
+    | |  | | /  \  | |__) | |      | |   | |   / / 
+    | |  | |/ /\ \ |  _  /| |      | |   | |  / /  
+    | |__| / ____ \| | \ \| |____ _| |_  | | / /   
+    |_____/_/    \_\_|  \_\______|_____| |_|/_/    
+                                     ______        
+                                    |______|       
+--]]
+
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
+local Window = Rayfield:CreateWindow({
+   Name = "Morph Gui [DOORS]",
+   LoadingTitle = "Loading...",
+   LoadingSubtitle = "by ValerikRob",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+local Tab1 = Window:CreateTab("DOORS", 12931623528)
+local Tab2 = Window:CreateTab("BACKDOOR", 16755073604)
+local Tab3 = Window:CreateTab("ROOMS", 13721725690)
+
+local Button = Tab1:CreateButton({
+   Name = "Rush",
+   Callback = function()
+   local Ambush = game:GetObjects("rbxassetid://86181759655390")[1]
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Ambush.Parent = game.Workspace
+Ambush.RushNew.Anchored = true
+game:GetService("RunService").RenderStepped:Connect(function()
+    Ambush:PivotTo(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1, 0))
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-30),0,0)) * CFrame.new(0,0.5,10)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21 --You Can İncrease Your WS Here
+end)
+   end,
+})
+local Button = Tab1:CreateButton({
+   Name = "Ambush",
+   Callback = function()
+   local Ambush = game:GetObjects("rbxassetid://96669039243756")[1]
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Ambush.Parent = game.Workspace
+Ambush.RushNew.Anchored = true
+game:GetService("RunService").RenderStepped:Connect(function()
+    Ambush:PivotTo(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1, 0))
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-30),0,0)) * CFrame.new(0,0.5,10)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21 --You Can İncrease Your WS Here
+end)
+   end,
+})
+local Button = Tab1:CreateButton({
+   Name = "Eyes",
+   Callback = function()
+   local Ambush = game:GetObjects("rbxassetid://124569870414176")[1]
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Ambush.Parent = game.Workspace
+Ambush.Core.Anchored = true
+Ambush.Core.Attachment.Bite.Enabled = false
+Ambush.Core.Attachment.Angry.Enabled = false
+game:GetService("RunService").RenderStepped:Connect(function()
+    Ambush:PivotTo(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1, 0))
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-30),0,0)) * CFrame.new(0,0.5,10)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21 --You Can İncrease Your WS Here
+end)
+   end,
+})
+local Button = Tab1:CreateButton({
+   Name = "Screech",
+   Callback = function()
+local Screech = game:GetService("ReplicatedStorage").Entities.Screech:Clone()
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "Screech" then
+        v:Destroy()
+    end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Screech.Parent = game.Workspace
+local character = game.Players.LocalPlayer.Character
+local transparencyConnections = {}
+
+-- enable
+for i,v in pairs(character:GetChildren()) do
+    if v:IsA("Accessory") then
+        v.Handle.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v.Handle:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.Handle.LocalTransparencyModifier = 0
+        end)
+    end
+
+    if v.Name == "Head" then
+        v.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.LocalTransparencyModifier = 0
+        end)
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-10),0,0)) * CFrame.new(0, 1.5, 10)
+end)
+game:GetService("RunService").RenderStepped:Connect(function()
+   Screech:PivotTo(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 0.2, -1.25))
+end)
+Screech.AnimationController:LoadAnimation(Screech.Animations.Idle):Play()
+   end,
+})
+local Button = Tab1:CreateButton({
+   Name = "Figure",
+   Callback = function()
+local Screech = game:GetObjects("rbxassetid://111591890921061")[1]:Clone()
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "Figure" then
+        v:Destroy()
+    end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Screech.Parent = game.Workspace
+local character = game.Players.LocalPlayer.Character
+local transparencyConnections = {}
+
+-- enable
+for i,v in pairs(character:GetChildren()) do
+    if v:IsA("Accessory") then
+        v.Handle.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v.Handle:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.Handle.LocalTransparencyModifier = 0
+        end)
+    end
+
+    if v.Name == "Head" then
+        v.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.LocalTransparencyModifier = 0
+        end)
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-10),0,0)) * CFrame.new(0, 1.5, 10)
+end)
+game:GetService("RunService").RenderStepped:Connect(function()
+   Screech:PivotTo(game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0, 0.2, -1.25)+Vector3.new(0,1,0))
+end)
+Screech.Animations.Idle.AnimationId = "rbxassetid://18539828651"
+Screech.Animations.Run.AnimationId = "rbxassetid://8465893113"
+Screech.Animations.Roar.AnimationId = "rbxassetid://18539834115"
+Screech.Humanoid:LoadAnimation(Screech.Animations.Idle):Play()
+   end,
+})
+local Button = Tab1:CreateButton({
+   Name = "Seek",
+   Callback = function()
+local Screech = game:GetObjects("rbxassetid://121021974913084")[1]:Clone()
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "Seek" then
+        v:Destroy()
+    end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Screech.Parent = game.Workspace
+local character = game.Players.LocalPlayer.Character
+local transparencyConnections = {}
+
+-- enable
+for i,v in pairs(character:GetChildren()) do
+    if v:IsA("Accessory") then
+        v.Handle.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v.Handle:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.Handle.LocalTransparencyModifier = 0
+        end)
+    end
+
+    if v.Name == "Head" then
+        v.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.LocalTransparencyModifier = 0
+        end)
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-10),0,0)) * CFrame.new(0, 1.5, 10)
+end)
+game:GetService("RunService").RenderStepped:Connect(function()
+   Screech:PivotTo(game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0, 0.2, -1.25)+Vector3.new(0,1,0))
+end)
+Screech.Humanoid:LoadAnimation(Screech.Animations.Raise):Play()
+workspace["Ambience_Seek"]:Play()
+wait(7)
+Screech.Humanoid:LoadAnimation(Screech.Animations.Run):Play()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21
+Screech.SeekPuddle:Destroy()
+   end,
+})
+local Button = Tab1:CreateButton({
+   Name = "Halt",
+   Callback = function()
+local Screech = game:GetObjects("rbxassetid://88858471711834")[1]:Clone()
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "Seek" then
+        v:Destroy()
+    end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Screech.Parent = game.Workspace
+local character = game.Players.LocalPlayer.Character
+local transparencyConnections = {}
+
+-- enable
+for i,v in pairs(character:GetChildren()) do
+    if v:IsA("Accessory") then
+        v.Handle.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v.Handle:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.Handle.LocalTransparencyModifier = 0
+        end)
+    end
+
+    if v.Name == "Head" then
+        v.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.LocalTransparencyModifier = 0
+        end)
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-10),0,0)) * CFrame.new(0, 1.5, 10)
+end)
+game:GetService("RunService").RenderStepped:Connect(function()
+   Screech:PivotTo(game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0, 0.2, -1.25)+Vector3.new(0,1,0))
+end)
+   end,
+})
+local Button = Tab1:CreateButton({
+   Name = "Glitch",
+   Callback = function()
+local Screech = game:GetObjects("rbxassetid://118036311702491")[1]:Clone()
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "Glitch" then
+        v:Destroy()
+    end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Screech.Parent = game.Workspace
+local character = game.Players.LocalPlayer.Character
+local transparencyConnections = {}
+
+-- enable
+for i,v in pairs(character:GetChildren()) do
+    if v:IsA("Accessory") then
+        v.Handle.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v.Handle:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.Handle.LocalTransparencyModifier = 0
+        end)
+    end
+
+    if v.Name == "Head" then
+        v.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.LocalTransparencyModifier = 0
+        end)
+    end
+end
+Screech.AnimationController:LoadAnimation(Screech.Animations.Run):Play()
+game:GetService("RunService").RenderStepped:Connect(function()
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-10),0,0)) * CFrame.new(0, 1.5, 10)
+end)
+game:GetService("RunService").RenderStepped:Connect(function()
+   Screech:PivotTo(game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0, 0.2, -1.25)+Vector3.new(0,1,0))
+end)
+   end,
+})
+local Button = Tab1:CreateButton({
+   Name = "Dread",
+   Callback = function()
+local Screech = game:GetObjects("rbxassetid://107321861085740")[1]:Clone()
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "Seek" then
+        v:Destroy()
+    end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Screech.Parent = game.Workspace
+local character = game.Players.LocalPlayer.Character
+local transparencyConnections = {}
+
+-- enable
+for i,v in pairs(character:GetChildren()) do
+    if v:IsA("Accessory") then
+        v.Handle.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v.Handle:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.Handle.LocalTransparencyModifier = 0
+        end)
+    end
+
+    if v.Name == "Head" then
+        v.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.LocalTransparencyModifier = 0
+        end)
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-10),0,0)) * CFrame.new(0, 1.5, 10)
+end)
+game:GetService("RunService").RenderStepped:Connect(function()
+   Screech:PivotTo(game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0, 0.2, -1.25)+Vector3.new(0,1,0)+Vector3.new(0,-3,0))
+end)
+   end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "Blitz",
+   Callback = function()
+   local Ambush = game:GetObjects("rbxassetid://139286134979272")[1]
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Ambush.Parent = game.Workspace
+Ambush.BlitzNew.Anchored = true
+game:GetService("RunService").RenderStepped:Connect(function()
+    Ambush:PivotTo(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1, 0))
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-30),0,0)) * CFrame.new(0,0.5,10)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21 --You Can İncrease Your WS Here
+end)
+   end,
+})
+local Button = Tab2:CreateButton({
+   Name = "Blackout",
+   Callback = function()
+   local Ambush = game:GetObjects("rbxassetid://84938337111247")[1]
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Ambush.Parent = game.Workspace
+Ambush.BlackoutNew.Anchored = true
+game:GetService("RunService").RenderStepped:Connect(function()
+    Ambush:PivotTo(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1, 0))
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-30),0,0)) * CFrame.new(0,0.5,10)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21 --You Can İncrease Your WS Here
+end)
+   end,
+})
+local Button = Tab2:CreateButton({
+   Name = "Haste",
+   Callback = function()
+   local Ambush = game:GetObjects("rbxassetid://125105091876393")[1]
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Ambush.Parent = game.Workspace
+Ambush.Main.Anchored = true
+game:GetService("RunService").RenderStepped:Connect(function()
+    Ambush:PivotTo(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1, 0))
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-30),0,0)) * CFrame.new(0,0.5,10)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21 --You Can İncrease Your WS Here
+end)
+   end,
+})
+local Button = Tab2:CreateButton({
+   Name = "Lookman",
+   Callback = function()
+   local Ambush = game:GetObjects("rbxassetid://92937265159099")[1]
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Ambush.Parent = game.Workspace
+Ambush.Core.Anchored = true
+game:GetService("RunService").RenderStepped:Connect(function()
+    Ambush:PivotTo(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1, 0)+Vector3.new(0,-4,0))
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-30),0,0)) * CFrame.new(0,0.5,10)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21 --You Can İncrease Your WS Here
+end)
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "A-60",
+   Callback = function()
+   local Ambush = game:GetObjects("rbxassetid://137199965134998")[1]
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Ambush.Parent = game.Workspace
+Ambush.RushNew.static.Playing = false
+Ambush.RushNew.Anchored = true
+game:GetService("RunService").RenderStepped:Connect(function()
+    Ambush:PivotTo(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1, 0))
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-30),0,0)) * CFrame.new(0,0.5,10)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21 --You Can İncrease Your WS Here
+end)
+   end,
+})
+local Button = Tab3:CreateButton({
+   Name = "A-90",
+   Callback = function()
+   local Ambush = game:GetObjects("rbxassetid://73082234021309")[1]
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Ambush.Parent = game.Workspace
+Ambush.RushNew.Anchored = true
+game:GetService("RunService").RenderStepped:Connect(function()
+    Ambush:PivotTo(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1, 0))
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-30),0,0)) * CFrame.new(0,0.5,10)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21 --You Can İncrease Your WS Here
+end)
+   end,
+})
+local Button = Tab3:CreateButton({
+   Name = "A-120",
+   Callback = function()
+   local Ambush = game:GetObjects("rbxassetid://85505041817153")[1]
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Ambush.Parent = game.Workspace
+Ambush.New.Anchored = true
+game:GetService("RunService").RenderStepped:Connect(function()
+    Ambush:PivotTo(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0, 1, 0))
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-30),0,0)) * CFrame.new(0,0.5,10)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21 --You Can İncrease Your WS Here
+end)
+   end,
+})
