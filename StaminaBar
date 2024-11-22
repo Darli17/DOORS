@@ -475,7 +475,7 @@ function QCHWWK_fake_script() -- StaminaBar.SprintFire
 			script.Parent.Dissapear.Value=999999999999999999999999999999999999999999999999999999999999999999999
 
 			
-			Walkspeed2 = DEF+8
+			Walkspeed2 = DEF+10
 			char.Humanoid.WalkSpeed = Walkspeed2
 			
 
