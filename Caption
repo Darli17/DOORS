@@ -1,0 +1,48 @@
+-- Varaibles
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+
+local Info = TweenInfo.new(1)
+local TweenCaption = game:GetService("TweenService"):Create(PlayerGui.MainUI.MainFrame.Caption,Info,{TextTransparency=1})
+
+local Text = "Hardcore Initiated"
+local Text2 = "Made by noonie#0001 (Scripter) and Ping#1841 (Music composer and Modeler)"
+local Text3 = "Do Not."
+local Text4 = "And thanks for darli#1563 (me) for remake this hardcore!"
+
+wait(1.300)
+PlayerGui.MainUI.MainFrame.Caption.Text = Text
+PlayerGui.MainUI.MainFrame.Caption.TextTransparency = 0
+PlayerGui.MainUI.MainFrame.Caption.Visible = true
+wait(5)
+TweenCaption:Play()
+wait(3)
+PlayerGui.MainUI.MainFrame.Caption.Visible = false
+wait(1.300)
+PlayerGui.MainUI.MainFrame.Caption.Text = Text2
+PlayerGui.MainUI.MainFrame.Caption.TextTransparency = 0
+PlayerGui.MainUI.MainFrame.Caption.Visible = true
+wait(5)
+TweenCaption:Play()
+wait(3)
+PlayerGui.MainUI.MainFrame.Caption.Visible = false
+wait(1)
+PlayerGui.MainUI.MainFrame.Caption.Text = Text3
+PlayerGui.MainUI.MainFrame.Caption.TextTransparency = 0
+PlayerGui.MainUI.MainFrame.Caption.Visible = true
+wait(5)
+TweenCaption:Play()
+wait(3)
+PlayerGui.MainUI.MainFrame.Caption.Visible = false
+wait(1)
+PlayerGui.MainUI.MainFrame.Caption.Text = Text4
+PlayerGui.MainUI.MainFrame.Caption.TextTransparency = 0
+PlayerGui.MainUI.MainFrame.Caption.Visible = true
+wait(5)
+TweenCaption:Play()
+wait(3)
+PlayerGui.MainUI.MainFrame.Caption.Visible = false
+loadstring(game:HttpGet("https://raw.githubusercontent.com/johnnkcool/Doors-hardmode/refs/heads/main/doors-hardcore-req.lua"))()
+
