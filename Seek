@@ -1,0 +1,5 @@
+local Seek = workspace.SeekMoving
+local SeekN = game:GetObjects("rbxassetid://92960403871032")[1]
+
+Seek:Destroy()
+SeekN.Parent = workspace
