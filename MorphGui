@@ -278,7 +278,63 @@ game:GetService("RunService").RenderStepped:Connect(function()
    Screech:PivotTo(game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0, 0.2, -1.25)+Vector3.new(0,1,0))
 end)
 Screech.Humanoid:LoadAnimation(Screech.Animations.Raise):Play()
-workspace["Ambience_Seek"]:Play()
+wait(7)
+Screech.Humanoid:LoadAnimation(Screech.Animations.Run):Play()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21
+Screech.SeekPuddle:Destroy()
+   end,
+})
+local Button = Tab1:CreateButton({
+   Name = "Mines Seek",
+   Callback = function()
+local Screech = game:GetObjects("rbxassetid://121021974913084")[1]:Clone()
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "Seek" then
+        v:Destroy()
+    end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Screech.Parent = game.Workspace
+local character = game.Players.LocalPlayer.Character
+local transparencyConnections = {}
+
+-- enable
+for i,v in pairs(character:GetChildren()) do
+    if v:IsA("Accessory") then
+        v.Handle.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v.Handle:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.Handle.LocalTransparencyModifier = 0
+        end)
+    end
+
+    if v.Name == "Head" then
+        v.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.LocalTransparencyModifier = 0
+        end)
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-10),0,0)) * CFrame.new(0, 1.5, 10)
+end)
+game:GetService("RunService").RenderStepped:Connect(function()
+   Screech:PivotTo(game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0, 0.2, -1.25)+Vector3.new(0,1,0))
+end)
+Screech.Humanoid:LoadAnimation(Screech.Animations.MinesRaise):Play()
 wait(7)
 Screech.Humanoid:LoadAnimation(Screech.Animations.Run):Play()
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21
