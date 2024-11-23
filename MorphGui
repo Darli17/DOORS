@@ -224,7 +224,7 @@ end)
 Screech.Animations.Idle.AnimationId = "rbxassetid://18539828651"
 Screech.Animations.Run.AnimationId = "rbxassetid://8465893113"
 Screech.Animations.Roar.AnimationId = "rbxassetid://18539834115"
-Screech.Humanoid:LoadAnimation(Screech.Animations.Idle):Play()
+Screech.Humanoid:LoadAnimation(Screech.Animations.Roar):Play()
    end,
 })
 local Button = Tab1:CreateButton({
