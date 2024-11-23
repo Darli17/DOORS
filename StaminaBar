@@ -84,10 +84,10 @@ UICornerC.CornerRadius = UDim.new(0.25, 0)
 Border.BorderSizePixel = 4
 
 
-Border.Position = UDim2.new(0.25, 0, 0.85, 0)
+Border.Position = UDim2.new(0.83, 0, 0.95, 0)
 
 
-Border.Size = UDim2.new(0.6, 0, 0.0263093561, 0)
+Border.Size = UDim2.new(0.15, 0, 0.0263093561, 0)
 
 
 
@@ -271,9 +271,6 @@ function QCHWWK_fake_script() -- StaminaBar.SprintFire
 				--Border.Visible = true
 
 
-				--SideBar.Visible = false
-
-
 				OO = OO +1
 
 
@@ -288,10 +285,7 @@ function QCHWWK_fake_script() -- StaminaBar.SprintFire
 			if script:FindFirstChild(A.Name) then
 
 
-				Border.Visible = false
-
-
-				SideBar.Visible = true
+				Border.Visible = true
 
 
 			end
@@ -565,19 +559,14 @@ function QCHWWK_fake_script() -- StaminaBar.SprintFire
 			if stamPower < 1 then
 
 
-				bar.Visible = false
+				bar.Visible = true
 
-
-				SideBar.Bar.Visible = false
 
 
 			else
 
 
 				bar.Visible = true
-
-
-				SideBar.Bar.Visible = true
 
 
 			end
@@ -601,9 +590,6 @@ function QCHWWK_fake_script() -- StaminaBar.SprintFire
 				--	bar.Visible = true
 
 
-				--SideBar.Bar.Visible = true
-
-
 				if stamPower > 100 then
 
 
@@ -613,25 +599,19 @@ function QCHWWK_fake_script() -- StaminaBar.SprintFire
 				end
 
 
-				-- SideBar.Bar.Visible = false
+				-- SideBar.Bar.Visible = true
 
 
 				if stamPower < 1 then
 
 
-					bar.Visible = false
-
-
-					SideBar.Bar.Visible = false
+					bar.Visible = true
 
 
 				else
 
 
 					bar.Visible = true
-
-
-					SideBar.Bar.Visible = true
 
 
 				end
@@ -765,7 +745,7 @@ function QCHWWK_fake_script() -- StaminaBar.SprintFire
 	CAS:BindAction("Sprint", sprint, true, bind1, bind2) -- Binds the keybinds to the sprint function and creates a mobile button for it
 
 
-	CAS:SetPosition("Sprint", UDim2.new(0.7,0,0,0)) -- Changes the position of the mobile button within the context frame, to read more about how UDim2 positions work, go to https://developer.roblox.com/en-us/api-reference/datatype/UDim2
+	CAS:SetPosition("Sprint", UDim2.new(5,0,0,0)) -- Changes the position of the mobile button within the context frame, to read more about how UDim2 positions work, go to https://developer.roblox.com/en-us/api-reference/datatype/UDim2
 
 
 	CAS:SetTitle("Sprint", "Shift") -- Sets the text on the mobile button, replace Ctrl with any text you desire
