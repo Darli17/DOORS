@@ -243,9 +243,6 @@ vynixu_crucifix_manager.Signals.InputBegan = UserInputService.InputBegan:Connect
                 if config.EntitiesOnly == true and not isCustomEntity then
                     return -- Ignore if not custom entity
                 end
-
-                -- Banish whatever
-                Crucifix(model, playerTool, config)
             end
         end
     end
