@@ -539,6 +539,12 @@ function QCHWWK_fake_script() -- StaminaBar.SprintFire
 					Started=false
 
 
+					PlayerGui.MainUI.MainFrame.Caption.Text = Text4
+					PlayerGui.MainUI.MainFrame.Caption.TextTransparency = 0
+					PlayerGui.MainUI.MainFrame.Caption.Visible = true
+					wait(5)
+					TweenCaption:Play()
+
 					script.Parent.Dissapear.Value=10
 
 
