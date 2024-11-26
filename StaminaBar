@@ -538,11 +538,15 @@ function QCHWWK_fake_script() -- StaminaBar.SprintFire
 
 					Started=false
 
+					local Text4 = "You're exhausted."
+					local PlayerGui = game.Players.LocalPlayer.PlayerGui
+					local Info = TweenInfo.new(1)
+					local TweenCaption = game:GetService("TweenService"):Create(PlayerGui.MainUI.MainFrame.Caption,Info,{TextTransparency=1})
 
 					PlayerGui.MainUI.MainFrame.Caption.Text = Text4
 					PlayerGui.MainUI.MainFrame.Caption.TextTransparency = 0
 					PlayerGui.MainUI.MainFrame.Caption.Visible = true
-					wait(5)
+					task.wait(1)
 					TweenCaption:Play()
 
 					script.Parent.Dissapear.Value=10
