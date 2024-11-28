@@ -1,0 +1,22 @@
+local Screech = game.ReplicatedStorage.Entities.Screech
+local Spider = game.ReplicatedStorage.Entities.Spider
+local Halt = game.ReplicatedStorage.Entities.Shade
+local FigureLib = game.ReplicatedStorage.JumpscareModels.FigureLibrary
+local Figure = game.ReplicatedStorage.JumpscareModels.Figure
+local SeekEye = game.ReplicatedStorage.Misc.Eyes
+
+local EntitiesRusted = game:GetObjects("rbxassetid://120278728611949")[1]
+game.ReplicatedStorage.Entities:Destroy()
+EntitiesRusted.Parent = game.ReplicatedStorage
+local EntitiesRusted2 = game:GetObjects("rbxassetid://134783584737754")[1]
+game.ReplicatedStorage.JumpscareModels:Destroy()
+EntitiesRusted2.Parent = game.ReplicatedStorage
+
+while task.wait(0.000005) do
+for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:GetDescendants()) do
+    v.Material = Enum.Material.CorrodedMetal
+end
+local roomdoor = game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door
+	roomdoor.Material = "CorrodedMetal"
+	roomdoor.Sign.Material = "CorrodedMetal"
+end
