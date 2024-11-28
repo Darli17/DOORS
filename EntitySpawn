@@ -8,7 +8,6 @@ local humRoot = char.HumanoidRootPart
 
 local Entity = {
 	Model = "rbxassetid://86181759655390",
-	PartInModelName = "RushNew",
 	Speed = 2,
 	WaitTime = 3,
 	Repeats = nil
