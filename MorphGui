@@ -40,6 +40,7 @@ local Window = Rayfield:CreateWindow({
 local Tab1 = Window:CreateTab("DOORS", 12931623528)
 local Tab2 = Window:CreateTab("BACKDOOR", 16755073604)
 local Tab3 = Window:CreateTab("ROOMS", 13721725690)
+local Tab4 = Window:CreateTab("HARDCORE", 14168632627)
 
 local Button = Tab1:CreateButton({
    Name = "Rush",
@@ -224,7 +225,7 @@ end)
 Screech.Animations.Idle.AnimationId = "rbxassetid://18539828651"
 Screech.Animations.Run.AnimationId = "rbxassetid://8465893113"
 Screech.Animations.Roar.AnimationId = "rbxassetid://18539834115"
-Screech.Humanoid:LoadAnimation(Screech.Animations.Roar):Play()
+Screech.Humanoid:LoadAnimation(Screech.Animations.Idle):Play()
    end,
 })
 local Button = Tab1:CreateButton({
@@ -278,7 +279,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
    Screech:PivotTo(game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0, 0.2, -1.25)+Vector3.new(0,1,0))
 end)
 Screech.Humanoid:LoadAnimation(Screech.Animations.Raise):Play()
-wait(7)
+wait(5)
 Screech.Humanoid:LoadAnimation(Screech.Animations.Run):Play()
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21
 Screech.SeekPuddle:Destroy()
@@ -335,7 +336,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
    Screech:PivotTo(game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0, 0.2, -1.25)+Vector3.new(0,1,0))
 end)
 Screech.Humanoid:LoadAnimation(Screech.Animations.MinesRaise):Play()
-wait(7)
+wait(5)
 Screech.Humanoid:LoadAnimation(Screech.Animations.Run):Play()
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21
 Screech.SeekPuddle:Destroy()
@@ -390,6 +391,110 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 game:GetService("RunService").RenderStepped:Connect(function()
    Screech:PivotTo(game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0, 0.2, -1.25)+Vector3.new(0,1,0))
+end)
+   end,
+})
+local Button = Tab1:CreateButton({
+   Name = "Dupe",
+   Callback = function()
+local Screech = game:GetObjects("rbxassetid://92163005620472")[1]:Clone()
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "Dupe" then
+        v:Destroy()
+    end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Screech.Parent = game.Workspace
+local character = game.Players.LocalPlayer.Character
+local transparencyConnections = {}
+
+-- enable
+for i,v in pairs(character:GetChildren()) do
+    if v:IsA("Accessory") then
+        v.Handle.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v.Handle:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.Handle.LocalTransparencyModifier = 0
+        end)
+    end
+
+    if v.Name == "Head" then
+        v.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.LocalTransparencyModifier = 0
+        end)
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-10),0,0)) * CFrame.new(0, 1.5, 10)
+end)
+game:GetService("RunService").RenderStepped:Connect(function()
+   Screech:PivotTo(game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0, 0.2, -1.25)+Vector3.new(0,1,0))
+end)
+   end,
+})
+local Button = Tab1:CreateButton({
+   Name = "Timothy",
+   Callback = function()
+local Screech = game:GetObjects("rbxassetid://106063520567081")[1]:Clone()
+for i,v in pairs(game.Workspace:GetChildren()) do
+    if v.Name == "Timothy" then
+        v:Destroy()
+    end
+end
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("MeshPart") then
+        v.Transparency = 1
+    end
+    if v:IsA("Part") then
+        v.Transparency = 1
+    end
+    if v:IsA("Accessory") then
+        v:Destroy()
+    end
+    game.Players.LocalPlayer.Character.Head.face.Transparency = 1
+end
+Screech.Parent = game.Workspace
+local character = game.Players.LocalPlayer.Character
+local transparencyConnections = {}
+
+-- enable
+for i,v in pairs(character:GetChildren()) do
+    if v:IsA("Accessory") then
+        v.Handle.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v.Handle:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.Handle.LocalTransparencyModifier = 0
+        end)
+    end
+
+    if v.Name == "Head" then
+        v.LocalTransparencyModifier = 0
+
+        transparencyConnections[#transparencyConnections + 1] = v:GetPropertyChangedSignal("LocalTransparencyModifier"):Connect(function()
+            v.LocalTransparencyModifier = 0
+        end)
+    end
+end
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    game.Workspace.CurrentCamera.CFrame = (game.Players.LocalPlayer.Character.Head.CFrame * CFrame.Angles(math.rad(-10),0,0)) * CFrame.new(0, 1.5, 10)
+end)
+game:GetService("RunService").RenderStepped:Connect(function()
+   Screech:PivotTo(game.Players.LocalPlayer.Character.Head.CFrame * CFrame.new(0, 0.2, -1.25)+Vector3.new(0,1,0)+Vector3.new(0, -6, 0))
 end)
    end,
 })
