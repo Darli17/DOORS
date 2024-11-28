@@ -1,0 +1,42 @@
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://86181759655390",
+	PartInModelName = "RushNew",
+	Speed = 2,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
