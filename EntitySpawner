@@ -41,6 +41,7 @@ local Tab1 = Window:CreateTab("DOORS", 12931623528)
 local Tab2 = Window:CreateTab("BACKDOOR", 16755073604)
 local Tab3 = Window:CreateTab("ROOMS", 13721725690)
 local Tab4 = Window:CreateTab("HARDCORE", 14168632627)
+local Tab5 = Window:CreateTab("CUSTOM", 115113031511640)
 
 local Button = Tab1:CreateButton({
    Name = "Rush",
@@ -351,5 +352,60 @@ warn("Tween Stopped!")
 	Thanks!
 
 ]]
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "A-60",
+   Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://88733963344547",
+	Speed = 3,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+EntityM.RushNew.PlaySound:Clone().Parent = char.HumanoidRootPart
+EntityM.RushNew.PlaySound:Play()
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+EntityM.RushNew.Footsteps:Clone().Parent = char.HumanoidRootPart
+EntityM.RushNew.Footsteps:Play()
+wait(3)
+EntityM:Destroy()
+char.HumanoidRootPart.PlaySound:Destroy()
+char.HumanoidRootPart.Footsteps:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+
    end,
 })
