@@ -354,6 +354,81 @@ warn("Tween Stopped!")
 ]]
    end,
 })
+local Button = Tab2:CreateButton({
+   Name = "Blitz [KILLABLE]",
+   Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://139286134979272",
+	Speed = 3,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.BlitzNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 1
+local tween = game:GetService("TweenService"):Create(EntityM.BlitzNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween2 = game:GetService("TweenService"):Create(EntityM.BlitzNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame})
+tween:Play()
+char.Humanoid:TakeDamage(100)
+wait(3)
+LatestRoom -= 1
+tween2:Play()
+wait(4)
+local bruhout = game:GetObjects("rbxassetid://84938337111247")[1]
+bruhout.Parent = workspace
+bruhout.BlackoutNew.CFrame = EntityM.BlitzNew.CFrame
+EntityM:Destroy()
+--=== Entity Settings ===--
+
+local Entity2 = {
+	Speed = 3,
+	WaitTime = 2,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM2 = bruhout
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+LatestRoom += 1
+warn("Entity 2 Arrived!")
+
+wait(Entity2.WaitTime)
+local tweenInfo2 = TweenInfo.new(Entity2.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+local tween3 = game:GetService("TweenService"):Create(EntityM2.BlackoutNew, tweenInfo2, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+
+tween3:Play()
+wait(3)
+EntityM2:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+   end,
+})
 
 local Button = Tab3:CreateButton({
    Name = "A-60",
@@ -407,5 +482,669 @@ warn("Tween Stopped!")
 
 ]]
 
+   end,
+})
+local Button = Tab3:CreateButton({
+   Name = "A-60 [KILLABLE]",
+   Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://88733963344547",
+	Speed = 3,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+EntityM.RushNew.PlaySound:Clone().Parent = char.HumanoidRootPart
+EntityM.RushNew.PlaySound:Play()
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+char.Humanoid:TakeDamage(100)
+EntityM.RushNew.Footsteps:Clone().Parent = char.HumanoidRootPart
+EntityM.RushNew.Footsteps:Play()
+wait(3)
+EntityM:Destroy()
+char.HumanoidRootPart.PlaySound:Destroy()
+char.HumanoidRootPart.Footsteps:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+
+   end,
+})
+local Button = Tab3:CreateButton({
+   Name = "A-90 [IF MOVE KILLABLE]",
+   Callback = function()
+local MainUI = game:GetObjects("rbxassetid://95819908379371")[1]
+MainUI.Parent = game.Players.LocalPlayer.PlayerGui
+
+	local Info = TweenInfo.new(1)
+	local Tween = game:GetService("TweenService"):Create(MainUI.Jumpscare,Info,{BackgroundTransparency=1})
+
+	local plr = game.Players.LocalPlayer
+	local arg1 = game.Workspace.CurrentCamera
+	local Jumpscare_A90 = MainUI.Jumpscare.Jumpscare_A90
+	Jumpscare_A90.BackgroundTransparency = 1
+	Jumpscare_A90.Face.Visible = true
+	Jumpscare_A90.FaceAngry.Visible = false
+	Jumpscare_A90.Static.Visible = true
+	Jumpscare_A90.Static2.Visible = true
+	Jumpscare_A90.Static.ImageTransparency = 1
+	Jumpscare_A90.Static2.ImageTransparency = 1
+	Jumpscare_A90.Face.ImageColor3 = Color3.new(0, 0, 0)
+	Jumpscare_A90.Face.Position = UDim2.new(math.random(10, 90) / 100, 0, math.random(10, 90) / 100, 0)
+	Jumpscare_A90.Visible = true
+	local isMoving = false
+	game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.A90.Spawn:Play()
+	task.wait(0.03333333333333333)
+	Jumpscare_A90.Face.ImageColor3 = Color3.new(1, 1, 1)
+	task.wait(0.48)
+	Jumpscare_A90.BackgroundTransparency = 0
+	Jumpscare_A90.Face.Position = UDim2.new(0.5, 0, 0.49, 0)
+	task.wait(0.03333333333333333)
+	Jumpscare_A90.StopIcon.Visible = true
+	Jumpscare_A90.BackgroundColor3 = Color3.new(0, 0, 0)
+	Jumpscare_A90.BackgroundTransparency = 1
+	Jumpscare_A90.Static.ImageTransparency = 0.8
+	Jumpscare_A90.Static2.ImageTransparency = 0.8
+	local isActive = true
+	local LookVector = arg1.CFrame.LookVector
+	task.delay(0.4, function()
+		Jumpscare_A90.StopIcon.Visible = false
+		while isActive do
+			task.wait(0.03333333333333333)
+			Jumpscare_A90.Static.Position = UDim2.new(math.random(0, 100) / 100, 0, math.random(0, 100) / 100, 0)
+			Jumpscare_A90.Static.Rotation = math.random(0, 1) * 180
+			Jumpscare_A90.Static2.Position = UDim2.new(math.random(0, 100) / 100, 0, math.random(0, 100) / 100, 0)
+			Jumpscare_A90.Static2.Rotation = math.random(0, 1) * 180
+			Jumpscare_A90.Face.Position = UDim2.new(0.5, 0, 0.49, math.random(-1, 1))
+			Jumpscare_A90.FaceAngry.Position = UDim2.new(0.5 + math.random(-100, 100) / 50000, 0, 0.49 + math.random(-100, 100) / 30000, math.random(-1, 1))
+			local randint = math.random(0, 1)
+			Jumpscare_A90.FaceAngry.ImageColor3 = Color3.new(1, randint, randint)
+			if not isMoving then
+				if 0.4 < (LookVector - arg1.CFrame.LookVector).Magnitude then
+					print("LOOKED TOO FAR AWAY")
+					isMoving = true
+				end
+				if 0.4 < plr.Character.Humanoid.MoveDirection.Magnitude then
+					print("KEPT MOVING")
+					isMoving = true
+				end
+			end
+		end
+	end)
+	task.wait(0.5)
+	Jumpscare_A90.BackgroundColor3 = Color3.new(0, 0, 0)
+	Jumpscare_A90.BackgroundTransparency = 0
+	Jumpscare_A90.Static.ImageTransparency = 0
+	Jumpscare_A90.Static2.ImageTransparency = 0.5
+	task.wait(0.03333333333333333)
+	Jumpscare_A90.Face.ImageColor3 = Color3.new(1, 0, 0)
+	task.wait(0.03333333333333333)
+	Jumpscare_A90.Visible = false
+	task.wait(0.08)
+	if isMoving then
+		print("Player moved from A90!")
+		Jumpscare_A90.Visible = true
+		game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.A90.Hit:Play()
+		task.wait(0.03333333333333333)
+		Jumpscare_A90.Face.ImageColor3 = Color3.new(1, 1, 1)
+		task.wait(0.03333333333333333)
+		Jumpscare_A90.BackgroundTransparency = 0
+		Jumpscare_A90.Static.ImageTransparency = 0
+		Jumpscare_A90.Static2.ImageTransparency = 0.5
+		task.wait(0.06666666666666667)
+		Jumpscare_A90.FaceAngry.ImageColor3 = Color3.new(1, 0, 0)
+		Jumpscare_A90.FaceAngry.Visible = true
+		task.wait(0.06666666666666667)
+		Jumpscare_A90.FaceAngry.ImageColor3 = Color3.new(1, 1, 1)
+		Jumpscare_A90.Face.Visible = false
+		Jumpscare_A90.FaceAngry.Size = UDim2.new(0.8, 0, 0.8, 0)
+		task.wait(0.75)
+		plr.Character.Humanoid.Health -= 90
+		task.wait(0.1)
+		Jumpscare_A90.FaceAngry.Visible = false
+		Jumpscare_A90.BackgroundColor3 = Color3.new(1, 1, 1)
+		Jumpscare_A90.Static.ImageTransparency = 1
+		Jumpscare_A90.Static2.ImageTransparency = 1
+		task.wait(0.06666666666666667)
+		Jumpscare_A90.BackgroundColor3 = Color3.new(1, 0, 0)
+		task.wait(0.06666666666666667)
+		Jumpscare_A90.BackgroundColor3 = Color3.new(0, 0, 0)
+		task.wait(0.06666666666666667)
+	else
+		game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.A90.Spawn:Stop()
+		Tween:Play()
+	end
+	isActive = false
+	Tween:Play()
+	wait(2)
+	MainUI:Destroy()
+   end,
+})
+local Button = Tab3:CreateButton({
+   Name = "A-120",
+   Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://79939395391137",
+	Speed = 3,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+EntityM.RushNew.PlaySound:Clone().Parent = char.HumanoidRootPart
+EntityM.RushNew.PlaySound:Play()
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+EntityM.RushNew.Footsteps:Clone().Parent = char.HumanoidRootPart
+EntityM.RushNew.Footsteps:Play()
+wait(3)
+EntityM:Destroy()
+char.HumanoidRootPart.PlaySound:Destroy()
+char.HumanoidRootPart.Footsteps:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+
+   end,
+})
+local Button = Tab3:CreateButton({
+   Name = "A-120 [KILLABLE]",
+   Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://79939395391137",
+	Speed = 3,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+EntityM.RushNew.PlaySound:Clone().Parent = char.HumanoidRootPart
+EntityM.RushNew.PlaySound:Play()
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+char.Humanoid:TakeDamage(100)
+EntityM.RushNew.Footsteps:Clone().Parent = char.HumanoidRootPart
+EntityM.RushNew.Footsteps:Play()
+wait(3)
+EntityM:Destroy()
+char.HumanoidRootPart.PlaySound:Destroy()
+char.HumanoidRootPart.Footsteps:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+
+   end,
+})
+local Button = Tab4:CreateButton({
+   Name = "Ripper",
+   Callback = function()
+		local Player = game.Players.LocalPlayer
+	local Character = Player.Character
+	local PlayerGui = Player.PlayerGui
+	local Reaper = game:GetObjects("rbxassetid://86751024587148")[1]
+	local ColorRed = game:GetObjects("rbxassetid://109493311508410")[1]
+	local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+	
+	-- Settings
+	
+	local WaitTime = 5
+	
+	-- Script
+	
+	Reaper.Parent = workspace
+	local Arrive = game:GetObjects("rbxassetid://75331423649923")[1]
+	Arrive.Parent = Character.HumanoidRootPart
+	Arrive.PlaybackSpeed = 0.53
+	Arrive:Play()
+	
+	for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Assets.Light_Fixtures:GetDescendants()) do
+	  if v.Name == "LightStand" then
+	        v.LightFixture.PointLight.Color = Color3.new(1, 0, 0)
+	        v.LightFixture.Neon.Attachment.PointLight.Color = Color3.new(1, 0, 0)
+	        v.LightFixture.Neon.Color = Color3.new(1, 0, 0)
+	        v.LightFixture.Neon.CenterAttach.PointLight.Color = Color3.new(1, 0, 0)
+	        v.LightFixture.Neon.CenterAttach.SpotLight.Color = Color3.new(1, 0, 0)
+	    end
+	end
+	for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Assets:GetDescendants()) do
+	  if v.Name == "Chandelier" then
+	        v.LightFixture.PointLight.Color = Color3.new(1, 0, 0)
+	        v.LightFixture.SpotLight.Color = Color3.new(1, 0, 0)
+	        v.LightFixture.Neon.Color = Color3.new(1, 0, 0)
+	  end
+	end
+	
+	
+	wait(5)
+	Reaper.RushNew.Ambush.Parent = Character.HumanoidRootPart
+	Character.HumanoidRootPart.Ambush.Volume = 0.1
+	Character.HumanoidRootPart.Ambush:Play()
+	
+	wait(1)
+	
+	--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Speed = 7,
+	WaitTime = 6,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = Reaper
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+	
+	wait(2)
+	
+	Reaper.SoundGroup.Ambience_Ripper.Parent = Character.HumanoidRootPart
+	Character.HumanoidRootPart.Ambience_Ripper.Volume = 10
+	Character.HumanoidRootPart.Ambience_Ripper:Play()
+	
+	wait(4)
+	
+EntityM:Destroy()
+warn("Tween Stopped!")
+	Character.HumanoidRootPart.Ambush:Destroy()
+	Character.HumanoidRootPart.Ambience_Ripper:Destroy()
+	
+	local Details = {
+		Description = "Don't Leave Too Early....",
+		Title = "Torn Apart",
+		Reason =  "Survive Ripper.",
+		Icon = "http://www.roblox.com/asset/?id=117338032296497"
+	}
+	
+	local LocalPlayer = game.Players.LocalPlayer;
+	local GUI = LocalPlayer.PlayerGui.MainUI
+	local TweenService = game:GetService("TweenService");
+	local AchievementsHolder = GUI.AchievementsHolder.Achievement:Clone();
+	AchievementsHolder.Size = UDim2.new(0, 0, 0, 0);
+	AchievementsHolder.Frame.Position = UDim2.new(1.1, 0, 0, 0);
+	AchievementsHolder.Name = "LiveAchievement";
+	AchievementsHolder.Visible = true;
+	AchievementsHolder.Parent = GUI.AchievementsHolder;
+	AchievementsHolder.Frame.Details.Desc.Text = Details.Description
+	AchievementsHolder.Frame.Details.Title.Text = Details.Title
+	AchievementsHolder.Frame.Details.Reason.Text = Details.Reason
+	AchievementsHolder.Frame.ImageLabel.Image = Details.Icon
+	AchievementsHolder.Sound:Play();
+	AchievementsHolder:TweenSize(UDim2.new(1, 0, 0.2, 0), "In", "Quad", 0.8, true);
+	wait(0.8);
+	AchievementsHolder.Frame:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.5, true);
+	TweenService:Create(AchievementsHolder.Frame.Glow, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+		ImageTransparency = 1
+	}):Play();
+	wait(8);
+	AchievementsHolder.Frame:TweenPosition(UDim2.new(1.1, 0, 0, 0), "In", "Quad", 0.5, true);
+	wait(0.5);
+	AchievementsHolder:TweenSize(UDim2.new(1, 0, -0.1, 0), "InOut", "Quad", 0.5, true);
+	wait(0.5);
+	AchievementsHolder:Destroy();
+   end,
+})
+local Button = Tab4:CreateButton({
+   Name = "Rebound",
+   Callback = function()
+local Button = Tab3:CreateButton({
+   Name = "A-120",
+   Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://79939395391137",
+	Speed = 3,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+EntityM.RushNew.PlaySound:Clone().Parent = char.HumanoidRootPart
+EntityM.RushNew.PlaySound:Play()
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+EntityM.RushNew.Footsteps:Clone().Parent = char.HumanoidRootPart
+EntityM.RushNew.Footsteps:Play()
+wait(3)
+EntityM:Destroy()
+char.HumanoidRootPart.PlaySound:Destroy()
+char.HumanoidRootPart.Footsteps:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+
+   end,
+})
+   end,
+})
+local Button = Tab4:CreateButton({
+   Name = "Frostbite",
+   Callback = function()
+	    local Player = game.Players.LocalPlayer
+	    local Character = Player.Character
+	    local PlayerGui = Player.PlayerGui
+	    local Frostbite = game:GetObjects("rbxassetid://97585092787249")[1]
+	
+	    -- Settings
+	
+	    local Damage = 5
+	    local WaitTime = 4.500
+	
+	    -- Script
+	
+	    Frostbite.Parent = workspace
+	    Frostbite.Part.CFrame = game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].RoomExit.CFrame
+	    Frostbite.Part.Anchored = true
+	    Frostbite.Part.CanCollide = false
+	
+	    Frostbite.Part["Static Effect"].Volume = 1.500
+	    Frostbite.Part["Static Effect"]:Play()
+	    wait(WaitTime)
+		Frostbite.Part["Sound"]:Play()
+		wait(0.4)
+        Frostbite.Part["Static Effect"].Volume = 0.9
+        wait(0.1)
+        Frostbite.Part["Static Effect"].Volume = 0.8
+        wait(0.1)
+        Frostbite.Part["Static Effect"].Volume = 0.7
+        wait(0.1)
+        Frostbite.Part["Static Effect"].Volume = 0.6
+        wait(0.1)
+        Frostbite.Part["Static Effect"].Volume = 0.5
+        wait(0.1)
+        Frostbite.Part["Static Effect"].Volume = 0.4
+        wait(0.1)
+        Frostbite.Part["Static Effect"].Volume = 0.3
+        wait(0.1)
+        Frostbite.Part["Static Effect"].Volume = 0.2
+        wait(0.1)
+        Frostbite.Part["Static Effect"].Volume = 0.1
+		wait(1)
+		Frostbite.Part.AmbienceFar:Stop()
+		Frostbite.Part["Static Effect"]:Stop()
+	    wait(0.100)
+	    Frostbite.Part.Ambience.Volume = 2
+	    Frostbite.Part.Ambience:Play()
+	
+	    Frostbite.Part.Attachment.Heylois.Enabled = true
+	    Frostbite.Part.Attachment.face.Enabled = true
+	    Frostbite.Part.Attachment.BlackTrail.Enabled = true
+	
+	    Frostbite.Part.Part.ParticleEmitter.Enabled = true
+	
+	    wait(1)
+	    Character.Humanoid:TakeDamage(Damage)
+	    wait(1)
+	    Character.Humanoid:TakeDamage(Damage)
+	    wait(1)
+	    Character.Humanoid:TakeDamage(Damage)
+	    wait(1)
+	    Character.Humanoid:TakeDamage(Damage)
+	    wait(1)
+	     Character.Humanoid:TakeDamage(Damage)
+	    wait(1)
+	    Character.Humanoid:TakeDamage(Damage)
+	
+	
+	    Frostbite.Part.Ambience:Stop()
+	
+	    Frostbite.Part.Attachment.Heylois.Enabled = false
+	    Frostbite.Part.Attachment.face.Enabled = false
+	    Frostbite.Part.Attachment.BlackTrail.Enabled = false
+	
+	    Frostbite.Part.Part.ParticleEmitter.Enabled = false
+	
+	    wait(3)
+	    Frostbite.Part.Anchored = false 
+	    wait(4)
+	    Frostbite:Destroy()
+	    Character.Humanoid.Health += 15
+   end,
+})
+local Button = Tab3:CreateButton({
+   Name = "A-90 [HC]",
+   Callback = function()
+
+		local MainUI = game:GetObjects("rbxassetid://95819908379371")[1]
+MainUI.Parent = game.Players.LocalPlayer.PlayerGui
+MainUI.Jumpscare.Jumpscare_A90.FaceAngry.Image = "rbxassetid://85035600888054"
+MainUI.Jumpscare.Jumpscare_A90.Face.Image = "rbxassetid://88128968539346"
+
+
+	local Info = TweenInfo.new(1)
+	local Tween = game:GetService("TweenService"):Create(MainUI.Jumpscare.Jumpscare_A90,Info,{BackgroundTransparency=1})
+
+	local plr = game.Players.LocalPlayer
+	local arg1 = game.Workspace.CurrentCamera
+	local Jumpscare_A90 = MainUI.Jumpscare.Jumpscare_A90
+	Jumpscare_A90.BackgroundTransparency = 1
+	Jumpscare_A90.Face.Visible = true
+	Jumpscare_A90.FaceAngry.Visible = false
+	Jumpscare_A90.Static.Visible = true
+	Jumpscare_A90.Static2.Visible = true
+	Jumpscare_A90.Static.ImageTransparency = 1
+	Jumpscare_A90.Static2.ImageTransparency = 1
+	Jumpscare_A90.Face.ImageColor3 = Color3.new(0, 0, 0)
+	Jumpscare_A90.Face.Position = UDim2.new(math.random(10, 90) / 100, 0, math.random(10, 90) / 100, 0)
+	Jumpscare_A90.Visible = true
+	local isMoving = false
+	game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.A90.Spawn:Play()
+	task.wait(0.03333333333333333)
+	Jumpscare_A90.Face.ImageColor3 = Color3.new(1, 1, 1)
+	task.wait(0.48)
+	Jumpscare_A90.BackgroundTransparency = 0
+	Jumpscare_A90.Face.Position = UDim2.new(0.5, 0, 0.49, 0)
+	task.wait(0.03333333333333333)
+	Jumpscare_A90.StopIcon.Visible = true
+	Jumpscare_A90.BackgroundColor3 = Color3.new(0, 0, 0)
+	Jumpscare_A90.BackgroundTransparency = 1
+	Jumpscare_A90.Static.ImageTransparency = 0.8
+	Jumpscare_A90.Static2.ImageTransparency = 0.8
+	local isActive = true
+	local LookVector = arg1.CFrame.LookVector
+	task.delay(0.4, function()
+		Jumpscare_A90.StopIcon.Visible = false
+		while isActive do
+			task.wait(0.03333333333333333)
+			Jumpscare_A90.Static.Position = UDim2.new(math.random(0, 100) / 100, 0, math.random(0, 100) / 100, 0)
+			Jumpscare_A90.Static.Rotation = math.random(0, 1) * 180
+			Jumpscare_A90.Static2.Position = UDim2.new(math.random(0, 100) / 100, 0, math.random(0, 100) / 100, 0)
+			Jumpscare_A90.Static2.Rotation = math.random(0, 1) * 180
+			Jumpscare_A90.Face.Position = UDim2.new(0.5, 0, 0.49, math.random(-1, 1))
+			Jumpscare_A90.FaceAngry.Position = UDim2.new(0.5 + math.random(-100, 100) / 50000, 0, 0.49 + math.random(-100, 100) / 30000, math.random(-1, 1))
+			local randint = math.random(0, 1)
+			Jumpscare_A90.FaceAngry.ImageColor3 = Color3.new(1, randint, randint)
+			if not isMoving then
+				if 0.4 < (LookVector - arg1.CFrame.LookVector).Magnitude then
+					print("LOOKED TOO FAR AWAY")
+					isMoving = true
+				end
+				if 0.4 < plr.Character.Humanoid.MoveDirection.Magnitude then
+					print("KEPT MOVING")
+					isMoving = true
+				end
+			end
+		end
+	end)
+	task.wait(0.5)
+	Jumpscare_A90.BackgroundColor3 = Color3.new(0, 0, 0)
+	Jumpscare_A90.BackgroundTransparency = 0
+	Jumpscare_A90.Static.ImageTransparency = 0
+	Jumpscare_A90.Static2.ImageTransparency = 0.5
+	task.wait(0.03333333333333333)
+	Jumpscare_A90.Face.ImageColor3 = Color3.new(1, 0, 0)
+	task.wait(0.03333333333333333)
+	Jumpscare_A90.Visible = false
+	task.wait(0.08)
+	if isMoving then
+		print("Player moved from A90!")
+		Jumpscare_A90.Visible = true
+		game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.A90.Hit:Play()
+		task.wait(0.03333333333333333)
+		Jumpscare_A90.Face.ImageColor3 = Color3.new(1, 1, 1)
+		task.wait(0.03333333333333333)
+		Jumpscare_A90.BackgroundTransparency = 0
+		Jumpscare_A90.Static.ImageTransparency = 0
+		Jumpscare_A90.Static2.ImageTransparency = 0.5
+		task.wait(0.06666666666666667)
+		Jumpscare_A90.FaceAngry.ImageColor3 = Color3.new(1, 0, 0)
+		Jumpscare_A90.FaceAngry.Visible = true
+		task.wait(0.06666666666666667)
+		Jumpscare_A90.FaceAngry.ImageColor3 = Color3.new(1, 1, 1)
+		Jumpscare_A90.Face.Visible = false
+		Jumpscare_A90.FaceAngry.Size = UDim2.new(0.8, 0, 0.8, 0)
+		task.wait(0.75)
+		plr.Character.Humanoid.Health -= 50
+		task.wait(0.1)
+		Jumpscare_A90.FaceAngry.Visible = false
+		Jumpscare_A90.BackgroundColor3 = Color3.new(1, 1, 1)
+		Jumpscare_A90.Static.ImageTransparency = 1
+		Jumpscare_A90.Static2.ImageTransparency = 1
+		task.wait(0.06666666666666667)
+		Jumpscare_A90.BackgroundColor3 = Color3.new(1, 0, 0)
+		task.wait(0.06666666666666667)
+		Jumpscare_A90.BackgroundColor3 = Color3.new(0, 0, 0)
+		task.wait(0.06666666666666667)
+	else
+		game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.A90.Spawn:Stop()
+		Tween:Play()
+	end
+	isActive = false
+	Tween:Play()
+	wait(2)
+	MainUI:Destroy()
    end,
 })
