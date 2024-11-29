@@ -22,7 +22,7 @@ EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
 warn("Entity Arrived!")
 
 wait(Entity.WaitTime)
-local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
 local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
 tween:Play()
