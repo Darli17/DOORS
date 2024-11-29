@@ -1,9 +1,6 @@
 local MainUI = game:GetObjects("rbxassetid://95819908379371")[1]
 MainUI.Parent = game.Players.LocalPlayer.PlayerGui
 
-	local Info = TweenInfo.new(1)
-	local Tween = game:GetService("TweenService"):Create(MainUI.Jumpscare,Info,{BackgroundTransparency=1})
-
 	local plr = game.Players.LocalPlayer
 	local arg1 = game.Workspace.CurrentCamera
 	local Jumpscare_A90 = MainUI.Jumpscare.Jumpscare_A90
@@ -97,9 +94,9 @@ MainUI.Parent = game.Players.LocalPlayer.PlayerGui
 		task.wait(0.06666666666666667)
 	else
 		game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.A90.Spawn:Stop()
-		Tween:Play()
+		Jumpscare_A90.BackgroundTransparency = 1
 	end
 	isActive = false
-	Tween:Play()
+	Jumpscare_A90.Visible = false
 	wait(2)
 	MainUI:Destroy()
