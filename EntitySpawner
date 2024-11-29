@@ -278,3 +278,78 @@ warn("Tween Stopped!")
 
    end,
 })
+
+local Button = Tab2:CreateButton({
+   Name = "Blitz",
+   Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://139286134979272",
+	Speed = 3,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.BlitzNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 1
+local tween = game:GetService("TweenService"):Create(EntityM.BlitzNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween2 = game:GetService("TweenService"):Create(EntityM.BlitzNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame})
+tween:Play()
+wait(3)
+LatestRoom -= 1
+tween2:Play()
+wait(4)
+local bruhout = game:GetObjects("rbxassetid://84938337111247")[1]
+bruhout.Parent = workspace
+bruhout.BlackoutNew.CFrame = EntityM.BlitzNew.CFrame
+EntityM:Destroy()
+--=== Entity Settings ===--
+
+local Entity2 = {
+	Speed = 3,
+	WaitTime = 2,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM2 = bruhout
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+LatestRoom += 1
+warn("Entity 2 Arrived!")
+
+wait(Entity2.WaitTime)
+local tweenInfo2 = TweenInfo.new(Entity2.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+local tween3 = game:GetService("TweenService"):Create(EntityM2.BlackoutNew, tweenInfo2, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+
+tween3:Play()
+wait(3)
+EntityM2:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+   end,
+})
