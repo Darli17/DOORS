@@ -1294,9 +1294,125 @@ local Button = Tab4:CreateButton({
    end,
 })
 local Button = Tab4:CreateButton({
+	Name = "A-60 [HC]",
+	Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://84351650241338",
+	Speed = 0.850,
+	WaitTime = 1,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+EntityM.AmbienceSounds["Ambience_A-60"]:Clone().Parent = char.HumanoidRootPart
+char.HumanoidRootPart["Ambience_A-60"]:Play()
+
+EntityM.RushNew["Far Static"]:Clone().Parent = char.HumanoidRootPart
+char.HumanoidRootPart["Far Static"]:Play()
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+LatestRoom -= 3
+local tween2 = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+wait(2)
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(2)
+tween:Play()
+wait(2)
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(2)
+tween:Play()
+wait(2)
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(2)
+
+EntityM.AmbienceSounds["Ambience_A-60_End"]:Clone().Parent = char.HumanoidRootPart
+char.HumanoidRootPart["Ambience_A-60_End"]:Play()
+
+char.HumanoidRootPart["Ambience_A-60"]:Destroy()
+
+char.HumanoidRootPart["Far Static"]:Destroy()
+
+EntityM:Destroy()
+warn("Tween Stopped!")
+
+  end,
+})
+local Button = Tab4:CreateButton({
    Name = "A-90 [HC IF MOVE KILLABLE]",
    Callback = function()
-
 		local MainUI = game:GetObjects("rbxassetid://95819908379371")[1]
 MainUI.Parent = game.Players.LocalPlayer.PlayerGui
 MainUI.Jumpscare.Jumpscare_A90.FaceAngry.Image = "rbxassetid://85035600888054"
