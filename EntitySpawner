@@ -894,9 +894,71 @@ warn("Tween Stopped!")
 local Button = Tab4:CreateButton({
    Name = "Rebound",
    Callback = function()
-local Button = Tab3:CreateButton({
-   Name = "A-120",
-   Callback = function()
+
+local Reboundcolor = Instance.new("ColorCorrectionEffect",game.Lighting) game.Debris:AddItem(Reboundcolor,24)
+Reboundcolor.Name = "Warn"
+Reboundcolor.TintColor = Color3.fromRGB(65, 138, 255) Reboundcolor.Saturation = -0.7 Reboundcolor.Contrast = 0.2
+game.TweenService:Create(Reboundcolor,TweenInfo.new(15),{TintColor = Color3.fromRGB(255, 255, 255),Saturation = 0, Contrast = 0}):Play()
+local TweenService = game:GetService("TweenService")
+local TW = TweenService:Create(game.Lighting.MainColorCorrection, TweenInfo.new(5),{TintColor = Color3.fromRGB(255, 255, 255)})
+TW:Play()
+local cue1 = Instance.new("Sound")
+cue1.Parent = game.Workspace
+cue1.Name = "Scream"
+cue1.SoundId = "rbxassetid://9114397505"
+local distort = Instance.new("DistortionSoundEffect")
+distort.Parent = cue1
+distort.Level = 1
+local distort2 = Instance.new("DistortionSoundEffect")
+distort2.Parent = cue1
+distort2.Level = 1
+local pitch = Instance.new("PitchShiftSoundEffect")
+pitch.Parent = cue1
+pitch.Octave = 0.5
+local pitch2 = Instance.new("PitchShiftSoundEffect")
+pitch2.Parent = cue1
+pitch2.Octave = 0.5
+local pitch3 = Instance.new("PitchShiftSoundEffect")
+pitch3.Parent = cue1
+pitch3.Octave = 0.5
+cue1.Volume = 0.1
+cue1:Play()
+local cue2 = Instance.new("Sound")
+cue2.Parent = game.Workspace
+cue2.Name = "Spawn"
+cue2.SoundId = "rbxassetid://9114221327"
+cue2.Volume = 3
+cue2:Play()
+wait(2.8)
+ 
+function GetGitSound(GithubSnd,SoundName)
+	local url=GithubSnd
+	if not isfile(SoundName..".mp3") then
+		writefile(SoundName..".mp3", game:HttpGet(url))
+	end
+	local sound=Instance.new("Sound")
+	sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+	return sound
+end
+ 
+local scare = Instance.new("Sound")
+scare.Parent = game.Workspace
+scare.Name = "MyEarsBurn"
+scare.SoundId = "rbxassetid://5567523008"
+scare.PlaybackSpeed = 3
+scare.Volume = 1
+ 
+local shift = Instance.new("PitchShiftSoundEffect")
+shift.Octave = 0.5
+shift.Parent = scare
+ 
+local distort = Instance.new("DistortionSoundEffect")
+distort.Parent = scare
+distort.Level = 1
+ 
+local TweenService = game:GetService("TweenService")
+local spookee = TweenService:Create(scare, TweenInfo.new(0.3),{Volume = 0})
+
 --=== Varaibles --===
 local plr = game.Players.LocalPlayer
 local char = plr.Character
@@ -906,8 +968,8 @@ local humRoot = char.HumanoidRootPart
 --=== Entity Settings ===--
 
 local Entity = {
-	Model = "rbxassetid://79939395391137",
-	Speed = 3,
+	Model = "rbxassetid://115475448921667",
+	Speed = 7,
 	WaitTime = 3,
 	Repeats = nil
 }
@@ -917,23 +979,16 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.Torso.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
 warn("Entity Arrived!")
-
-EntityM.RushNew.PlaySound:Clone().Parent = char.HumanoidRootPart
-EntityM.RushNew.PlaySound:Play()
 
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.Torso, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
 tween:Play()
-EntityM.RushNew.Footsteps:Clone().Parent = char.HumanoidRootPart
-EntityM.RushNew.Footsteps:Play()
-wait(3)
+wait(20)
 EntityM:Destroy()
-char.HumanoidRootPart.PlaySound:Destroy()
-char.HumanoidRootPart.Footsteps:Destroy()
 warn("Tween Stopped!")
 --=== Credits ===--
 
@@ -945,9 +1000,85 @@ warn("Tween Stopped!")
 	Thanks!
 
 ]]
+ 
+local randomnumber = math.random(3,5)
+print(randomnumber)
+ 
+for i = 3,randomnumber do
+	game.ReplicatedStorage.GameData.LatestRoom.Changed:Wait()
+wait(1)
+ 
+function GetGitSound(GithubSnd,SoundName)
+	local url=GithubSnd
+	if not isfile(SoundName..".mp3") then
+		writefile(SoundName..".mp3", game:HttpGet(url))
+	end
+	local sound=Instance.new("Sound")
+	sound.SoundId=(getcustomasset or getsynasset)(SoundName..".mp3")
+	return sound
+end
+ 
+local scare = Instance.new("Sound")
+scare.Parent = game.Workspace
+scare.Name = "MyEarsBurn"
+scare.SoundId = "rbxassetid://5567523008"
+scare.PlaybackSpeed = 3
+scare.Volume = 1
+ 
+local shift = Instance.new("PitchShiftSoundEffect")
+shift.Octave = 0.5
+shift.Parent = scare
+ 
+local distort = Instance.new("DistortionSoundEffect")
+distort.Parent = scare
+distort.Level = 1
+ 
+local TweenService = game:GetService("TweenService")
+ 
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
 
-   end,
-})
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://115475448921667",
+	Speed = 7,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.Torso.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.Torso, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+wait(20)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end
+print("Laps ended. Done.")
+part:Destroy()
    end,
 })
 local Button = Tab4:CreateButton({
@@ -1034,7 +1165,7 @@ local Button = Tab4:CreateButton({
 	    Character.Humanoid.Health += 15
    end,
 })
-local Button = Tab3:CreateButton({
+local Button = Tab4:CreateButton({
    Name = "A-90 [HC]",
    Callback = function()
 
