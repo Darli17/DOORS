@@ -14,7 +14,7 @@
 local Details = {
     Description = "DOORS API has loaded!",
     Title = "DOORS API",
-    Reason =  "By @ValerikRob",
+    Reason =  "Wait for [Entity Spawner] Load.",
     Icon = "http://www.roblox.com/asset/?id=79246083066446",
     Not = "API NOTIFICATION"
 }
@@ -40,7 +40,7 @@ AchievementsHolder.Frame:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.5
 TweenService:Create(AchievementsHolder.Frame.Glow, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
     ImageTransparency = 1
   }):Play();
-  wait(8);
+  wait(2);
 AchievementsHolder.Frame:TweenPosition(UDim2.new(1.1, 0, 0, 0), "In", "Quad", 0.5, true);
 wait(0.5);
 AchievementsHolder:TweenSize(UDim2.new(1, 0, -0.1, 0), "InOut", "Quad", 0.5, true);
