@@ -1411,6 +1411,23 @@ local Button = Tab4:CreateButton({
 local Button = Tab4:CreateButton({
 	Name = "A-60 [HC]",
 	Callback = function()
+
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+local Sound = Instance.new("Sound")
+Sound.SoundId = "rbxassetid://2738830850"
+Sound.Volume = 0.2
+Sound.PlaybackSpeed = 0.7
+Sound.Name = "A60Arrive"
+Sound.Looped = true
+Sound.Parent = humRoot
+Sound:Play()
+
+wait(21)
+
 --=== Varaibles --===
 local plr = game.Players.LocalPlayer
 local char = plr.Character
