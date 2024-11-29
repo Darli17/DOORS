@@ -122,9 +122,52 @@ wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
 local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+-- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
+
+-- Decompiled with Konstant V2.1, a fast Luau decompiler made in Luau by plusgiant5 (https://discord.gg/wyButjTMhM)
+-- Decompiled on 2024-11-26 10:49:56
+-- Luau version 6, Types version 3
+-- Time taken: 0.001608 seconds
+
+local MainUI_upvr = game.Players.LocalPlayer.PlayerGui:WaitForChild("MainUI")
+    game.SoundService.Main.Volume = 0
+    MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscares.Rush.Jumpscare_Rush:Play()
+    MainUI_upvr.Jumpscare.Jumpscare_Rush.Visible = true
+    local tick_result1 = tick()
+    local var6 = math.random(5, 30) / 10
+    if math.random(1, 10) ~= 5 then
+        for _ = 1, 100000 do
+            task.wait()
+            if tick_result1 + var6 <= tick() then
+                MainUI_upvr.Jumpscare.Jumpscare_Rush.ImageLabel.Visible = true
+				MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscares.Rush.Jumpscare_Rush.Pitch = 1 + math.random(-100, 100) / 500
+                MainUI_upvr.Jumpscare.Jumpscare_Rush.BackgroundColor3 = Color3.new(0, 0, math.random(0, 10) / 255)
+                MainUI_upvr.Jumpscare.Jumpscare_Rush.ImageLabel.Position = UDim2.new(0.5, math.random(-2, 2), 0.5, math.random(-2, 2))
+                local var7 = 0.25 + 0.05
+                MainUI_upvr.Jumpscare.Jumpscare_Rush.ImageLabel.Size = UDim2.new(var7, 0, var7, 0)
+            end
+            if (tick_result1) + (var6 + math.random(10, 60) / 10) <= tick() then break end
+        end
+    end
+    MainUI_upvr.Jumpscare.Jumpscare_Rush.ImageLabel.Visible = true
+	MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscares.Rush.Jumpscare_Rush:Stop()
+	MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscares.Rush.Jumpscare_Rush2:Play()
+    MainUI_upvr.Jumpscare.Jumpscare_Rush.ImageLabel.Visible = false
+    MainUI_upvr.Jumpscare.Jumpscare_Rush.ImageLabelBig.Visible = true
+    MainUI_upvr.Jumpscare.Jumpscare_Rush.ImageLabelBig:TweenSize(UDim2.new(2.5, 0, 2.5, 0), "In", "Sine", 0.3, true)
+    game.Players.LocalPlayer.Character.Humanoid:TakeDamage(100)
+    for _ = 1, 1000 do
+        local var8 = math.random(0, 10) / 10
+        MainUI_upvr.Jumpscare.Jumpscare_Rush.BackgroundColor3 = Color3.new(var8, var8, math.clamp(math.random(25, 50) / 50, var8, 1))
+        MainUI_upvr.Jumpscare.Jumpscare_Rush.ImageLabelBig.Position = UDim2.new(0.5 + math.random(-100, 100) / 5000, 0, 0.5 + math.random(-100, 100) / 3000, 0)
+        task.wait((1/60))
+        if tick() + 0.3 <= tick() then break end
+    end
+    MainUI_upvr.Jumpscare.Jumpscare_Rush.ImageLabelBig.Visible = false
+    MainUI_upvr.Jumpscare.Jumpscare_Rush.BackgroundColor3 = Color3.new(0, 0, 0)
+    wait(1)
+    MainUI_upvr.Jumpscare.Jumpscare_Rush.Visible = false
 tween:Play()
-wait(2)
-char.Humanoid:TakeDamage(100)
 wait(3)
 EntityM:Destroy()
 warn("Tween Stopped!")
@@ -242,9 +285,43 @@ LatestRoom += 2
 local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
 LatestRoom -= 3
 local tween2 = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local MainUI_upvr = game.Players.LocalPlayer.PlayerGui:WaitForChild("MainUI")
+    game.SoundService.Main.Volume = 0
+	MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscares.Ambush.Jumpscare_Ambush:Play()
+    MainUI_upvr.Jumpscare.Jumpscare_Ambush.Visible = true
+    local tick_result1 = tick()
+    local var6 = math.random(5, 30) / 100
+    for _ = 1, 100000 do
+        task.wait((1/60))
+        MainUI_upvr.Jumpscare.Jumpscare_Ambush.ImageLabel.Position = UDim2.new(0.5, math.random(-15, 15), 0.5, math.random(-15, 15))
+        MainUI_upvr.Jumpscare.Jumpscare_Ambush.BackgroundColor3 = Color3.new(0, math.random(4, 10) / 255, math.random(0, 3) / 255)
+        if tick_result1 + var6 <= tick() then
+            MainUI_upvr.Jumpscare.Jumpscare_Ambush.ImageLabel.Visible = true
+			MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscares.Ambush.Jumpscare_Ambush.Pitch = math.random(35, 155) / 100
+            MainUI_upvr.Jumpscare.Jumpscare_Ambush.BackgroundColor3 = Color3.new(0, math.random(4, 10) / 255, math.random(0, 3) / 255)
+            MainUI_upvr.Jumpscare.Jumpscare_Ambush.ImageLabel.Position = UDim2.new(0.5, math.random(-25, 25), 0.5, math.random(-25, 25))
+            local var7 = 0.2 + 0.05
+            MainUI_upvr.Jumpscare.Jumpscare_Ambush.ImageLabel.Size = UDim2.new(var7, 0, var7, 0)
+        end
+        if (tick_result1) + (var6 + math.random(10, 60) / 100) <= tick() then break end
+    end
+	MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscares.Ambush.Jumpscare_Ambush2:Play()
+    MainUI_upvr.Jumpscare.Jumpscare_Ambush.ImageLabel.Visible = true
+    MainUI_upvr.Jumpscare.Jumpscare_Ambush.ImageLabel:TweenSize(UDim2.new(9, 0, 9, 0), "In", "Quart", 0.3, true)
+        game.Players.LocalPlayer.Character.Humanoid:TakeDamage(100)
+    for _ = 1, 100 do
+        local var8 = math.random(0, 10) / 10
+        MainUI_upvr.Jumpscare.Jumpscare_Ambush.BackgroundColor3 = Color3.new(var8, math.clamp(math.random(25, 50) / 50, var8, 1), math.clamp(math.random(25, 50) / 150, var8, 1))
+        game["Run Service"].RenderStepped:wait()
+        if tick() + 0.3 <= tick() then break end
+    end
+	MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscares.Ambush.Jumpscare_Ambush:Stop()
+    MainUI_upvr.Jumpscare.Jumpscare_Ambush.ImageLabel.Visible = false
+    MainUI_upvr.Jumpscare.Jumpscare_Ambush.BackgroundColor3 = Color3.new(0, 0, 0)
+    wait(0.100)
+    MainUI_upvr.Jumpscare.Jumpscare_Ambush.Visible = false
 tween:Play()
 wait(1.500)
-char.Humanoid:TakeDamage(100)
 wait(1)
 tween2:Play()
 wait(3)
