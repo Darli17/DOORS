@@ -764,7 +764,7 @@ local Button = Tab4:CreateButton({
 		local Player = game.Players.LocalPlayer
 	local Character = Player.Character
 	local PlayerGui = Player.PlayerGui
-	local Reaper = game:GetObjects("rbxassetid://86751024587148")[1]
+	local Reaper = game:GetObjects("rbxassetid://140383516511407")[1]
 	local ColorRed = game:GetObjects("rbxassetid://109493311508410")[1]
 	local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 	
@@ -1166,7 +1166,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 local Button = Tab4:CreateButton({
-   Name = "A-90 [HC]",
+   Name = "A-90 [HC IF MOVE KILLABLE]",
    Callback = function()
 
 		local MainUI = game:GetObjects("rbxassetid://95819908379371")[1]
