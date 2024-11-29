@@ -76,7 +76,7 @@ local Window = Rayfield:CreateWindow({
 local Tab1 = Window:CreateTab("DOORS", 12931623528)
 local Tab2 = Window:CreateTab("BACKDOOR", 16755073604)
 local Tab3 = Window:CreateTab("ROOMS", 13721725690)
-local Tab4 = Window:CreateTab("HARDCORE", 14168632627)
+local Tab4 = Window:CreateTab("HARDCORE", 92259183327027)
 local Tab5 = Window:CreateTab("CUSTOM", 115113031511640)
 local Tab6 = Window:CreateTab("GIVER", 16587915599)
 
