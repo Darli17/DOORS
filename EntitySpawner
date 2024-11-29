@@ -1082,6 +1082,134 @@ part:Destroy()
    end,
 })
 local Button = Tab4:CreateButton({
+	Name = "Deer God",
+	Callback = function()
+	--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://77798269324365",
+	Speed = 13,
+	WaitTime = 5,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+EntityM.Static:Clone().Parent = char.HumanoidRootPart
+char.HumanoidRootPart.Static:Play()
+
+wait(Entity.WaitTime)
+
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+
+wait(7)
+
+EntityM.RushNew.FootstepsVell:Clone().Parent = char.HumanoidRootPart
+char.HumanoidRootPart.FootstepsVell:Play()
+
+wait(12)
+EntityM:Destroy()
+char.HumanoidRootPart.Static:Destroy()
+char.HumanoidRootPart.FootstepsVell:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end,
+})
+local Button = Tab4:CreateButton({
+	Name = "Cease",
+	Callback = function()
+	--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://107258800537976",
+	Speed = 9,
+	WaitTime = 5,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+local Ceasecolor = Instance.new("ColorCorrectionEffect",game.Lighting) game.Debris:AddItem(Ceasecolor,25)
+Ceasecolor.Name = "Warn"
+Ceasecolor.TintColor = Color3.fromRGB(98, 48, 168) Ceasecolor.Saturation = -0.7 Ceasecolor.Contrast = 0.2
+game.TweenService:Create(Ceasecolor,TweenInfo.new(55),{TintColor = Color3.fromRGB(255, 255, 255),Saturation = 0, Contrast = 0}):Play()
+local TweenService = game:GetService("TweenService")
+local TW = TweenService:Create(game.Lighting.MainColorCorrection, TweenInfo.new(5),{TintColor = Color3.fromRGB(255, 255, 255)})
+
+EntityM.RushNew.Silence:Clone().Parent = char.HumanoidRootPart
+char.HumanoidRootPart.Silence:Play()
+
+wait(Entity.WaitTime)
+
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+EntityM.Silence.Name = "Lol"
+EntityM.Lol:Clone().Parent = char.HumanoidRootPart
+char.HumanoidRootPart.Lol:Play()
+tween:Play()
+
+wait(3)
+
+EntityM.RushNew.Rush:Clone().Parent = char.HumanoidRootPart
+char.HumanoidRootPart.Rush:Play()
+
+wait(10)
+TW:Play()
+char.HumanoidRootPart.Lol:Destroy()
+char.HumanoidRootPart.Rush:Destroy()
+char.HumanoidRootPart.Silence:Destroy()
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end,
+})
+local Button = Tab4:CreateButton({
    Name = "Frostbite",
    Callback = function()
 	    local Player = game.Players.LocalPlayer
