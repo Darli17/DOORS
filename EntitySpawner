@@ -11,6 +11,42 @@
                                     |______|       
 --]]
 
+local Details = {
+    Description = "DOORS API has loaded!",
+    Title = "DOORS API",
+    Reason =  "By @ValerikRob",
+    Icon = "http://www.roblox.com/asset/?id=79246083066446",
+    Not = "API NOTIFICATION"
+}
+
+local LocalPlayer = game.Players.LocalPlayer;
+local GUI = LocalPlayer.PlayerGui.MainUI
+local TweenService = game:GetService("TweenService");
+local AchievementsHolder = GUI.AchievementsHolder.Achievement:Clone();
+AchievementsHolder.Size = UDim2.new(0, 0, 0, 0);
+AchievementsHolder.Frame.Position = UDim2.new(1.1, 0, 0, 0);
+AchievementsHolder.Name = "LiveAchievement";
+AchievementsHolder.Visible = true;
+AchievementsHolder.Parent = GUI.AchievementsHolder;
+AchievementsHolder.Frame.Details.Desc.Text = Details.Description
+AchievementsHolder.Frame.Details.Title.Text = Details.Title
+AchievementsHolder.Frame.Details.Reason.Text = Details.Reason
+AchievementsHolder.Frame.ImageLabel.Image = Details.Icon
+AchievementsHolder.Frame.TextLabel.Text = Details.Not
+AchievementsHolder.Sound:Play();
+AchievementsHolder:TweenSize(UDim2.new(1, 0, 0.2, 0), "In", "Quad", 0.8, true);
+wait(0.8);
+AchievementsHolder.Frame:TweenPosition(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.5, true);
+TweenService:Create(AchievementsHolder.Frame.Glow, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+    ImageTransparency = 1
+  }):Play();
+  wait(8);
+AchievementsHolder.Frame:TweenPosition(UDim2.new(1.1, 0, 0, 0), "In", "Quad", 0.5, true);
+wait(0.5);
+AchievementsHolder:TweenSize(UDim2.new(1, 0, -0.1, 0), "InOut", "Quad", 0.5, true);
+wait(0.5);
+AchievementsHolder:Destroy();
+
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 local Window = Rayfield:CreateWindow({
    Name = "Entity Spawner [DOORS]",
