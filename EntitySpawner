@@ -42,6 +42,8 @@ local Tab2 = Window:CreateTab("BACKDOOR", 16755073604)
 local Tab3 = Window:CreateTab("ROOMS", 13721725690)
 local Tab4 = Window:CreateTab("HARDCORE", 14168632627)
 local Tab5 = Window:CreateTab("CUSTOM", 115113031511640)
+local Tab6 = Window:CreateTab("GIVER", 16587915599)
+
 
 local Button = Tab1:CreateButton({
    Name = "Rush",
@@ -1778,4 +1780,137 @@ warn("Tween Stopped!")
 
 ]]
 end,
+})
+
+local Input = Tab6:CreateInput({
+   Name = "Golds",
+   PlaceholderText = "...",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text2)
+	local tweenservice = game:GetService("TweenService")
+local tweeninfo1 = TweenInfo.new(0.300, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
+
+tweenservice:Create(game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold, tweeninfo1, {TextColor3 = Color3.fromRGB(255, 255, 53)}):Play()
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold.Visible = true
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold.Text = Text2
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold.TextSize = 31
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold.TextSize = 32
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold.TextSize = 33
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold.TextSize = 34
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold.TextSize = 35
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold.TextSize = 34
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold.TextSize = 33
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold.TextSize = 32
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold.TextSize = 31
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold.TextSize = 30
+tweenservice:Create(game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Gold, tweeninfo1, {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+   end,
+})
+local Input = Tab6:CreateInput({
+   Name = "Knobs",
+   PlaceholderText = "...",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text2)
+	local tweenservice = game:GetService("TweenService")
+local tweeninfo1 = TweenInfo.new(0.300, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
+
+tweenservice:Create(game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs, tweeninfo1, {TextColor3 = Color3.fromRGB(255, 255, 53)}):Play()
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs.Visible = true
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs.Text = Text2
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs.TextSize = 31
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs.TextSize = 32
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs.TextSize = 33
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs.TextSize = 34
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs.TextSize = 35
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs.TextSize = 34
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs.TextSize = 33
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs.TextSize = 32
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs.TextSize = 31
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs.TextSize = 30
+tweenservice:Create(game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Knobs, tweeninfo1, {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+   end,
+})
+local Input = Tab6:CreateInput({
+   Name = "Revives",
+   PlaceholderText = "...",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text2)
+	local tweenservice = game:GetService("TweenService")
+local tweeninfo1 = TweenInfo.new(0.300, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
+
+tweenservice:Create(game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives, tweeninfo1, {TextColor3 = Color3.fromRGB(255, 255, 53)}):Play()
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives.Visible = true
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives.Text = Text2
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives.TextSize = 31
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives.TextSize = 32
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives.TextSize = 33
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives.TextSize = 34
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives.TextSize = 35
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives.TextSize = 34
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives.TextSize = 33
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives.TextSize = 32
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives.TextSize = 31
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives.TextSize = 30
+tweenservice:Create(game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Revives, tweeninfo1, {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+   end,
+})
+local Input = Tab6:CreateInput({
+   Name = "Boosts",
+   PlaceholderText = "...",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text2)
+	local tweenservice = game:GetService("TweenService")
+local tweeninfo1 = TweenInfo.new(0.300, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut)
+
+tweenservice:Create(game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts, tweeninfo1, {TextColor3 = Color3.fromRGB(255, 255, 53)}):Play()
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts.Visible = true
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts.Text = Text2
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts.TextSize = 31
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts.TextSize = 32
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts.TextSize = 33
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts.TextSize = 34
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts.TextSize = 35
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts.TextSize = 34
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts.TextSize = 33
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts.TextSize = 32
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts.TextSize = 31
+wait(0.)
+game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts.TextSize = 30
+tweenservice:Create(game.Players.LocalPlayer.PlayerGui.TopbarUI.Topbar.Boosts, tweeninfo1, {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+   end,
 })
