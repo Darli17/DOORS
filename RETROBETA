@@ -157,6 +157,37 @@ local Screech = game:GetObjects("rbxassetid://113548204297211")[1]
 game.ReplicatedStorage.Entities.Screech:Destroy()
 Screech.Parent = game.ReplicatedStorage.Entities
 
+for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Parts:GetDescendants()) do
+if v:IsA("BasePart") then
+      if v.Name == "Wall" then
+            v.Wallpaper:Destroy()
+            local Wallpaper = Instance.new("Texture")
+            Wallpaper.Parent = v
+            Wallpaper.Texture = "rbxassetid://6927295847"
+            Wallpaper.Transparency = 0
+            Wallpaper.ZIndex = 1
+            Wallpaper.StudsPerTileU = 2
+            Wallpaper.StudsPerTileV = 2
+      end
+   end
+end
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+    for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Parts:GetDescendants()) do
+    if v:IsA("BasePart") then
+            if v.Name == "Wall" then
+                v.Wallpaper:Destroy()
+                local Wallpaper = Instance.new("Texture")
+                Wallpaper.Parent = v
+                Wallpaper.Texture = "rbxassetid://6927295847"
+                Wallpaper.Transparency = 0
+                Wallpaper.ZIndex = 1
+                Wallpaper.StudsPerTileU = 2
+                Wallpaper.StudsPerTileV = 2
+            end
+        end
+    end
+end)
+
 while true do 
     wait(0.)
     Hotbar["1"].UIStroke.Transparency = 0
