@@ -153,6 +153,10 @@ Prompt.Holder.Key.TextColor3 = Color3.new(255, 0, 0)
 Hint.CenterImage.ImageColor3 = Color3.new(1, 1, 1)
 Hint.Bar:Destroy()
 
+local Screech = game:GetObjects("rbxassetid://113548204297211")[1]
+game.ReplicatedStorage.Entities.Screech:Destroy()
+Screech.Parent = game.ReplicatedStorage.Entities
+
 while true do 
     wait(0.)
     Hotbar["1"].UIStroke.Transparency = 0
