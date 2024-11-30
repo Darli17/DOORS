@@ -1,0 +1,172 @@
+local MainUI = game.Players.LocalPlayer.PlayerGui.MainUI
+local TopbarUI = game.Players.LocalPlayer.PlayerGui.TopbarUI
+local Hotbar = MainUI.MainFrame.Hotbar
+local Healthbar = MainUI.MainFrame.Healthbar
+local Prompt = MainUI.MainFrame.PromptFrame
+local Hint = MainUI.MainFrame.HintFrame
+local Knobs = TopbarUI.Topbar.Knobs
+local Revives = TopbarUI.Topbar.Revives
+local Golds = TopbarUI.Topbar.Gold
+
+Knobs.Font = "ArimoBold"
+Revives.Font = "ArimoBold"
+Golds.Font = "ArimoBold"
+
+Knobs.UIStroke:Destroy()
+Revives.UIStroke:Destroy()
+
+Knobs.Frame.UIStroke:Destroy()
+Knobs.Frame.UICorner:Destroy()
+Knobs.Frame.UIGradient:Destroy()
+
+Revives.Frame.UIStroke:Destroy()
+Revives.Frame.UICorner:Destroy()
+Revives.Frame.UIGradient:Destroy()
+
+Golds.Frame.UIStroke:Destroy()
+Golds.Frame.UICorner:Destroy()
+Golds.Frame.UIGradient:Destroy()
+
+local HintMessage = Instance.new("Hint")
+HintMessage.Parent = workspace
+HintMessage.Text = "RETRO MODE BETA"
+
+MainUI.MainFrame.InventoryCap.CapBar:Destroy()
+
+Hotbar["1"].UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["1"].UIStroke.Color = Color3.new(255, 0, 0)
+Hotbar["1"].UIStroke.UIGradient:Destroy()
+
+Hotbar["1"].SlotNum.Font = "ArimoBold"
+Hotbar["1"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
+
+Hotbar["1"].SlotNum.UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["1"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
+
+Hotbar["2"].UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["2"].UIStroke.Color = Color3.new(255, 0, 0)
+Hotbar["2"].UIStroke.UIGradient:Destroy()
+
+Hotbar["2"].SlotNum.Font = "ArimoBold"
+Hotbar["2"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
+
+Hotbar["2"].SlotNum.UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["2"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
+
+Hotbar["3"].UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["3"].UIStroke.Color = Color3.new(255, 0, 0)
+Hotbar["3"].UIStroke.UIGradient:Destroy()
+
+Hotbar["3"].SlotNum.Font = "ArimoBold"
+Hotbar["3"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
+
+Hotbar["3"].SlotNum.UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["3"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
+
+Hotbar["4"].UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["4"].UIStroke.Color = Color3.new(255, 0, 0)
+Hotbar["4"].UIStroke.UIGradient:Destroy()
+
+Hotbar["4"].SlotNum.Font = "ArimoBold"
+Hotbar["4"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
+
+Hotbar["4"].SlotNum.UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["4"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
+
+Hotbar["5"].UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["5"].UIStroke.Color = Color3.new(255, 0, 0)
+Hotbar["5"].UIStroke.UIGradient:Destroy()
+
+Hotbar["5"].SlotNum.Font = "ArimoBold"
+Hotbar["5"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
+
+Hotbar["5"].SlotNum.UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["5"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
+
+Hotbar["6"].UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["6"].UIStroke.Color = Color3.new(255, 0, 0)
+
+Hotbar["6"].SlotNum.Font = "ArimoBold"
+Hotbar["6"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
+Hotbar["6"].UIStroke.UIGradient:Destroy()
+
+Hotbar["6"].SlotNum.UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["6"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
+
+Hotbar["7"].UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["7"].UIStroke.Color = Color3.new(255, 0, 0)
+Hotbar["7"].UIStroke.UIGradient:Destroy()
+
+Hotbar["7"].SlotNum.Font = "ArimoBold"
+Hotbar["7"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
+
+Hotbar["7"].SlotNum.UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["7"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
+
+Hotbar["8"].UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["8"].UIStroke.Color = Color3.new(255, 0, 0)
+Hotbar["8"].UIStroke.UIGradient:Destroy()
+
+Hotbar["8"].SlotNum.Font = "ArimoBold"
+Hotbar["8"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
+
+Hotbar["8"].SlotNum.UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["8"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
+
+Hotbar["9"].UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["9"].UIStroke.Color = Color3.new(255, 0, 0)
+Hotbar["9"].UIStroke.UIGradient:Destroy()
+
+Hotbar["9"].SlotNum.Font = "ArimoBold"
+Hotbar["9"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
+
+Hotbar["9"].SlotNum.UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["9"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
+
+Hotbar["0"].UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["0"].UIStroke.Color = Color3.new(255, 0, 0)
+Hotbar["0"].UIStroke.UIGradient:Destroy()
+
+Hotbar["0"].SlotNum.Font = "ArimoBold"
+Hotbar["0"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
+
+Hotbar["0"].SlotNum.UICorner.CornerRadius = UDim.new(0, 1)
+Hotbar["0"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
+
+Healthbar.Bar.UICorner.CornerRadius = UDim.new(0, 1)
+Healthbar.Bar.UIStroke.Color = Color3.new(255, 0, 0)
+
+Healthbar.Bar.Bar.UICorner.CornerRadius = UDim.new(0, 0)
+Healthbar.Bar.Bar.BackgroundColor3 = Color3.new(1, 1, 1)
+-- 2 Step
+Healthbar.Bar.HurtBar.UICorner.CornerRadius = UDim.new(0, 0)
+Healthbar.Bar.HurtBar.BackgroundColor3 = Color3.new(1, 1, 1)
+
+
+Prompt.CenterImage.ImageColor3 = Color3.new(1, 1, 1)
+Prompt.Holder.Key.UICorner:Destroy()
+Prompt.Holder.Key.BackgroundColor3 = Color3.new(1, 1, 1)
+Prompt.Holder.Key.BorderColor3 = Color3.new(1, 1, 1)
+Prompt.Holder.Key.Font = "Roboto"
+Prompt.Holder.Key.TextColor3 = Color3.new(255, 0, 0)
+
+Hint.CenterImage.ImageColor3 = Color3.new(1, 1, 1)
+Hint.Bar:Destroy()
+
+while true do 
+    wait(0.)
+    Hotbar["1"].UIStroke.Transparency = 0
+	Hotbar["1"].UIStroke.Transparency = 0
+	Hotbar["2"].UIStroke.Transparency = 0
+	Hotbar["3"].UIStroke.Transparency = 0
+	Hotbar["4"].UIStroke.Transparency = 0
+	Hotbar["5"].UIStroke.Transparency = 0
+	Hotbar["6"].UIStroke.Transparency = 0
+	Hotbar["7"].UIStroke.Transparency = 0
+	Hotbar["8"].UIStroke.Transparency = 0
+	Hotbar["9"].UIStroke.Transparency = 0
+	Hotbar["0"].UIStroke.Transparency = 0
+	Prompt.Bar.Visible = false
+    MainUI.MainFrame.InventoryRightArrow.Visible = false
+    MainUI.MainFrame.InventoryLeftArrow.Visible = false
+end
