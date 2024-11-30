@@ -161,6 +161,7 @@ for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRo
 if v:IsA("BasePart") then
       if v.Name == "Wall" then
             v.Wallpaper:Destroy()
+            v.Color = Color3.new(1, 0.184314, 0.0745098)
             local Wallpaper = Instance.new("Texture")
             Wallpaper.Parent = v
             Wallpaper.Texture = "rbxassetid://6927295847"
@@ -176,6 +177,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
     if v:IsA("BasePart") then
             if v.Name == "Wall" then
                 v.Wallpaper:Destroy()
+                v.Color = Color3.new(1, 0.184314, 0.0745098)
                 local Wallpaper = Instance.new("Texture")
                 Wallpaper.Parent = v
                 Wallpaper.Texture = "rbxassetid://6927295847"
