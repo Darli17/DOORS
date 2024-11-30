@@ -783,7 +783,7 @@ local humRoot = char.HumanoidRootPart
 --=== Entity Settings ===--
 
 local Entity = {
-	Model = "rbxassetid://78030473629424",
+	Model = "rbxassetid://140406851711037",
 	Speed = 3,
 	WaitTime = 3,
 	Repeats = nil
@@ -821,7 +821,7 @@ end,
 local Button = TabR:CreateButton({
 	Name = "Ambush",
 	Callback = function()
-	--=== Varaibles --===
+--=== Varaibles --===
 local plr = game.Players.LocalPlayer
 local char = plr.Character
 local hum = char.Humanoid
@@ -830,8 +830,8 @@ local humRoot = char.HumanoidRootPart
 --=== Entity Settings ===--
 
 local Entity = {
-	Model = "rbxassetid://77720448343148",
-	Speed = 3,
+	Model = "rbxassetid://83442782589827",
+	Speed = 1,
 	WaitTime = 3,
 	Repeats = nil
 }
@@ -848,8 +848,30 @@ wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
 local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+LatestRoom -= 3
+local tween2 = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
 tween:Play()
-wait(5)
+wait(2)
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(2)
 EntityM:Destroy()
 warn("Tween Stopped!")
 --=== Credits ===--
