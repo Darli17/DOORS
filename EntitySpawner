@@ -783,7 +783,7 @@ local humRoot = char.HumanoidRootPart
 --=== Entity Settings ===--
 
 local Entity = {
-	Model = "rbxassetid://101483643384735",
+	Model = "rbxassetid://78030473629424",
 	Speed = 3,
 	WaitTime = 3,
 	Repeats = nil
@@ -830,7 +830,7 @@ local humRoot = char.HumanoidRootPart
 --=== Entity Settings ===--
 
 local Entity = {
-	Model = "rbxassetid://129826132057158",
+	Model = "rbxassetid://77720448343148",
 	Speed = 3,
 	WaitTime = 3,
 	Repeats = nil
