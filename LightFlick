@@ -1,0 +1,85 @@
+local FlickTime = 5
+
+
+
+
+local v1 = {}
+local l__LocalPlayer__2 = game.Players.LocalPlayer
+local u1 = nil
+function v1.init(p1)
+	u1 = p1
+end
+local TweenService = game:GetService("TweenService")
+local p2 = game.ReplicatedStorage.GameData.LatestRoom.Value
+local p3 = FlickTime
+	local u3 = p2
+	spawn(function()
+		if typeof(u3) ~= "Instance" then
+			if typeof(u3) == "number" then
+				u3 = workspace.CurrentRooms:FindFirstChild(u3)
+			else
+				u3 = nil
+			end
+		end
+		if u3 == nil then
+			warn("Cannot find room")
+		end
+		local v3 = workspace.CurrentRooms[p2]:WaitForChild("Assets").Light_Fixtures
+		--[[for v4, v5 in pairs(u3:GetDescendants()) do
+			if v5:IsA("Model") and (v5.Name == "LightStand" or v5.Name == "Chandelier") then
+				table.insert(v3, v5)
+			end
+		end]]
+		for v6, v7 in pairs(v3:GetDescendants()) do
+			for v8, v9 in pairs(v7:GetDescendants()) do
+				if v9:IsA("Light") then
+					v9:SetAttribute("B", v9.Brightness)
+				end
+			end
+		end
+		TweenService:Create(game.Lighting, TweenInfo.new(p3 / 2, Enum.EasingStyle.Quart, Enum.EasingDirection.Out, 0, true), {
+			Ambient = Color3.new(0, 0, 0)
+		}):Play()
+		local v10 = tick()
+		for v11, v12 in pairs(v3:GetDescendants()) do
+			task.spawn(function()
+				for v13 = 1, 10000000 do
+					task.wait(math.random(24, 70) / 100)
+					if v10 + p3 <= tick() then
+						break
+					end
+					v14 = game:GetService("ReplicatedStorage").Sounds.BulbZap:Clone()
+					v14.Parent = v12.PrimaryPart
+					if v14 then
+						v14.TimePosition = math.random(0, 13) / 20
+						v14.Pitch = v14.Pitch + math.random(-100, 100) / 5000
+						v14:Play()
+					end
+					for v15, v16 in pairs(v12:GetDescendants()) do
+						if v16:IsA("Light") then
+							v16.Brightness = v16:GetAttribute("B")
+							TweenService:Create(v16, TweenInfo.new(0.06, Enum.EasingStyle.Back, Enum.EasingDirection.InOut, 2, true, 0), {
+								Brightness = 0
+							}):Play()
+						end
+					end
+					local l__Neon__17 = v12:FindFirstChild("Neon", true)
+					if l__Neon__17 and l__Neon__17.Name == "Neon" then
+						TweenService:Create(l__Neon__17, TweenInfo.new(0.06, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, 2, true, 0), {
+							Transparency = 1
+						}):Play()
+					end
+				end
+			end)
+		end
+		wait(p3)
+		for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Assets.Light_Fixtures:GetDescendants()) do
+			if v.Name == "LightStand" then
+				v.LightFixture.PointLight.Enabled = true
+				v.LightFixture.Neon.Transparency = 0
+				v.LightFixture.Neon.Attachment.PointLight.Enabled = true
+				v.LightFixture.Neon.CenterAttach.PointLight.Enabled = true
+				v.LightFixture.Neon.CenterAttach.SpotLight.Enabled = true
+			end
+		end
+	end)
