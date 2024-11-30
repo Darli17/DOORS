@@ -2,6 +2,9 @@ local MainUI = game.Players.LocalPlayer.PlayerGui.MainUI
 local TopbarUI = game.Players.LocalPlayer.PlayerGui.TopbarUI
 local Hotbar = MainUI.MainFrame.Hotbar
 local Healthbar = MainUI.MainFrame.Healthbar
+local Settings = MainUI.Settings
+local Statics = MainUI.Statistics
+local bruh = MainUI.DeathPanelDead
 local Prompt = MainUI.MainFrame.PromptFrame
 local Hint = MainUI.MainFrame.HintFrame
 local Knobs = TopbarUI.Topbar.Knobs
@@ -27,15 +30,15 @@ Golds.Frame.UIStroke:Destroy()
 Golds.Frame.UICorner:Destroy()
 Golds.Frame.UIGradient:Destroy()
 
-local HintMessage = Instance.new("Hint")
-HintMessage.Parent = workspace
-HintMessage.Text = "RETRO MODE BETA"
-
 MainUI.MainFrame.InventoryCap.CapBar:Destroy()
 
 Hotbar["1"].UICorner.CornerRadius = UDim.new(0, 1)
 Hotbar["1"].UIStroke.Color = Color3.new(255, 0, 0)
 Hotbar["1"].UIStroke.UIGradient:Destroy()
+
+Hotbar["1"].Durability.UICorner:Destroy()
+Hotbar["1"].Durability.Bar.UICorner:Destroy()
+Hotbar["1"].Durability.Bar.BackgroundColor3 = Color3.new(1, 1, 1)
 
 Hotbar["1"].SlotNum.Font = "ArimoBold"
 Hotbar["1"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
@@ -47,6 +50,10 @@ Hotbar["2"].UICorner.CornerRadius = UDim.new(0, 1)
 Hotbar["2"].UIStroke.Color = Color3.new(255, 0, 0)
 Hotbar["2"].UIStroke.UIGradient:Destroy()
 
+Hotbar["2"].Durability.UICorner:Destroy()
+Hotbar["2"].Durability.Bar.UICorner:Destroy()
+Hotbar["2"].Durability.Bar.BackgroundColor3 = Color3.new(1, 1, 1)
+
 Hotbar["2"].SlotNum.Font = "ArimoBold"
 Hotbar["2"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
 
@@ -56,6 +63,10 @@ Hotbar["2"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
 Hotbar["3"].UICorner.CornerRadius = UDim.new(0, 1)
 Hotbar["3"].UIStroke.Color = Color3.new(255, 0, 0)
 Hotbar["3"].UIStroke.UIGradient:Destroy()
+
+Hotbar["3"].Durability.UICorner:Destroy()
+Hotbar["3"].Durability.Bar.UICorner:Destroy()
+Hotbar["3"].Durability.Bar.BackgroundColor3 = Color3.new(1, 1, 1)
 
 Hotbar["3"].SlotNum.Font = "ArimoBold"
 Hotbar["3"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
@@ -67,6 +78,10 @@ Hotbar["4"].UICorner.CornerRadius = UDim.new(0, 1)
 Hotbar["4"].UIStroke.Color = Color3.new(255, 0, 0)
 Hotbar["4"].UIStroke.UIGradient:Destroy()
 
+Hotbar["4"].Durability.UICorner:Destroy()
+Hotbar["4"].Durability.Bar.UICorner:Destroy()
+Hotbar["4"].Durability.Bar.BackgroundColor3 = Color3.new(1, 1, 1)
+
 Hotbar["4"].SlotNum.Font = "ArimoBold"
 Hotbar["4"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
 
@@ -77,6 +92,10 @@ Hotbar["5"].UICorner.CornerRadius = UDim.new(0, 1)
 Hotbar["5"].UIStroke.Color = Color3.new(255, 0, 0)
 Hotbar["5"].UIStroke.UIGradient:Destroy()
 
+Hotbar["5"].Durability.UICorner:Destroy()
+Hotbar["5"].Durability.Bar.UICorner:Destroy()
+Hotbar["5"].Durability.Bar.BackgroundColor3 = Color3.new(1, 1, 1)
+
 Hotbar["5"].SlotNum.Font = "ArimoBold"
 Hotbar["5"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
 
@@ -85,6 +104,10 @@ Hotbar["5"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
 
 Hotbar["6"].UICorner.CornerRadius = UDim.new(0, 1)
 Hotbar["6"].UIStroke.Color = Color3.new(255, 0, 0)
+
+Hotbar["6"].Durability.UICorner:Destroy()
+Hotbar["6"].Durability.Bar.UICorner:Destroy()
+Hotbar["6"].Durability.Bar.BackgroundColor3 = Color3.new(1, 1, 1)
 
 Hotbar["6"].SlotNum.Font = "ArimoBold"
 Hotbar["6"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
@@ -97,6 +120,10 @@ Hotbar["7"].UICorner.CornerRadius = UDim.new(0, 1)
 Hotbar["7"].UIStroke.Color = Color3.new(255, 0, 0)
 Hotbar["7"].UIStroke.UIGradient:Destroy()
 
+Hotbar["7"].Durability.UICorner:Destroy()
+Hotbar["7"].Durability.Bar.UICorner:Destroy()
+Hotbar["7"].Durability.Bar.BackgroundColor3 = Color3.new(1, 1, 1)
+
 Hotbar["7"].SlotNum.Font = "ArimoBold"
 Hotbar["7"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
 
@@ -106,6 +133,10 @@ Hotbar["7"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
 Hotbar["8"].UICorner.CornerRadius = UDim.new(0, 1)
 Hotbar["8"].UIStroke.Color = Color3.new(255, 0, 0)
 Hotbar["8"].UIStroke.UIGradient:Destroy()
+
+Hotbar["8"].Durability.UICorner:Destroy()
+Hotbar["8"].Durability.Bar.UICorner:Destroy()
+Hotbar["8"].Durability.Bar.BackgroundColor3 = Color3.new(1, 1, 1)
 
 Hotbar["8"].SlotNum.Font = "ArimoBold"
 Hotbar["8"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
@@ -117,6 +148,10 @@ Hotbar["9"].UICorner.CornerRadius = UDim.new(0, 1)
 Hotbar["9"].UIStroke.Color = Color3.new(255, 0, 0)
 Hotbar["9"].UIStroke.UIGradient:Destroy()
 
+Hotbar["9"].Durability.UICorner:Destroy()
+Hotbar["9"].Durability.Bar.UICorner:Destroy()
+Hotbar["9"].Durability.Bar.BackgroundColor3 = Color3.new(1, 1, 1)
+
 Hotbar["9"].SlotNum.Font = "ArimoBold"
 Hotbar["9"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
 
@@ -126,6 +161,11 @@ Hotbar["9"].SlotNum.UIStroke.Color = Color3.new(255, 0, 0)
 Hotbar["0"].UICorner.CornerRadius = UDim.new(0, 1)
 Hotbar["0"].UIStroke.Color = Color3.new(255, 0, 0)
 Hotbar["0"].UIStroke.UIGradient:Destroy()
+
+Hotbar["0"].Durability.UICorner:Destroy()
+Hotbar["0"].Durability.Marker.UIGradient:Destroy()
+Hotbar["0"].Durability.Bar.UICorner:Destroy()
+Hotbar["0"].Durability.Bar.BackgroundColor3 = Color3.new(1, 1, 1)
 
 Hotbar["0"].SlotNum.Font = "ArimoBold"
 Hotbar["0"].SlotNum.TextColor3 = Color3.new(1, 1, 1)
@@ -156,6 +196,64 @@ Hint.Bar:Destroy()
 local Screech = game:GetObjects("rbxassetid://113548204297211")[1]
 game.ReplicatedStorage.Entities.Screech:Destroy()
 Screech.Parent = game.ReplicatedStorage.Entities
+
+Statics.UICorner:Destroy()
+Statics.UIStroke.Color = Color3.new(255, 0, 0)
+Statics.Title.TextColor3 = Color3.new(1, 1, 1)
+Statics.Title.Font = "ArimoBold"
+Statics.Death.Font = "ArimoBold"
+Statics.RoomReached.Font = "ArimoBold"
+Statics.CloseButton.ImageColor3 = Color3.new(1, 1, 1)
+
+bruh.PlayAgain.UICorner:Destroy()
+bruh.PlayAgain.UIStroke.Color = Color3.new(255, 0, 0)
+
+bruh.PlayAgain.TextColor3 = Color3.new(1, 1, 1)
+bruh.PlayAgain.Font = "ArimoBold"
+
+bruh.Spectate.UICorner:Destroy()
+bruh.Spectate.UIStroke.Color = Color3.new(255, 0, 0)
+bruh.Spectate.ImageLabel.ImageColor3 = Color3.new(1, 1, 1)
+
+bruh.Leave.UICorner:Destroy()
+bruh.Leave.UIStroke.Color = Color3.new(255, 0, 0)
+bruh.Leave.ImageLabel.ImageColor3 = Color3.new(1, 1, 1)
+
+bruh.Stats.UICorner:Destroy()
+bruh.Stats.UIStroke.Color = Color3.new(255, 0, 0)
+bruh.Stats.ImageLabel.ImageColor3 = Color3.new(1, 1, 1)
+
+Settings.UICorner:Destroy()
+Settings.UIStroke.Color = Color3.new(255, 0, 0)
+
+Settings.Title_Store.TextColor3 = Color3.new(1, 1, 1)
+Settings.CloseButton.ImageColor3 = Color3.new(1, 1, 1)
+Settings.Title_Store.Font = "ArimoBold"
+Settings.List:Destroy()
+
+local Fot = game.ReplicatedStorage.Footsteps
+Fot.Fabric:Destroy()
+Fot.WoodPlanks:Destroy()
+
+local FolderF = Instance.new("Folder")
+local FolderW = Instance.new("Folder")
+
+FolderF.Parent = Fot
+FolderF.Name = "Fabric"
+FolderW.Parent = Fot
+FolderW.Name = "WoodPlanks"
+
+local SoundF = Instance.new("Sound")
+local SoundW = Instance.new("Sound")
+
+SoundF.Parent = FolderF
+SoundF.Volume = 10
+SoundF.PlaybackSpeed = 1.1
+SoundF.SoundId = "rbxassetid://6138554166"
+SoundW.Parent = FolderW
+SoundW.Volume = 10
+SoundW.PlaybackSpeed = 1.1
+SoundW.SoundId = "rbxassetid://6138554166"
 
 for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Parts:GetDescendants()) do
 if v:IsA("BasePart") then
