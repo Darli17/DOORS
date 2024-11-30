@@ -772,7 +772,7 @@ warn("Tween Stopped!")
 })
 
 local Button = TabR:CreateButton({
-	Name = "Rush"
+	Name = "Rush",
 	Callback = function()
 	--=== Varaibles --===
 local plr = game.Players.LocalPlayer
@@ -817,8 +817,9 @@ warn("Tween Stopped!")
 ]]
 end,
 })
+
 local Button = TabR:CreateButton({
-	Name = "Ambush"
+	Name = "Ambush",
 	Callback = function()
 	--=== Varaibles --===
 local plr = game.Players.LocalPlayer
