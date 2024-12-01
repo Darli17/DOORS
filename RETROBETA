@@ -187,7 +187,7 @@ Prompt.CenterImage.ImageColor3 = Color3.new(1, 1, 1)
 Prompt.Holder.Key.UICorner:Destroy()
 Prompt.Holder.Key.BackgroundColor3 = Color3.new(1, 1, 1)
 Prompt.Holder.Key.BorderColor3 = Color3.new(1, 1, 1)
-Prompt.Holder.Key.Font = "Roboto"
+Prompt.Holder.Key.Font = "BuilderSansExtraBold"
 Prompt.Holder.Key.TextColor3 = Color3.new(255, 0, 0)
 
 Hint.CenterImage.ImageColor3 = Color3.new(1, 1, 1)
@@ -244,16 +244,42 @@ FolderW.Parent = Fot
 FolderW.Name = "WoodPlanks"
 
 local SoundF = Instance.new("Sound")
+local SoundF2 = Instance.new("Sound")
+local SoundF3 = Instance.new("Sound")
+
 local SoundW = Instance.new("Sound")
+local SoundW2 = Instance.new("Sound")
+local SoundW3 = Instance.new("Sound")
 
 SoundF.Parent = FolderF
 SoundF.Volume = 10
-SoundF.PlaybackSpeed = 1.1
-SoundF.SoundId = "rbxassetid://6138554166"
+SoundF.PlaybackSpeed = 0.9
+SoundF.SoundId = "rbxassetid://16886928257"
+
 SoundW.Parent = FolderW
 SoundW.Volume = 10
-SoundW.PlaybackSpeed = 1.1
-SoundW.SoundId = "rbxassetid://6138554166"
+SoundW.PlaybackSpeed = 0.9
+SoundW.SoundId = "rbxassetid://16886928257"
+
+SoundF2.Parent = FolderF
+SoundF2.Volume = 10
+SoundF2.PlaybackSpeed = 0.9
+SoundF2.SoundId = "rbxassetid://16886928257"
+
+SoundW2.Parent = FolderW
+SoundW2.Volume = 10
+SoundW2.PlaybackSpeed = 0.9
+SoundW2.SoundId = "rbxassetid://16886928257"
+
+SoundF3.Parent = FolderF
+SoundF3.Volume = 10
+SoundF3.PlaybackSpeed = 0.9
+SoundF3.SoundId = "rbxassetid://16886928257"
+
+SoundW3.Parent = FolderW
+SoundW3.Volume = 10
+SoundW3.PlaybackSpeed = 0.9
+SoundW3.SoundId = "rbxassetid://16886928257"
 
 for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Parts:GetDescendants()) do
 if v:IsA("BasePart") then
