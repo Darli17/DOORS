@@ -314,12 +314,12 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
     end
 end)
 workspace.CurrentRooms["0"].Door.Door.Open.SoundId = "rbxassetid://12222054"
-workspace.CurrentRooms["0"].Door.Door.Open.Volume = 7
+workspace.CurrentRooms["0"].Door.Door.Open.Volume = 4
 workspace.CurrentRooms["0"].Door.Door.Open.PlaybackSpeed = 0.3
 while true do 
 	wait(0.)
 	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.SoundId = "rbxassetid://12222054"
-	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.Volume = 7
+	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.Volume = 4
 	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.PlaybackSpeed = 0.3
 end
 while true do 
