@@ -318,13 +318,7 @@ workspace.CurrentRooms["0"].Door.Door.Open.Volume = 4
 workspace.CurrentRooms["0"].Door.Door.Open.PlaybackSpeed = 0.3
 while true do 
 	wait(0.)
-	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.SoundId = "rbxassetid://12222054"
-	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.Volume = 4
-	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.PlaybackSpeed = 0.3
-end
-while true do 
-    wait(0.)
-    Hotbar["1"].UIStroke.Transparency = 0
+    	Hotbar["1"].UIStroke.Transparency = 0
 	Hotbar["1"].UIStroke.Transparency = 0
 	Hotbar["2"].UIStroke.Transparency = 0
 	Hotbar["3"].UIStroke.Transparency = 0
@@ -336,6 +330,9 @@ while true do
 	Hotbar["9"].UIStroke.Transparency = 0
 	Hotbar["0"].UIStroke.Transparency = 0
 	Prompt.Bar.Visible = false
-    MainUI.MainFrame.InventoryRightArrow.Visible = false
-    MainUI.MainFrame.InventoryLeftArrow.Visible = false
+    	MainUI.MainFrame.InventoryRightArrow.Visible = false
+    	MainUI.MainFrame.InventoryLeftArrow.Visible = false
+	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.SoundId = "rbxassetid://12222054"
+	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.Volume = 4
+	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.PlaybackSpeed = 0.3
 end
