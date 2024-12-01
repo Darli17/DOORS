@@ -82,4 +82,14 @@ local p3 = FlickTime
 				v.LightFixture.Neon.CenterAttach.SpotLight.Enabled = true
 			end
 		end
+		wait(0.500)
+		for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Assets.Light_Fixtures:GetDescendants()) do
+			if v.Name == "LightStand" then
+				v.LightFixture.PointLight.Enabled = true
+				v.LightFixture.Neon.Transparency = 0
+				v.LightFixture.Neon.Attachment.PointLight.Enabled = true
+				v.LightFixture.Neon.CenterAttach.PointLight.Enabled = true
+				v.LightFixture.Neon.CenterAttach.SpotLight.Enabled = true
+			end
+		end
 	end)
