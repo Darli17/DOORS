@@ -313,14 +313,14 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
         end
     end
 end)
-for i,v in pairs(workspace.CurrentRooms["0"].Door:GetDescendants()) do
-	v.Door.Open.SoundId = "rbxassetid://12222054"
-	v.Door.Open.PlaybackSpeed = 0.3
+for i,v in pairs(workspace.CurrentRooms["0"]:GetDescendants()) do
+	v.Door.Door.Open.SoundId = "rbxassetid://12222054"
+	v.Door.Door.Open.PlaybackSpeed = 0.3
 end
 game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
-	for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door:GetDescendants()) do
-		v.Door.Open.SoundId = "rbxassetid://12222054"
-		v.Door.Open.PlaybackSpeed = 0.3
+	for i,v in pairs(workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]:GetDescendants()) do
+		v.Door.Door.Open.SoundId = "rbxassetid://12222054"
+		v.Door.Door.Open.PlaybackSpeed = 0.3
 	end
 end)
 while true do 
