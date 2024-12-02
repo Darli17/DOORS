@@ -252,32 +252,32 @@ local SoundW2 = Instance.new("Sound")
 local SoundW3 = Instance.new("Sound")
 
 SoundF.Parent = FolderF
-SoundF.Volume = 10
+SoundF.Volume = 5
 SoundF.PlaybackSpeed = 0.9
 SoundF.SoundId = "rbxassetid://16886928257"
 
 SoundW.Parent = FolderW
-SoundW.Volume = 10
+SoundW.Volume = 5
 SoundW.PlaybackSpeed = 0.9
 SoundW.SoundId = "rbxassetid://16886928257"
 
 SoundF2.Parent = FolderF
-SoundF2.Volume = 10
+SoundF2.Volume = 5
 SoundF2.PlaybackSpeed = 0.9
 SoundF2.SoundId = "rbxassetid://16886928257"
 
 SoundW2.Parent = FolderW
-SoundW2.Volume = 10
+SoundW2.Volume = 5
 SoundW2.PlaybackSpeed = 0.9
 SoundW2.SoundId = "rbxassetid://16886928257"
 
 SoundF3.Parent = FolderF
-SoundF3.Volume = 10
+SoundF3.Volume = 5
 SoundF3.PlaybackSpeed = 0.9
 SoundF3.SoundId = "rbxassetid://16886928257"
 
 SoundW3.Parent = FolderW
-SoundW3.Volume = 10
+SoundW3.Volume = 5
 SoundW3.PlaybackSpeed = 0.9
 SoundW3.SoundId = "rbxassetid://16886928257"
 
