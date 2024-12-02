@@ -3,6 +3,7 @@ local TopbarUI = game.Players.LocalPlayer.PlayerGui.TopbarUI
 local Hotbar = MainUI.MainFrame.Hotbar
 local Healthbar = MainUI.MainFrame.Healthbar
 local Settings = MainUI.Settings
+local Caption = MainUI.MainFrame.Caption
 local Statics = MainUI.Statistics
 local bruh = MainUI.DeathPanelDead
 local Prompt = MainUI.MainFrame.PromptFrame
@@ -180,7 +181,7 @@ Healthbar.Bar.Bar.UICorner.CornerRadius = UDim.new(0, 0)
 Healthbar.Bar.Bar.BackgroundColor3 = Color3.new(1, 1, 1)
 -- 2 Step
 Healthbar.Bar.HurtBar.UICorner.CornerRadius = UDim.new(0, 0)
-Healthbar.Bar.HurtBar.BackgroundColor3 = Color3.new(1, 1, 1)
+Healthbar.Bar.HurtBar.BackgroundColor3 = Color3.new(255, 0, 0)
 
 
 Prompt.CenterImage.ImageColor3 = Color3.new(1, 1, 1)
@@ -223,6 +224,9 @@ bruh.Stats.UICorner:Destroy()
 bruh.Stats.UIStroke.Color = Color3.new(255, 0, 0)
 bruh.Stats.ImageLabel.ImageColor3 = Color3.new(1, 1, 1)
 
+Caption.Font = "Roboto"
+Caption.TextColor3 = Color3.new(255, 0, 0)
+
 Settings.UICorner:Destroy()
 Settings.UIStroke.Color = Color3.new(255, 0, 0)
 
@@ -252,32 +256,32 @@ local SoundW2 = Instance.new("Sound")
 local SoundW3 = Instance.new("Sound")
 
 SoundF.Parent = FolderF
-SoundF.Volume = 5
+SoundF.Volume = 1
 SoundF.PlaybackSpeed = 0.9
 SoundF.SoundId = "rbxassetid://16886928257"
 
 SoundW.Parent = FolderW
-SoundW.Volume = 5
+SoundW.Volume = 1
 SoundW.PlaybackSpeed = 0.9
 SoundW.SoundId = "rbxassetid://16886928257"
 
 SoundF2.Parent = FolderF
-SoundF2.Volume = 5
+SoundF2.Volume = 1
 SoundF2.PlaybackSpeed = 0.9
 SoundF2.SoundId = "rbxassetid://16886928257"
 
 SoundW2.Parent = FolderW
-SoundW2.Volume = 5
+SoundW2.Volume = 1
 SoundW2.PlaybackSpeed = 0.9
 SoundW2.SoundId = "rbxassetid://16886928257"
 
 SoundF3.Parent = FolderF
-SoundF3.Volume = 5
+SoundF3.Volume = 1
 SoundF3.PlaybackSpeed = 0.9
 SoundF3.SoundId = "rbxassetid://16886928257"
 
 SoundW3.Parent = FolderW
-SoundW3.Volume = 5
+SoundW3.Volume = 1
 SoundW3.PlaybackSpeed = 0.9
 SoundW3.SoundId = "rbxassetid://16886928257"
 
@@ -314,7 +318,7 @@ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
     end
 end)
 workspace.CurrentRooms["0"].Door.Door.Open.SoundId = "rbxassetid://12222054"
-workspace.CurrentRooms["0"].Door.Door.Open.Volume = 4
+workspace.CurrentRooms["0"].Door.Door.Open.Volume = 2
 workspace.CurrentRooms["0"].Door.Door.Open.PlaybackSpeed = 0.3
 while true do 
 	wait(0.)
@@ -372,6 +376,6 @@ while true do
     	MainUI.MainFrame.InventoryRightArrow.Visible = false
     	MainUI.MainFrame.InventoryLeftArrow.Visible = false
 	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.SoundId = "rbxassetid://12222054"
-	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.Volume = 4
+	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.Volume = 2
 	workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door.Open.PlaybackSpeed = 0.3
 end
