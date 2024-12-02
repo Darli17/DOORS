@@ -42,7 +42,4 @@ PlayerGui.MainUI.MainFrame.Caption.TextTransparency = 0
 PlayerGui.MainUI.MainFrame.Caption.Visible = true
 wait(5)
 TweenCaption:Play()
-wait(3)
-PlayerGui.MainUI.MainFrame.Caption.Visible = false
-loadstring(game:HttpGet("https://raw.githubusercontent.com/johnnkcool/Doors-hardmode/refs/heads/main/doors-hardcore-req.lua"))()
 
