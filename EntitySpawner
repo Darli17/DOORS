@@ -78,6 +78,7 @@ local Tab2 = Window:CreateTab("BACKDOOR", 16755073604)
 local Tab3 = Window:CreateTab("ROOMS", 13721725690)
 local TabR = Window:CreateTab("RETRO", 17333366394)
 local Tab4 = Window:CreateTab("HARDCORE", 92259183327027)
+local TabPS = Window:CreateTab("PRESSURE (SPECIAL)", 90912248955833)
 local Tab5 = Window:CreateTab("CUSTOM", 115113031511640)
 local Tab6 = Window:CreateTab("GIVER", 16587915599)
 
@@ -771,6 +772,428 @@ warn("Tween Stopped!")
    end,
 })
 
+local Button = TabPS:CreateButton({
+	Name = "Angler",
+	Callback = function()
+	--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://134913094919217",
+	Speed = 2,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end,
+})
+local Button = TabPS:CreateButton({
+	Name = "Blitz",
+	Callback = function()
+	--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://140552667347207",
+	Speed = 2,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end,
+})
+local Button = TabPS:CreateButton({
+	Name = "Pinkie",
+	Callback = function()
+	--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://79837799443072",
+	Speed = 2,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end,
+})
+local Button = TabPS:CreateButton({
+	Name = "Froger",
+	Callback = function()
+	--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://90403967318866",
+	Speed = 5,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end,
+})
+local Button = TabPS:CreateButton({
+	Name = "Chainsmoker [NOT OFFICIAL]",
+	Callback = function()
+	--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://86850035985448",
+	Speed = 13,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+wait(15)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end,
+})
+local Button = TabPS:CreateButton({
+	Name = "Pandemonium [BIG WAIT TIME]",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/DripCapybara/Doors-Modes/refs/heads/main/PressureMode/PandemoniumNoKill.lua"))()
+end,
+})
+local Section = TabPS:CreateSection("Secret Entities")
+local Button = TabPS:CreateButton({
+	Name = "Runner",
+	Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://93104336402138",
+	Speed = 2,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end,
+})
+local Button = TabPS:CreateButton({
+	Name = "Ambuscade",
+	Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://106064958782236",
+	Speed = 0.3,
+	WaitTime = 5,
+	Repeats = 15
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end,
+})
+local Button = TabPS:CreateButton({
+	Name = "Death Angel",
+	Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://90067691296242",
+	Speed = 2,
+	WaitTime = 10,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end,
+})
+local Button = TabPS:CreateButton({
+	Name = "Multi Monster",
+	Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://90807966995856",
+	Speed = 0.700,
+	WaitTime = 1,
+	Repeats = 50
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+tween:Play()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end,
+})
+
 local Button = TabR:CreateButton({
 	Name = "Rush",
 	Callback = function()
@@ -817,6 +1240,7 @@ warn("Tween Stopped!")
 ]]
 end,
 })
+
 
 local Button = TabR:CreateButton({
 	Name = "Ambush",
@@ -1422,7 +1846,7 @@ local Button = Tab4:CreateButton({
    end,
 })
 local Button = Tab4:CreateButton({
-	Name = "A-60 [HC]",
+	Name = "A-60 [HC, BIG WAIT TIME]",
 	Callback = function()
 
 local plr = game.Players.LocalPlayer
