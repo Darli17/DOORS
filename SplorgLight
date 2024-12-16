@@ -1,0 +1,32 @@
+-- Varaibles
+
+local module_SplorgLight = game.ReplicatedStorage.ToolsModule.Splorglight
+local module_GummyLight = game.ReplicatedStorage.ToolsModule.Gummylight
+
+local sound_SplorgLight = game.ReplicatedStorage.ToolsModule.Splorglight.Sounds.Shake
+local sound_GummyLight = game.ReplicatedStorage.ToolsModule.Gummylight.Sounds.Shake
+
+-- Folders
+
+local EquipableItems = game.ReplicatedStorage.EquipableItems
+local Items = game.ReplicatedStorage.Items.Item
+local Modules = game.ReplicatedStorage.ToolsModule
+local Icons = game.ReplicatedStorage.Icons
+
+local char = game.Players.LocalPlayer.Character
+
+Icons.Gummylight:Destroy()
+Icons.Splorglight.Name = "Gummylight"
+
+while true do
+	wait(0.)
+	char:WaitForChild("Gummylight").Handle.Color = Color3.new(0.2, 0.345098, 0.509804)
+	char:WaitForChild("Gummylight")["Meshes/Items_Cylinder3531"].Color = Color3.new(0.431373, 0.6, 0.792157)
+	for i,v in pairs(char:WaitForChild("Gummylight").Light:GetDescendants()) do
+	  if v.Name == "Shake" then
+            v.SoundId = sound_SplorgLight.SoundId
+	    end
+	end
+    char:WaitForChild("Gummylight").Light.Attachment.SpotLight.Color = Color3.new(0.431373, 0.6, 0.792157)
+    char:WaitForChild("Gummylight").Light.Particle.ParticleEmitter.Color = Color3.new(0.431373, 0.6, 0.792157)
+end
