@@ -50,6 +50,8 @@ AchievementsHolder:Destroy();
 local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 local Window = Rayfield:CreateWindow({
    Name = "Entity Spawner [DOORS]",
+  Icon = 12011843673,
+  Theme = "Ocean",
    LoadingTitle = "Loading...",
    LoadingSubtitle = "by ValerikRob",
    ConfigurationSaving = {
