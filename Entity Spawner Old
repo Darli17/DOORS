@@ -67,13 +67,13 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 tween:Play()
 wait(5)
 EntityM:Destroy()
@@ -114,13 +114,13 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 -- Saved by UniversalSynSaveInstance (Join to Copy Games) https://discord.gg/wx4ThpAsmw
 
 -- Decompiled with Konstant V2.1, a fast Luau decompiler made in Luau by plusgiant5 (https://discord.gg/wyButjTMhM)
@@ -206,15 +206,15 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 LatestRoom -= 3
-local tween2 = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween2 = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 tween:Play()
 wait(2)
 tween2:Play()
@@ -275,15 +275,15 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 LatestRoom -= 3
-local tween2 = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween2 = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 local MainUI_upvr = game.Players.LocalPlayer.PlayerGui:WaitForChild("MainUI")
     game.SoundService.Main.Volume = 0
 	MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscares.Ambush.Jumpscare_Ambush:Play()
@@ -453,13 +453,13 @@ local EntityM = Reaper
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 tween:Play()
 --=== Credits ===--
 
@@ -608,13 +608,13 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.Torso.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.Torso.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.Torso, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.Torso, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 tween:Play()
 wait(20)
 EntityM:Destroy()
@@ -684,13 +684,13 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.Torso.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.Torso.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.Torso, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.Torso, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 tween:Play()
 wait(20)
 EntityM:Destroy()
@@ -733,7 +733,7 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 EntityM.Static:Clone().Parent = char.HumanoidRootPart
@@ -743,7 +743,7 @@ wait(Entity.WaitTime)
 
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 tween:Play()
 
 wait(7)
@@ -791,7 +791,7 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 local Ceasecolor = Instance.new("ColorCorrectionEffect",game.Lighting) game.Debris:AddItem(Ceasecolor,25)
@@ -808,7 +808,7 @@ wait(Entity.WaitTime)
 
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 EntityM.Silence.Name = "Lol"
 EntityM.Lol:Clone().Parent = char.HumanoidRootPart
 char.HumanoidRootPart.Lol:Play()
@@ -854,7 +854,7 @@ local Button = Tab4:CreateButton({
 	    -- Script
 	
 	    Frostbite.Parent = workspace
-	    Frostbite.Part.CFrame = game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].RoomExit.CFrame
+	    Frostbite.Part.CFrame = game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].RoomEnd.CFrame
 	    Frostbite.Part.Anchored = true
 	    Frostbite.Part.CanCollide = false
 	
@@ -962,7 +962,7 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 EntityM.AmbienceSounds["Ambience_A-60"]:Clone().Parent = char.HumanoidRootPart
@@ -974,9 +974,9 @@ char.HumanoidRootPart["Far Static"]:Play()
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 LatestRoom -= 3
-local tween2 = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween2 = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 tween:Play()
 wait(2)
 tween2:Play()
@@ -1193,7 +1193,7 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 EntityM.RushNew["Static Far"]:Clone().Parent = char.HumanoidRootPart
@@ -1202,7 +1202,7 @@ char.HumanoidRootPart["Static Far"]:Play()
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 tween:Play()
 EntityM.RushNew["Static"]:Clone().Parent = char.HumanoidRootPart
 char.HumanoidRootPart["Static"]:Play()
@@ -1246,7 +1246,7 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 EntityM.RushNew["Repent"]:Clone().Parent = char.HumanoidRootPart
@@ -1255,7 +1255,7 @@ char.HumanoidRootPart["Repent"]:Play()
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 tween:Play()
 EntityM.RushNew["PlaySound"]:Clone().Parent = char.HumanoidRootPart
 char.HumanoidRootPart["PlaySound"]:Play()
@@ -1299,13 +1299,13 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 tween:Play()
 wait(5)
 EntityM:Destroy()
@@ -1345,7 +1345,7 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 EntityM.RushNew["PlaySound"]:Clone().Parent = char.HumanoidRootPart
@@ -1354,7 +1354,7 @@ char.HumanoidRootPart["PlaySound"]:Play()
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 tween:Play()
 EntityM.RushNew["Footsteps"]:Clone().Parent = char.HumanoidRootPart
 char.HumanoidRootPart["Footsteps"]:Play()
@@ -1398,7 +1398,7 @@ local EntityM = game:GetObjects(Entity.Model)[1]
 local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
 EntityM.Parent = workspace
 LatestRoom -= 1
-EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomEntrance.CFrame
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
 warn("Entity Arrived!")
 
 EntityM.RushNew["PlaySound"]:Clone().Parent = char.HumanoidRootPart
@@ -1407,7 +1407,7 @@ char.HumanoidRootPart["PlaySound"]:Play()
 wait(Entity.WaitTime)
 local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
 LatestRoom += 2
-local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomExit.CFrame})
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
 tween:Play()
 wait(5)
 char.HumanoidRootPart["PlaySound"]:Destroy()
