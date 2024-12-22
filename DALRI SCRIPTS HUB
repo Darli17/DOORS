@@ -1,5 +1,25 @@
 local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/cueshut/saves/main/criminality%20paste%20ui%20library'))()
 
+local screen = Instance.new("ScreenGui")
+screen.Parent = game.Players.LocalPlayer.PlayerGui
+screen.Name = "HubAddition"
+local btn = Instance.new("TextButton")
+btn.Parent = screen
+btn.Name = "Toggle"
+btn.BackgroundColor3 = Color3.new(0, 0, 0)
+btn.BorderColor3 = Color3.new(0.305882, 0.364706, 0.917647)
+btn.BorderSizePixel = 2
+btn.TextColor3 = Color3.new(1, 1, 1)
+btn.TextScaled = true
+btn.Font = "Ubuntu"
+btn.Text = "Toggle"
+btn.Position = UDim2.new(0, 0, 0.516, 0)
+btn.Size = UDim2.new(0,200, 0,50)
+btn.MouseButton1Up:Connect(function()
+    local SGui = game.CoreGui.unknown
+    SGui.Enabled = not SGui.Enabled
+end)
+
 -- // Window \\ --
 local window = library.new('Darli Scripts Hub', 'Darli')
 
