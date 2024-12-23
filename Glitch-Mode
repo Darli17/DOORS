@@ -1,3 +1,38 @@
+-- Varaibles
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local PlayerGui = Player.PlayerGui
+
+local Info = TweenInfo.new(1)
+local TweenCaption = game:GetService("TweenService"):Create(PlayerGui.MainUI.MainFrame.Caption,Info,{TextTransparency=1})
+
+local Text = "Loading Data..."
+local Text2 = "Loading Assets : ReplicatedStorage/Sounds/bruh.mp3"
+local Text3 = "Do Not."
+
+wait(1.300)
+PlayerGui.MainUI.MainFrame.Caption.Text = Text
+PlayerGui.MainUI.MainFrame.Caption.TextTransparency = 0
+PlayerGui.MainUI.MainFrame.Caption.Visible = true
+wait(3)
+PlayerGui.MainUI.MainFrame.Caption.Text = "Loading Assets : PlayerGui/MainUI.GlitchEffect"
+wait(1)
+PlayerGui.MainUI.MainFrame.Caption.Text = "Loading Assets : PlayerGui/MainUI/Initiator/Main_Game/Remote_Listener/Modules/Glitch"
+wait(1)
+local namebruh = game.Players.LocalPlayer.Character.Name
+PlayerGui.MainUI.MainFrame.Caption.Text = "Loading Person : ServerScriptService/PlayersInGame"
+wait(0.300)
+PlayerGui.MainUI.MainFrame.Caption.Text = "Loading Assets : ServerScriptService/Type"
+wait(1)
+PlayerGui.MainUI.MainFrame.Caption.Text = "Loading Assets : PlayerGui/MainUI/Initiator/Main_Game/Remote_Listener/Modules/GlitchModeOff"
+wait(0.800)
+PlayerGui.MainUI.MainFrame.Caption.Text = "Loading Assets : PlayerGui/MainUI/Initiator/Main_Game/Remote_Listener/Modules/GlitchModeOn"
+wait(2)
+PlayerGui.MainUI.MainFrame.Caption.Text = "Loaded! Wait for launch."
+wait(4)
+TweenCaption:Play()
+wait(2)
 require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
 workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
 game.Players.LocalPlayer.PlayerGui.MainUI.GlitchEffect.Visible = true
