@@ -39,10 +39,34 @@ local Window = Rayfield:CreateWindow({
       Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
-local Tab1 = Window:CreateTab("DOORS", 12931623528)
-local Tab4 = Window:CreateTab("HARDCORE", 92259183327027)
-local Tab5 = Window:CreateTab("CUSTOM", 115113031511640)
+local Tab1 = Window:CreateTab("ENTITIES [DOORS]", 12931623528)
+local Tab3 = Window:CreateTab("ROOM [DOORS]", 12931623528)
+local Tab4 = Window:CreateTab("ENTITIES [HARDCORE]", 92259183327027)
+local Tab5 = Window:CreateTab("ENTITIES [CUSTOM]", 115113031511640)
 
+local Button = Tab3:CreateButton({
+	Name = "Seek Eyes",
+	Callback = function()
+		local a = game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game
+		require(game.ReplicatedStorage.ClientModules.EntityModules.Seek).tease(nil, workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], 100)
+	end,
+})
+local Button = Tab3:CreateButton({
+	Name = "Light Flicker",
+	Callback = function()
+		local room = workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]
+		local events = require(game.ReplicatedStorage.ClientModules.Module_Events)
+		events.flickerLights(room, 1)
+	end,
+})
+local Button = Tab3:CreateButton({
+	Name = "Break Light",
+	Callback = function()
+		local room = workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]
+		local events = require(game.ReplicatedStorage.ClientModules.Module_Events)
+		events.breakLights(room, 1)
+	end,
+})
 
 local Button = Tab1:CreateButton({
    Name = "Rush",
