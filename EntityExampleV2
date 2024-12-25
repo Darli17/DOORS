@@ -1,0 +1,55 @@
+--=== Need Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+
+--=== Varaibles --===
+
+local Entity = {
+	Model = "rbxassetid://86181759655390",
+	Speed = 0.300,
+	WaitTime = 3,
+  DeleteTime = 2,
+	Repeats = nil,
+  GeneralPart = "RushNew",
+  RoomEntrance = "RoomStart",
+  RoomExit = "RoomEnd",
+  NodesVisible = false
+}
+
+--=== Entity --===
+
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom
+
+local NoRoom = Instance.new("StringValue")
+NoRoom.Parent = LatestRoom
+NoRoom.Name = "NoRoom"
+NoRoom.Value = LatestRoom.Value
+NoRoom.Value -= 1
+
+local YesRoom = Instance.new("StringValue")
+YesRoom.Parent = LatestRoom
+YesRoom.Name = "YesRoom"
+YesRoom.Value = LatestRoom.Value
+YesRoom.Value += 1
+
+EntityM.Parent = workspace
+game.Debris:AddItem(EntityM, DeleteTime)
+EntityM[Entity.GeneralPart].CFrame = workspace.CurrentRooms[NoRoom.Value][Entity.RoomExit].CFrame
+print("IM GONNA RUSH!!")
+warn("HEY ITS ME GOK?!")
+if Entity.NodesVisible == true then
+  for i=1, 100, 1 do
+     workspace.CurrentRooms[LatestRoom.Value].Nodes[i].Transparency = 0
+  end
+end
+
+wait(WaitTime)
+for i=1, 100, 1 do
+    wait(Entity.Speed)
+    EntityM[Entity.GeneralPart].CFrame = workspace.CurrentRooms[LatestRoom.Value].Nodes[i].CFrame
+    print("Stats:")
+    print("Wait for rush : " ..Entity.WaitTime)
+    print("Wait for delete : " ..Entity.DeleteTime)
+    print("Nodes rushed : " ..i)
+end
