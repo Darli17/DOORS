@@ -6,9 +6,10 @@ local char = plr.Character
 
 local Entity = {
   Model = "rbxassetid://86181759655390",
-  Speed = 0.300,
+  Speed = 0.2,
+  TweenSpeed = 0.,
   WaitTime = 3,
-  DeleteTime = 2,
+  DeleteTime = 0.300,
   Repeats = nil,
   GeneralPart = "RushNew",
   RoomEntrance = "RoomStart",
@@ -35,9 +36,11 @@ YesRoom.Value += 1
 
 EntityM.Parent = workspace
 game.Debris:AddItem(EntityM, DeleteTime)
-EntityM[Entity.GeneralPart].CFrame = workspace.CurrentRooms[NoRoom.Value][Entity.RoomExit].CFrame
+LatestRoom.Value -= 2
+EntityM[Entity.GeneralPart].CFrame = workspace.CurrentRooms[LatestRoom.Value][Entity.RoomExit].CFrame
 print("IM GONNA RUSH!!")
 warn("HEY ITS ME GOK?!")
+LatestRoom.Value += 2
 if Entity.NodesVisible == true then
   for i=1, 100, 1 do
      workspace.CurrentRooms[LatestRoom.Value].Nodes[i].Transparency = 0
@@ -46,8 +49,8 @@ end
 
 wait(WaitTime)
 for i=1, 100, 1 do
-    wait(Entity.Speed)
-    EntityM[Entity.GeneralPart].CFrame = workspace.CurrentRooms[LatestRoom.Value].Nodes[i].CFrame
+    local tweenInfo = TweenInfo.new(2, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+    local tween = game:GetService("TweenService"):Create(EntityM[Entity.GeneralPart], tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom.Value].Nodes[i].CFrame}):Play()
     print("Stats:")
     print("Wait for rush : " ..Entity.WaitTime)
     print("Wait for delete : " ..Entity.DeleteTime)
