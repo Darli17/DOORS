@@ -5,11 +5,11 @@ local char = plr.Character
 --=== Varaibles --===
 
 local Entity = {
-	Model = "rbxassetid://86181759655390",
-	Speed = 0.300,
-	WaitTime = 3,
+  Model = "rbxassetid://86181759655390",
+  Speed = 0.300,
+  WaitTime = 3,
   DeleteTime = 2,
-	Repeats = nil,
+  Repeats = nil,
   GeneralPart = "RushNew",
   RoomEntrance = "RoomStart",
   RoomExit = "RoomEnd",
