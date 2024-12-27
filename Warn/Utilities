@@ -1,0 +1,837 @@
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
+local Window = Rayfield:CreateWindow({
+   Name = "DOORS Utilities Gui",
+  Icon = 12011843673,
+  Theme = "Amethyst",
+   LoadingTitle = "Loading...",
+   LoadingSubtitle = "by ValerikRob",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but  you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, --  this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+local Tab1 = Window:CreateTab("Entities", 12549578506)
+local Tab12 = Window:CreateTab("Entities Every Time", 12549578506)
+local Tab13 = Window:CreateTab("Entities Every Door", 12549578506)
+local Tab2 = Window:CreateTab("Items", 12656753493)
+local Tab3 = Window:CreateTab("Modes", 11247557290)
+local TabR = Window:CreateTab("Player", 12812166882)
+local Tab4 = Window:CreateTab("Visual", 12801280877)
+local TabPS = Window:CreateTab("Extra", 6663675885)
+
+local Button = Tab1:CreateButton({
+   Name = "Rush",
+   Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://86181759655390",
+	Speed = 3,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
+tween:Play()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+
+   end,
+})
+
+local Button = Tab1:CreateButton({
+   Name = "Ambush",
+   Callback = function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://96669039243756",
+	Speed = 1,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
+LatestRoom -= 3
+local tween2 = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
+tween:Play()
+wait(2)
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(2)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+
+   end,
+})
+
+local Button = Tab1:CreateButton({
+  Name = "Screech",
+  Callback = function()
+    require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+end,
+})
+local Button = Tab1:CreateButton({
+  Name = "Halt",
+  Callback = function()
+    require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+end,
+})
+local Button = Tab1:CreateButton({
+  Name = "Timothy",
+  Callback = function()
+    local a = game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game
+require(a.RemoteListener.Modules.SpiderJumpscare)(require(a), workspace.CurrentRooms["0"].Assets.Dresser.DrawerContainer, 0.2)
+end,
+})
+local Button = Tab1:CreateButton({
+  Name = "Glitch",
+  Callback = function()
+require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+end,
+})
+local Button = Tab1:CreateButton({
+  Name = "Ripper",
+  Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Entities/Ripper"))()
+end,
+})
+local Button = Tab1:CreateButton({
+  Name = "Cease",
+  Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Entities/Cease"))()
+end,
+})
+local Button = Tab1:CreateButton({
+  Name = "Shocker",
+  Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Entities/Shocker"))()
+end,
+})
+local Button = Tab1:CreateButton({
+  Name = "Rebound",
+  Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Entities/Rebound"))()
+end,
+})
+local Button = Tab1:CreateButton({
+  Name = "Frostbite",
+  Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Entities/Frostbite"))()
+end,
+})
+
+local Input = Tab12:CreateInput({
+   Name = "Rush",
+   PlaceholderText = "Time",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+        while true do
+                    wait(Text)
+        --=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://86181759655390",
+	Speed = 3,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
+tween:Play()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+        end
+   end,
+})
+
+local Input = Tab12:CreateInput({
+   Name = "Ambush",
+   PlaceholderText = "Time",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+        while true do
+                    wait(Text)
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://96669039243756",
+	Speed = 1,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
+LatestRoom -= 3
+local tween2 = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
+tween:Play()
+wait(2)
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(2)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+        end
+   end,
+})
+
+local Input = Tab12:CreateInput({
+   Name = "Screech",
+   PlaceholderText = "Time",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+        while true do
+            wait(Text)
+            require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+            workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+        end
+   end,
+})
+local Input = Tab12:CreateInput({
+   Name = "Halt",
+   PlaceholderText = "Time",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+        while true do
+            wait(Text)
+            require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+            workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+        end
+   end,
+})
+local Input = Tab12:CreateInput({
+   Name = "Timothy",
+   PlaceholderText = "Time",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+        while true do
+            wait(Text)
+            local a = game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game
+            require(a.RemoteListener.Modules.SpiderJumpscare)(require(a), workspace.CurrentRooms["0"].Assets.Dresser.DrawerContainer, 0.2)
+        end
+   end,
+})
+local Input = Tab12:CreateInput({
+   Name = "Glitch",
+   PlaceholderText = "Time",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+        while true do
+            wait(Text)
+            require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+            workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+        end
+   end,
+})
+
+local Button = Tab13:CreateButton({
+   Name = "Rush",
+   Callback = function()
+game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+			--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://86181759655390",
+	Speed = 3,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
+tween:Play()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end)
+   end,
+})
+
+local Button = Tab13:CreateButton({
+   Name = "Ambush",
+   Callback = function()
+ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://96669039243756",
+	Speed = 1,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
+LatestRoom -= 3
+local tween2 = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
+tween:Play()
+wait(2)
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(3)
+LatestRoom += 2
+tween:Play()
+wait(2)
+LatestRoom -= 3
+tween2:Play()
+wait(2)
+EntityM:Destroy()
+warn("Tween Stopped!")
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
+end)
+   end,
+})
+
+
+local Button = Tab13:CreateButton({
+  Name = "Screech",
+  Callback = function()
+ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+    require(game.StarterGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.Screech)(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+	workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+end)
+end,
+})
+local Button = Tab13:CreateButton({
+  Name = "Halt",
+  Callback = function()
+ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+    require(game.ReplicatedStorage.ClientModules.EntityModules.Shade).stuff(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+	workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+end)
+end,
+})
+local Button = Tab13:CreateButton({
+  Name = "Timothy",
+  Callback = function()
+ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+    local a = game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game
+	require(a.RemoteListener.Modules.SpiderJumpscare)(require(a), workspace.CurrentRooms["0"].Assets.Dresser.DrawerContainer, 0.2)
+end)
+end,
+})
+local Button = Tab13:CreateButton({
+  Name = "Glitch",
+  Callback = function()
+ game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+	require(game.ReplicatedStorage.ClientModules.EntityModules.Glitch).stuff(require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game),
+	workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")])
+end)
+end,
+})
+
+local Button = Tab2:CreateButton({
+   Name = "M249",
+   Callback = function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/cJWSByci"))()
+   end,
+})
+local Button = Tab2:CreateButton({
+   Name = "Crucifix",
+   Callback = function()
+		                local shadow=game:GetObjects("rbxassetid://11498423088")[1]
+shadow.Parent = game.Players.LocalPlayer.Backpack
+local Players = game:GetService("Players")
+local Plr = Players.LocalPlayer
+local Char = Plr.Character or Plr.CharacterAdded:Wait()
+local Hum = Char:WaitForChild("Humanoid")
+local RightArm = Char:WaitForChild("RightUpperArm")
+local LeftArm = Char:WaitForChild("LeftUpperArm")
+local RightC1 = RightArm.RightShoulder.C1
+local LeftC1 = LeftArm.LeftShoulder.C1
+        local function setupCrucifix(tool)
+        RightArm.Name = "R_Arm"
+        LeftArm.Name = "L_Arm"
+        
+        RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-15), 0)
+        LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(-0.2, -0.3, -0.5) * CFrame.Angles(math.rad(-125), math.rad(25), math.rad(25))
+        for _, v in next, Hum:GetPlayingAnimationTracks() do
+            v:Stop()
+        end
+        end
+shadow.Equipped:Connect(function()
+setupCrucifix(shadow)
+game.Players.LocalPlayer:SetAttribute("Hidden", true)
+end)
+ 
+shadow.Unequipped:Connect(function()
+    game.Players.LocalPlayer:SetAttribute("Hidden", false)
+        RightArm.Name = "RightUpperArm"
+        LeftArm.Name = "LeftUpperArm"
+        
+        RightArm.RightShoulder.C1 = RightC1
+        LeftArm.LeftShoulder.C1 = LeftC1
+end)
+   end,
+})
+local Button = Tab2:CreateButton({
+   Name = "Devil Crucifix",
+   Callback = function()
+                local shadow=game:GetObjects("rbxassetid://73222030661067")[1]
+                local fold = Instance.new("Folder")
+                fold.Parent = shadow
+                fold.Name = "Animations"
+                local anim = Instance.new("Animation")
+                anim.Parent = fold
+                anim.Name = "idle"
+                anim.AnimationId = "rbxassetid://12345678901234"
+shadow.Parent = game.Players.LocalPlayer.Backpack
+local Players = game:GetService("Players")
+local Plr = Players.LocalPlayer
+local Char = Plr.Character or Plr.CharacterAdded:Wait()
+local Hum = Char:WaitForChild("Humanoid")
+local RightArm = Char:WaitForChild("RightUpperArm")
+local LeftArm = Char:WaitForChild("LeftUpperArm")
+local RightC1 = RightArm.RightShoulder.C1
+local LeftC1 = LeftArm.LeftShoulder.C1
+        local function setupCrucifix(tool)
+        RightArm.Name = "R_Arm"
+        LeftArm.Name = "L_Arm"
+        
+        RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-15), 0)
+        LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(-0.2, -0.3, -0.5) * CFrame.Angles(math.rad(-125), math.rad(25), math.rad(25))
+        for _, v in next, Hum:GetPlayingAnimationTracks() do
+            v:Stop()
+        end
+        end
+shadow.Equipped:Connect(function()
+setupCrucifix(shadow)
+game.Players.LocalPlayer:SetAttribute("Hidden", true)
+end)
+ 
+shadow.Unequipped:Connect(function()
+    game.Players.LocalPlayer:SetAttribute("Hidden", false)
+        RightArm.Name = "RightUpperArm"
+        LeftArm.Name = "LeftUpperArm"
+        
+        RightArm.RightShoulder.C1 = RightC1
+        LeftArm.LeftShoulder.C1 = LeftC1
+end)
+   end,
+})
+local Button = Tab2:CreateButton({
+   Name = "Guiding Crucifix",
+   Callback = function()
+                local shadow=game:GetObjects("rbxassetid://129527379927260")[1]
+shadow.Parent = game.Players.LocalPlayer.Backpack
+local Players = game:GetService("Players")
+local Plr = Players.LocalPlayer
+local Char = Plr.Character or Plr.CharacterAdded:Wait()
+local Hum = Char:WaitForChild("Humanoid")
+local RightArm = Char:WaitForChild("RightUpperArm")
+local LeftArm = Char:WaitForChild("LeftUpperArm")
+local RightC1 = RightArm.RightShoulder.C1
+local LeftC1 = LeftArm.LeftShoulder.C1
+        local function setupCrucifix(tool)
+        RightArm.Name = "R_Arm"
+        LeftArm.Name = "L_Arm"
+        
+        RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-15), 0)
+        LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(-0.2, -0.3, -0.5) * CFrame.Angles(math.rad(-125), math.rad(25), math.rad(25))
+        for _, v in next, Hum:GetPlayingAnimationTracks() do
+            v:Stop()
+        end
+        end
+shadow.Equipped:Connect(function()
+setupCrucifix(shadow)
+game.Players.LocalPlayer:SetAttribute("Hidden", true)
+end)
+ 
+shadow.Unequipped:Connect(function()
+    game.Players.LocalPlayer:SetAttribute("Hidden", false)
+        RightArm.Name = "RightUpperArm"
+        LeftArm.Name = "LeftUpperArm"
+        
+        RightArm.RightShoulder.C1 = RightC1
+        LeftArm.LeftShoulder.C1 = LeftC1
+end)
+shadow.Activated:Connect(function(plr)
+    local effects = game:GetObjects("rbxassetid://94134410389484")[1]
+    effects.Parent = workspace
+    effects.Anchored = true
+    local mouse = game.Players.LocalPlayer:GetMouse()
+    workspace.Effects.CFrame = mouse.Target.CFrame
+    local wthesigma = Instance.new("Attachment")
+    wthesigma.Parent = mouse.Target
+    workspace.Effects.Top.Top.Attachment1 = wthesigma
+    game.ReplicatedStorage.Sounds["LA_The Courtyard"]:Play()
+    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, 1, 0)wait(0.)
+    wait(5)
+    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)    mouse.Target.CFrame = mouse.Target.CFrame+Vector3.new(0, -1, 0)wait(0.)
+    wait(5)
+    mouse.Target:Destroy()
+    effects:Destroy()
+end)
+   end,
+})
+local Button = Tab2:CreateButton({
+   Name = "Seek Crucifix",
+   Callback = function()
+               local shadow=game:GetObjects("rbxassetid://124705169731612")[1]
+                local fold = Instance.new("Folder")
+                fold.Parent = shadow
+                fold.Name = "Animations"
+                local anim = Instance.new("Animation")
+                anim.Parent = fold
+                anim.Name = "idle"
+                anim.AnimationId = "rbxassetid://12345678901234"
+shadow.Parent = game.Players.LocalPlayer.Backpack
+local Players = game:GetService("Players")
+local Plr = Players.LocalPlayer
+local Char = Plr.Character or Plr.CharacterAdded:Wait()
+local Hum = Char:WaitForChild("Humanoid")
+local RightArm = Char:WaitForChild("RightUpperArm")
+local LeftArm = Char:WaitForChild("LeftUpperArm")
+local RightC1 = RightArm.RightShoulder.C1
+local LeftC1 = LeftArm.LeftShoulder.C1
+        local function setupCrucifix(tool)
+        RightArm.Name = "R_Arm"
+        LeftArm.Name = "L_Arm"
+        
+        RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-15), 0)
+        LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(-0.2, -0.3, -0.5) * CFrame.Angles(math.rad(-125), math.rad(25), math.rad(25))
+        for _, v in next, Hum:GetPlayingAnimationTracks() do
+            v:Stop()
+        end
+        end
+shadow.Equipped:Connect(function()
+setupCrucifix(shadow)
+game.Players.LocalPlayer:SetAttribute("Hidden", true)
+end)
+ 
+shadow.Unequipped:Connect(function()
+    game.Players.LocalPlayer:SetAttribute("Hidden", false)
+        RightArm.Name = "RightUpperArm"
+        LeftArm.Name = "LeftUpperArm"
+        
+        RightArm.RightShoulder.C1 = RightC1
+        LeftArm.LeftShoulder.C1 = LeftC1
+end)
+   end,
+})
+local Button = Tab2:CreateButton({
+   Name = "Gun",
+   Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ZepsyyCodesLUA/Utilities/refs/heads/main/Doors/Pistol.lua"))()
+   end,
+})
+
+local Button = Tab3:CreateButton({
+   Name = "Christmas!",
+   Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ZepsyyCodesLUA/Utilities/refs/heads/main/Doors/Christmas.lua"))()
+   end,
+})
+local Button = Tab3:CreateButton({
+   Name = "Hardcore Release",
+   Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Hardcore/HardcoreForOldHotel"))()
+   end,
+})
+local Button = Tab3:CreateButton({
+   Name = "Glitch Mode",
+   Callback = function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Darli17/DOORS/refs/heads/main/Glitch-Mode"))()
+   end,
+})
+
+local Slider = TabR:CreateSlider({
+   Name = "WalkSpeed",
+   Range = {15, 200},
+   Increment = 15,
+   Suffix = "",
+   CurrentValue = 15,
+   Flag = "Speed", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		while true do
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+		end
+   end,
+})
+local Slider = TabR:CreateSlider({
+   Name = "Health",
+   Range = {1, 100},
+   Increment = 100,
+   Suffix = "",
+   CurrentValue = 1,
+   Flag = "Health", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+		wait(0.)
+		game.Players.LocalPlayer.Character.Humanoid.Health = Value
+   end,
+})
+
+local Button = Tab4:CreateButton({
+   Name = "Fullbright",
+   Callback = function()
+		pcall(function()
+	local lighting = game:GetService("Lighting");
+	lighting.Ambient = Color3.fromRGB(255, 255, 255);
+	lighting.Brightness = 1;
+	lighting.FogEnd = 1e10;
+	for i, v in pairs(lighting:GetDescendants()) do
+		if v:IsA("BloomEffect") or v:IsA("BlurEffect") or v:IsA("ColorCorrectionEffect") or v:IsA("SunRaysEffect") then
+			v.Enabled = false;
+		end;
+	end;
+	lighting.Changed:Connect(function()
+		lighting.Ambient = Color3.fromRGB(255, 255, 255);
+		lighting.Brightness = 1;
+		lighting.FogEnd = 1e10;
+	end);
+	spawn(function()
+		local character = game:GetService("Players").LocalPlayer.Character;
+		while wait() do
+			repeat wait() until character ~= nil;
+			if not character.HumanoidRootPart:FindFirstChildWhichIsA("PointLight") then
+				local headlight = Instance.new("PointLight", character.HumanoidRootPart);
+				headlight.Brightness = 1;
+				headlight.Range = 60;
+			end;
+		end;
+	end);
+end)
+   end,
+})
+
+local Button = TabPS:CreateButton({
+   Name = "Infinite Yield",
+   Callback = function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+   end,
+})
+local Button = TabPS:CreateButton({
+   Name = "Room Nodes Show",
+   Callback = function()
+		game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
+			for i=1, 100, 1 do
+				workspace.CurrentRooms[LatestRoom.Value].Nodes[i].Transparency = 0
+			end
+		end)
+   end,
+})
