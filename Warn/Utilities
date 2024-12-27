@@ -769,6 +769,7 @@ local Slider = TabR:CreateSlider({
    Flag = "Speed", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
 		while true do
+			wait(0.)
 			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
 		end
    end,
@@ -781,8 +782,7 @@ local Slider = TabR:CreateSlider({
    CurrentValue = 1,
    Flag = "Health", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-		wait(0.)
-		game.Players.LocalPlayer.Character.Humanoid.Health = Value
+	game.Players.LocalPlayer.Character.Humanoid.Health = Value
    end,
 })
 
