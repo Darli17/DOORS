@@ -768,10 +768,10 @@ local Slider = TabR:CreateSlider({
    CurrentValue = 15,
    Flag = "Speed", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-		while true do
-			wait(0.)
-			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-		end
+	while true do
+		wait(0.1)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end
    end,
 })
 local Slider = TabR:CreateSlider({
