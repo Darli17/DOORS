@@ -886,12 +886,6 @@ local Button = TabPS:CreateButton({
    end,
 })
 local Button = TabPS:CreateButton({
-    Name = "Doors Speedrun Mode",
-    Callback = function ()
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/MuhXd/DoorSuff/main/DoorsModes/DoorSpeedRun%20Mode'))()
-    end,
-})
-local Button = TabPS:CreateButton({
     Name = "Break Lights",
     Callback = function ()
 	local room = workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]
