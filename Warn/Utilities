@@ -738,7 +738,10 @@ end)
 local Button = Tab2:CreateButton({
    Name = "Gun",
    Callback = function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/ZepsyyCodesLUA/Utilities/refs/heads/main/Doors/Pistol.lua"))()
+	game.Players.LocalPlayer.Character.RightHand.Transparency = 1
+	game.Players.LocalPlayer.Character.RightLowerArm.Transparency = 1
+	game.Players.LocalPlayer.Character.RightUpperArm.Transparency = 1
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ZepsyyCodesLUA/Utilities/refs/heads/main/Doors/Pistol.lua"))()
    end,
 })
 
