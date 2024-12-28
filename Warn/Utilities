@@ -32,6 +32,7 @@ local Tab13 = Window:CreateTab("Entities Every Door", 12549578506)
 local Tab2 = Window:CreateTab("Items", 12656753493)
 local Tab3 = Window:CreateTab("Modes", 11247557290)
 local TabR = Window:CreateTab("Player", 12812166882)
+local TabG = Window:CreateTab("Main", 12801280877)
 local Tab4 = Window:CreateTab("Visual", 12801280877)
 local TabPS = Window:CreateTab("Extra", 6663675885)
 
@@ -760,6 +761,44 @@ local Button = Tab3:CreateButton({
    end,
 })
 
+local Button = TabG:CreateButton({
+  Name = "No jumpscares",
+  Callback = function()
+        pcall(function()
+            game:GetService("ReplicatedStorage").Bricks.Jumpscare:Destroy()
+        end)
+  end,
+})
+
+local Button = TabG:CreateButton({
+  Name = "Skip Door",
+  Callback = function()
+        pcall(function()
+            local HasKey = false
+            local CurrentDoor = workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Door")
+            for i,v in ipairs(CurrentDoor.Parent:GetDescendants()) do
+                if v.Name == "KeyObtain" then
+                    HasKey = v
+                end
+            end
+            if HasKey then
+                game.Players.LocalPlayer.Character:PivotTo(CF(HasKey.Hitbox.Position))
+                wait(0.3)
+                fireproximityprompt(HasKey.ModulePrompt,0)
+                game.Players.LocalPlayer.Character:PivotTo(CF(CurrentDoor.Door.Position))
+                wait(0.3)
+                fireproximityprompt(CurrentDoor.Lock.UnlockPrompt,0)
+            end
+            if LatestRoom == 50 then
+                CurrentDoor = workspace.CurrentRooms[tostring(LatestRoom+1)]:WaitForChild("Door")
+            end
+            game.Players.LocalPlayer.Character:PivotTo(CF(CurrentDoor.Door.Position))
+            wait(0.3)
+            CurrentDoor.ClientOpen:FireServer()
+        end)
+  end,
+})
+
 local Slider = TabR:CreateSlider({
    Name = "WalkSpeed",
    Range = {15, 200},
@@ -768,10 +807,10 @@ local Slider = TabR:CreateSlider({
    CurrentValue = 15,
    Flag = "Speed", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-	while true do
-		wait(0.1)
-		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-	end
+		while true do
+			wait(0.)
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+		end
    end,
 })
 local Slider = TabR:CreateSlider({
@@ -818,6 +857,17 @@ local Button = Tab4:CreateButton({
 end)
    end,
 })
+local Button = Tab4:CreateButton({
+    Name = "Get All Achievements",
+    Callback = function ()
+        local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game)
+        for i,v in pairs(require(game.ReplicatedStorage.Achievements)) do
+            spawn(function()
+                require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game.RemoteListener.Modules.AchievementUnlock)(nil, i)
+            end)
+        end
+    end
+})
 
 local Button = TabPS:CreateButton({
    Name = "Infinite Yield",
@@ -834,4 +884,55 @@ local Button = TabPS:CreateButton({
 			end
 		end)
    end,
+})
+local Button = TabPS:CreateButton({
+    Name = "Doors Speedrun Mode",
+    Callback = function ()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/MuhXd/DoorSuff/main/DoorsModes/DoorSpeedRun%20Mode'))()
+    end,
+})
+local Button = TabPS:CreateButton({
+    Name = "Break Lights",
+    Callback = function ()
+	local room = workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]
+	local events = require(game.ReplicatedStorage.ClientModules.Module_Events)
+	events.breakLights(room, 1)
+    end,
+})
+
+
+local Button = TabPS:CreateButton({
+    Name = "Flicker Lights",
+    Callback = function ()
+	local room = workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]
+	local events = require(game.ReplicatedStorage.ClientModules.Module_Events)
+	events.flickerLights(room, 1)
+    end,
+})
+
+
+local Button = TabPS:CreateButton({
+    Name = "Seek's Eyes",
+    Callback = function ()
+        local Data = require(game.Players.LocalPlayer.PlayerGui.MainUI.Initiator.Main_Game)
+        require(game:GetService("ReplicatedStorage").ClientModules.EntityModules.Seek).tease(nil, workspace.CurrentRooms:WaitForChild(game.ReplicatedStorage.GameData.LatestRoom.Value), 14, 1665596753, true)
+    end,
+})
+
+
+local Button = TabPS:CreateButton({
+    Name = "Red Room",
+    Callback = function ()
+        local v1 = require(game.ReplicatedStorage.ClientModules.Module_Events)
+        local room = workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]
+        local seconds = 1000000
+        v1.tryp(workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], seconds)
+    end,
+})
+
+local Button = TabPS:CreateButton({
+    Name = "Heartbeat Minigame",
+    Callback = function ()
+        firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent) 
+    end,
 })
