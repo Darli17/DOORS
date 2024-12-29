@@ -212,6 +212,12 @@ local Button = Tab1:CreateButton({
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Entities/Frostbite"))()
 end,
 })
+local Button = Tab1:CreateButton({
+  Name = "Dear God",
+  Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Darli17/Entities/refs/heads/main/Entities/DearGod"))()
+end,
+})
 
 local Input = Tab12:CreateInput({
    Name = "Rush",
@@ -776,29 +782,7 @@ local Button = TabG:CreateButton({
 local Button = TabG:CreateButton({
   Name = "Skip Door",
   Callback = function()
-        pcall(function()
-            local HasKey = false
-            local CurrentDoor = workspace.CurrentRooms[tostring(game:GetService("ReplicatedStorage").GameData.LatestRoom.Value)]:WaitForChild("Door")
-            for i,v in ipairs(CurrentDoor.Parent:GetDescendants()) do
-                if v.Name == "KeyObtain" then
-                    HasKey = v
-                end
-            end
-            if HasKey then
-                game.Players.LocalPlayer.Character:PivotTo(CF(HasKey.Hitbox.Position))
-                wait(0.3)
-                fireproximityprompt(HasKey.ModulePrompt,0)
-                game.Players.LocalPlayer.Character:PivotTo(CF(CurrentDoor.Door.Position))
-                wait(0.3)
-                fireproximityprompt(CurrentDoor.Lock.UnlockPrompt,0)
-            end
-            if LatestRoom == 50 then
-                CurrentDoor = workspace.CurrentRooms[tostring(LatestRoom+1)]:WaitForChild("Door")
-            end
-            game.Players.LocalPlayer.Character:PivotTo(CF(CurrentDoor.Door.Position))
-            wait(0.3)
-            CurrentDoor.ClientOpen:FireServer()
-        end)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].RoomEnd.CFrame
   end,
 })
 
@@ -881,11 +865,9 @@ local Button = TabPS:CreateButton({
 local Button = TabPS:CreateButton({
    Name = "Room Nodes Show",
    Callback = function()
-		game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
-			for i=1, 100, 1 do
-				workspace.CurrentRooms[LatestRoom.Value].Nodes[i].Transparency = 0
-			end
-		end)
+	for i=1, 100, 1 do
+		workspace.CurrentRooms[LatestRoom.Value].Nodes[i].Transparency = 0
+	end
    end,
 })
 local Button = TabPS:CreateButton({
@@ -924,12 +906,5 @@ local Button = TabPS:CreateButton({
         local room = workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")]
         local seconds = 1000000
         v1.tryp(workspace.CurrentRooms[game.Players.LocalPlayer:GetAttribute("CurrentRoom")], seconds)
-    end,
-})
-
-local Button = TabPS:CreateButton({
-    Name = "Heartbeat Minigame",
-    Callback = function ()
-        firesignal(game.ReplicatedStorage.Bricks.ClutchHeartbeat.OnClientEvent) 
     end,
 })
