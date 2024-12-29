@@ -866,7 +866,7 @@ local Button = TabPS:CreateButton({
    Name = "Room Nodes Show",
    Callback = function()
 	for i=1, 100, 1 do
-		workspace.CurrentRooms[LatestRoom.Value].Nodes[i].Transparency = 0
+		workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Nodes[i].Transparency = 0
 	end
    end,
 })
