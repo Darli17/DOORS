@@ -1,0 +1,64 @@
+--=== Varaibles --===
+local plr = game.Players.LocalPlayer
+local char = plr.Character
+local hum = char.Humanoid
+local humRoot = char.HumanoidRootPart
+
+--=== Entity Settings ===--
+
+local Entity = {
+	Model = "rbxassetid://105729176960421",
+	Speed = 7,
+	WaitTime = 3,
+	Repeats = nil
+}
+
+--=== Entity ===--
+local EntityM = game:GetObjects(Entity.Model)[1]
+local LatestRoom = game.ReplicatedStorage.GameData.LatestRoom.Value
+EntityM.Parent = workspace
+LatestRoom -= 1
+EntityM.RushNew.CFrame = workspace.CurrentRooms[LatestRoom].RoomStart.CFrame
+
+local Sound = Instance.new("Sound")
+Sound.Parent = EntityM
+Sound.Volume = 10
+Sound.Name = "Forward"
+Sound.SoundId = "rbxassetid://1330849332"
+Sound:Play()
+
+warn("Entity Arrived!")
+
+wait(Entity.WaitTime)
+local tweenInfo = TweenInfo.new(Entity.Speed, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+LatestRoom += 2
+local tween = game:GetService("TweenService"):Create(EntityM.RushNew, tweenInfo, {CFrame = workspace.CurrentRooms[LatestRoom].RoomEnd.CFrame})
+tween:Play()
+local Sound2 = Instance.new("Sound")
+Sound2.Parent = EntityM
+Sound2.Volume = 10
+Sound2.Name = "Oros"
+Sound2.SoundId = "rbxassetid://1588058260"
+Sound2:Play()
+plr.PlayerGui.MainUI.DamageVignette:Clone().Parent = plr.PlayerGui.MainUI
+plr.PlayerGui.MainUI.DamageVignette.Name = "BlindVignette"
+plr.PlayerGui.MainUI.BlindVignette.Visible = true
+plr.PlayerGui.MainUI.BlindVignette.ImageColor3 = Color3.new(1, 1, 1)
+plr.PlayerGui.MainUI.BlindVignette.UIGradient:Destroy()
+wait(5)
+EntityM:Destroy()
+warn("Tween Stopped!")
+
+wait(15)
+
+plr.PlayerGui.MainUI.BlindVignette:Destroy()
+--=== Credits ===--
+
+--[[
+
+	Darli_17 = Creator (Owner), Scripter.
+	Vinuxy = Idea.
+	
+	Thanks!
+
+]]
