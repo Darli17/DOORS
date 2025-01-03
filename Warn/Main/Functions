@@ -1,0 +1,219 @@
+--[[
+  _____          _____  _      _____  __ ______ 
+ |  __ \   /\   |  __ \| |    |_   _|/_ |____  |
+ | |  | | /  \  | |__) | |      | |   | |   / / 
+ | |  | |/ /\ \ |  _  /| |      | |   | |  / /  
+ | |__| / ____ \| | \ \| |____ _| |_  | | / /   
+ |_____/_/    \_\_|  \_\______|_____| |_|/_/    
+                                  ______        
+                                 |______|       
+
+  caption("your text", duration)
+
+  deathcause("text")
+  deathcauseWithDeath("text", time, health)
+
+  changeHealth(health)
+  changeKnobs(value) if anything, this happens not via IntValue but via Text. Therefore, you can enter anything there *only in "" *.
+  changeGold(value)
+  changeRevives(value) if anything, this happens not via IntValue but via Text. Therefore, you can enter anything there *only in "" *.
+
+  giveM249() just not using this...😥
+  giveCrucifix() JUST APRIL FOOLS!
+
+--]]
+
+local function caption(text, duration)
+	  local Player = game.Players.LocalPlayer
+	  local Character = Player.Character
+	  local PlayerGui = Player.PlayerGui
+
+	  local Info = TweenInfo.new(1)
+	  local TweenCaption = game:GetService("TweenService"):Create(PlayerGui.MainUI.MainFrame.Caption,Info,{TextTransparency=1})
+
+	  PlayerGui.MainUI.MainFrame.Caption.Text = text
+	  PlayerGui.MainUI.MainFrame.Caption.TextTransparency = 0
+	  PlayerGui.MainUI.MainFrame.Caption.Visible = true
+
+    wait(duration)
+    TweenCaption:Play()
+end
+
+local function deathcause(text)
+	local PlayerName = game.Players.LocalPlayer.Name
+
+    game.ReplicatedStorage.GameStats["Player_" ..PlayerName].Total.DeathCause.Value = text
+end
+local function deathcauseWithDeath(textD, time)
+	local PlayerName = game.Players.LocalPlayer.Name
+
+    game.ReplicatedStorage.GameStats["Player_" ..PlayerName].Total.DeathCause.Value = textD
+    wait(time)
+    game.Players.LocalPlayer.Character.Humanoid.Health -= 1333333
+end
+
+local function changeHealth(value)
+    game.Players.LocalPlayer.Character.Humanoid.Health = value
+end
+
+local function changeKnobs(valueK)
+    game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Knobs.Text = valueK
+    game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Knobs.Visible = true
+end
+local function changeGold(valueG)
+    game.Players.LocalPlayer.Gold.Value = valueG
+end
+local function changeRevives(valueR)
+    game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Revives.Text = valueR
+    game.Players.LocalPlayer.PlayerGui.PermUI.Topbar.Revives.Visible = true
+end
+
+local function giveM249()
+    -- Services
+
+local Players = game:GetService("Players")
+local UIS = game:GetService("UserInputService")
+
+-- Variables
+
+local Plr = Players.LocalPlayer
+local Char = Plr.Character or Plr.CharacterAdded:Wait()
+local Hum = Char:WaitForChild("Humanoid")
+local RightArm = Char:WaitForChild("RightUpperArm")
+local LeftArm = Char:WaitForChild("LeftUpperArm")
+local RightHand = Char:WaitForChild("RightHand")
+local Mouse = Plr:GetMouse()
+
+local RightC1 = RightArm.RightShoulder.C1
+local LeftC1 = LeftArm.LeftShoulder.C1
+
+local SelfModules = {
+    Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))(),
+    CustomShop = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Shop%20Items/Source.lua"))(),
+}
+local ModuleScripts = {
+    MainGame = require(Plr.PlayerGui.MainUI.Initiator.Main_Game),
+}
+
+-- Functions
+
+-- Scripts
+
+local Gun = LoadCustomInstance("https://github.com/lopvi/Doors/blob/main/M249.rbxm?raw=true")
+
+if typeof(Gun) == "Instance" and Gun.ClassName == "Tool" then
+    Gun.Equipped:Connect(function()
+        RightArm.Name = "R_Arm"
+        LeftArm.Name = "L_Arm"
+        
+        local rightGrip = RightHand:WaitForChild("RightGrip")
+    
+        RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-35), 0)
+        LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(1, 1, 0) * CFrame.Angles(math.rad(-80), math.rad(35), 0)
+        rightGrip.C1 = rightGrip.C1 * CFrame.Angles(0, math.rad(35), 0)
+    end)
+    
+    Gun.Unequipped:Connect(function()
+        RightArm.Name = "RightUpperArm"
+        LeftArm.Name = "LeftUpperArm"
+    
+        RightArm.RightShoulder.C1 = RightC1
+        LeftArm.LeftShoulder.C1 = LeftC1
+    end)
+    end
+    Gun.Activated:Connect(function()
+        while UIS.IsMouseButtonPressed(UIS, Enum.UserInputType.MouseButton1) and Char.FindFirstChild(Char, Gun.Name) and Hum.Health > 0 do
+            -- Sound
+            
+            local sound = Gun.Shoot:Clone()
+            sound.PlayOnRemove = true
+            sound.Parent = workspace
+            sound:Destroy()
+    
+            -- Shoot visual
+    
+            Gun.Barrel.Attachment.Particles:Emit(1)
+    
+            -- Cam shake
+    
+            ModuleScripts.MainGame.camShaker:ShakeOnce(20, 10, 0.05, 0.05)
+    
+            -- Bullet ray
+    
+            local bulletRay = Ray.new(Gun.Barrel.Position, (Mouse.Hit.Position - Gun.Barrel.Position).Unit * 100)
+            local found = workspace:FindPartOnRayWithIgnoreList(bulletRay, {Char})
+    
+            if found then
+                local entity = nil
+    
+                for _, v in next, workspace:GetChildren() do
+                    if v.GetAttribute(v, "IsCustomEntity") and found.IsDescendantOf(found, v) then
+                        entity = v
+    
+                        break
+                    end
+                end
+    
+                if entity then
+                    local health = entity:GetAttribute("Health") or 1
+                    health -= 1
+                    
+                    entity:SetAttribute("Health", health)
+    
+                    if health == 0 then
+                        entity:Destroy()
+                    end
+                end
+            end
+    
+            task.wait(0.1)
+        end
+    end)
+
+local Folder = Instance.new("Folder")
+Folder.Parent = Gun
+Folder.Name = "Animations"
+
+local an = Instance.new("Animation")
+an.Parent = Folder
+an.Name = "idle"
+an.AnimationId = "rbxassetid://12345132563"
+
+Gun.Parent = game.Players.LocalPlayer.Backpack
+end
+
+local function giveCrucifix()
+                    local shadow=game:GetObjects("rbxassetid://11498423088")[1]
+shadow.Parent = game.Players.LocalPlayer.Backpack
+local Players = game:GetService("Players")
+local Plr = Players.LocalPlayer
+local Char = Plr.Character or Plr.CharacterAdded:Wait()
+local Hum = Char:WaitForChild("Humanoid")
+local RightArm = Char:WaitForChild("RightUpperArm")
+local LeftArm = Char:WaitForChild("LeftUpperArm")
+local RightC1 = RightArm.RightShoulder.C1
+local LeftC1 = LeftArm.LeftShoulder.C1
+        local function setupCrucifix(tool)
+        RightArm.Name = "R_Arm"
+        LeftArm.Name = "L_Arm"
+        
+        RightArm.RightShoulder.C1 = RightC1 * CFrame.Angles(math.rad(-90), math.rad(-15), 0)
+        LeftArm.LeftShoulder.C1 = LeftC1 * CFrame.new(-0.2, -0.3, -0.5) * CFrame.Angles(math.rad(-125), math.rad(25), math.rad(25))
+        for _, v in next, Hum:GetPlayingAnimationTracks() do
+            v:Stop()
+        end
+        end
+shadow.Equipped:Connect(function()
+setupCrucifix(shadow)
+game.Players.LocalPlayer:SetAttribute("Hidden", true)
+end)
+ 
+shadow.Unequipped:Connect(function()
+    game.Players.LocalPlayer:SetAttribute("Hidden", false)
+        RightArm.Name = "RightUpperArm"
+        LeftArm.Name = "LeftUpperArm"
+        
+        RightArm.RightShoulder.C1 = RightC1
+        LeftArm.LeftShoulder.C1 = LeftC1
+end)
+end
