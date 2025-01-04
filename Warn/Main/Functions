@@ -38,6 +38,21 @@ local function caption(text, duration)
     wait(duration)
     TweenCaption:Play()
 end
+local function warning(text, duration)
+	  local Player = game.Players.LocalPlayer
+	  local Character = Player.Character
+	  local PlayerGui = Player.PlayerGui
+
+	  local Info = TweenInfo.new(1)
+	  local TweenCaption = game:GetService("TweenService"):Create(PlayerGui.MainUI.MainFrame.Warning,Info,{TextTransparency=1})
+
+	  PlayerGui.MainUI.MainFrame.Warning.Text = text
+	  PlayerGui.MainUI.MainFrame.Warning.TextTransparency = 0
+	  PlayerGui.MainUI.MainFrame.Warning.Visible = true
+
+    wait(duration)
+    TweenCaption:Play()
+end
 
 local function deathcause(text)
 	local PlayerName = game.Players.LocalPlayer.Name
