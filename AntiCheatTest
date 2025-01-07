@@ -1,0 +1,37 @@
+wait(7)
+	local MainUI_upvr = game.Players.LocalPlayer.PlayerGui:WaitForChild("MainUI")
+    game.SoundService.Main.Volume = 0
+	MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscare_Ambush:Play()
+    MainUI_upvr.Jumpscare_Ambush.Visible = true
+    local tick_result1 = tick()
+    local var6 = math.random(5, 30) / 100
+    for _ = 1, 100000 do
+        task.wait((1/60))
+        MainUI_upvr.Jumpscare_Ambush.ImageLabel.Position = UDim2.new(0.5, math.random(-15, 15), 0.5, math.random(-15, 15))
+        MainUI_upvr.Jumpscare_Ambush.BackgroundColor3 = Color3.new(0, math.random(4, 10) / 255, math.random(0, 3) / 255)
+        if tick_result1 + var6 <= tick() then
+            MainUI_upvr.Jumpscare_Ambush.ImageLabel.Visible = true
+			MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscare_Ambush.Pitch = math.random(35, 155) / 100
+            MainUI_upvr.Jumpscare_Ambush.BackgroundColor3 = Color3.new(0, math.random(4, 10) / 255, math.random(0, 3) / 255)
+            MainUI_upvr.Jumpscare_Ambush.ImageLabel.Position = UDim2.new(0.5, math.random(-25, 25), 0.5, math.random(-25, 25))
+            local var7 = 0.2 + 0.05
+            MainUI_upvr.Jumpscare_Ambush.ImageLabel.Size = UDim2.new(var7, 0, var7, 0)
+        end
+        if (tick_result1) + (var6 + math.random(10, 60) / 100) <= tick() then break end
+    end
+	MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscare_Ambush2:Play()
+    MainUI_upvr.Jumpscare_Ambush.ImageLabel.Visible = true
+    MainUI_upvr.Jumpscare_Ambush.ImageLabel:TweenSize(UDim2.new(9, 0, 9, 0), "In", "Quart", 0.3, true)
+    firesignal(game.ReplicatedStorage.Bricks.DeathHint.OnClientEvent, {"bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh","bruh", "bruh", "bruh"})
+	game.Players.LocalPlayer.Character.Humanoid.Health = 0
+    for _ = 1, 100 do
+        local var8 = math.random(0, 10) / 10
+        MainUI_upvr.Jumpscare_Ambush.BackgroundColor3 = Color3.new(var8, math.clamp(math.random(25, 50) / 50, var8, 1), math.clamp(math.random(25, 50) / 150, var8, 1))
+        game["Run Service"].RenderStepped:wait()
+        if tick() + 0.3 <= tick() then break end
+    end
+	MainUI_upvr.Initiator.Main_Game.RemoteListener.Jumpscare_Ambush:Stop()
+    MainUI_upvr.Jumpscare_Ambush.ImageLabel.Visible = false
+    MainUI_upvr.Jumpscare_Ambush.BackgroundColor3 = Color3.new(0, 0, 0)
+    wait(0.100)
+    MainUI_upvr.Jumpscare_Ambush.Visible = false
